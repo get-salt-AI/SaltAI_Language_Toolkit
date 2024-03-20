@@ -1,0 +1,4526 @@
+{
+  "last_node_id": 131,
+  "last_link_id": 139,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "SaltChatMessages",
+      "pos": [
+        -59.17377516455061,
+        224.5202930947266
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "llm_message",
+          "type": "LIST",
+          "links": [
+            2
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatMessages"
+      },
+      "widgets_values": [
+        "prompt",
+        "SYSTEM"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "LlamaCPPModel",
+      "pos": [
+        -59.17377516455061,
+        124.52029309472651
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Model",
+          "type": "LLM_MODEL",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LlamaCPPModel"
+      },
+      "widgets_values": [
+        "mistral-7b-instruct-v0.2.Q4_K_M.gguf"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "SaltChat",
+      "pos": [
+        360.8262248354494,
+        224.5202930947266
+      ],
+      "size": {
+        "0": 229.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 1
+        },
+        {
+          "name": "message",
+          "type": "LIST",
+          "link": 2,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChat"
+      }
+    },
+    {
+      "id": 4,
+      "type": "ShowText|pysssss",
+      "pos": [
+        620.826224835449,
+        224.5202930947266
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 3,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        " You can ask me to perform various tasks such as setting reminders, sending emails, making phone calls, or even answering questions. For example, you might say \"Set a reminder for my doctor's appointment on Thursday at 3 PM,\" or \"Send an email to John Doe with the subject 'Meeting Agenda'\" or \"Call the number 555-1234\". I can also help answer questions on a wide range of topics. What would you like me to do?"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "ShowText|pysssss",
+      "pos": [
+        620.826224835449,
+        574.5202930947262
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 6,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        " You can ask me to perform various tasks such as setting reminders, sending emails, making phone calls, or even answering questions. For example, you might say \"Set a reminder for my doctor's appointment on Thursday at 3 PM,\" or \"Send an email to John Doe with the subject 'Meeting Agenda'\" or \"Call the number 555-1234\". I can also help answer questions on a wide range of topics. What would you like me to do?"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "SaltChat",
+      "pos": [
+        360.8262248354494,
+        574.5202930947262
+      ],
+      "size": {
+        "0": 229.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 7,
+          "slot_index": 0
+        },
+        {
+          "name": "message",
+          "type": "LIST",
+          "link": 5,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChat"
+      }
+    },
+    {
+      "id": 9,
+      "type": "MistralAIModel",
+      "pos": [
+        -62.640775164550654,
+        464.9582930947264
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Model",
+          "type": "LLM_MODEL",
+          "links": [
+            7
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MistralAIModel"
+      },
+      "widgets_values": [
+        "mistral-7b-instruct-v0.2.Q4_K_M.gguf",
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "SaltChatMessages",
+      "pos": [
+        -62.640775164550654,
+        594.9582930947263
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "llm_message",
+          "type": "LIST",
+          "links": [
+            5
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatMessages"
+      },
+      "widgets_values": [
+        "prompt",
+        "SYSTEM"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "SaltChatMessages",
+      "pos": [
+        -62.640775164550654,
+        974.9582930947263
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 4,
+      "outputs": [
+        {
+          "name": "llm_message",
+          "type": "LIST",
+          "links": [
+            9
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatMessages"
+      },
+      "widgets_values": [
+        "prompt",
+        "SYSTEM"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "ShowText|pysssss",
+      "pos": [
+        627.3592248354491,
+        954.9582930947263
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 40,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 10,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        " You can ask me to perform various tasks such as setting reminders, sending emails, making phone calls, or even answering questions. For example, you might say \"Set a reminder for my doctor's appointment on Thursday at 3 PM,\" or \"Send an email to John Doe with the subject 'Meeting Agenda'\" or \"Call the number 555-1234\". I can also help answer questions on a wide range of topics. What would you like me to do?"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "SaltChat",
+      "pos": [
+        367.3592248354493,
+        954.9582930947263
+      ],
+      "size": {
+        "0": 229.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 29,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 11,
+          "slot_index": 0
+        },
+        {
+          "name": "message",
+          "type": "LIST",
+          "link": 9,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            10
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChat"
+      }
+    },
+    {
+      "id": 14,
+      "type": "OllamaModel",
+      "pos": [
+        -62.640775164550654,
+        874.9582930947263
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "outputs": [
+        {
+          "name": "Model",
+          "type": "LLM_MODEL",
+          "links": [
+            11
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaModel"
+      },
+      "widgets_values": [
+        "mistral-7b-instruct-v0.2.Q4_K_M.gguf"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "ShowText|pysssss",
+      "pos": [
+        627.3592248354491,
+        1304.9582930947263
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 14,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        " You can ask me to perform various tasks such as setting reminders, sending emails, making phone calls, or even answering questions. For example, you might say \"Set a reminder for my doctor's appointment on Thursday at 3 PM,\" or \"Send an email to John Doe with the subject 'Meeting Agenda'\" or \"Call the number 555-1234\". I can also help answer questions on a wide range of topics. What would you like me to do?"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "SaltChat",
+      "pos": [
+        367.3592248354493,
+        1304.9582930947263
+      ],
+      "size": {
+        "0": 229.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 15,
+          "slot_index": 0
+        },
+        {
+          "name": "message",
+          "type": "LIST",
+          "link": 13,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            14
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChat"
+      }
+    },
+    {
+      "id": 16,
+      "type": "SaltChatMessages",
+      "pos": [
+        -62.640775164550654,
+        1364.9582930947263
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "llm_message",
+          "type": "LIST",
+          "links": [
+            13
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatMessages"
+      },
+      "widgets_values": [
+        "prompt",
+        "SYSTEM"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "OpenAIModel",
+      "pos": [
+        -62.640775164550654,
+        1224.9582930947263
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Model",
+          "type": "LLM_MODEL",
+          "links": [
+            15
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OpenAIModel"
+      },
+      "widgets_values": [
+        "gpt-3.5-turbo-0125",
+        "text-embedding-3-small",
+        "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"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "LlamaCPPModel",
+      "pos": [
+        1091.2899274159545,
+        119.48478865109361
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Model",
+          "type": "LLM_MODEL",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LlamaCPPModel"
+      },
+      "widgets_values": [
+        "mistral-7b-instruct-v0.2.Q4_K_M.gguf"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "SaltCSVReader",
+      "pos": [
+        1491.2899274159545,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            16
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltCSVReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 22,
+      "type": "SaltSummaryIndex",
+      "pos": [
+        1831.2899274159545,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 16
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 17,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSummaryIndex"
+      }
+    },
+    {
+      "id": 24,
+      "type": "SaltChatEngine",
+      "pos": [
+        2141.289927415953,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            20
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 25,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2561.289927415953,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 62,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 20,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 28,
+      "type": "SaltChatEngine",
+      "pos": [
+        2141.289927415953,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            23
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 29,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2561.289927415953,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 63,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 23,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 27,
+      "type": "SaltSummaryIndex",
+      "pos": [
+        1831.2899274159545,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 25,
+          "slot_index": 0
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 24,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSummaryIndex"
+      }
+    },
+    {
+      "id": 30,
+      "type": "SaltDocxReader",
+      "pos": [
+        1491.2899274159545,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            25
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltDocxReader"
+      },
+      "widgets_values": [
+        "Last Will and Testament.docx"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2561.1884723378294,
+        798.3938441686709
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 64,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 32,
+      "type": "SaltChatEngine",
+      "pos": [
+        2141.289927415953,
+        799.4847886510936
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 31,
+      "type": "SaltSummaryIndex",
+      "pos": [
+        1831.1884723378296,
+        798.3938441686709
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 30,
+          "slot_index": 0
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 29,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            27
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSummaryIndex"
+      }
+    },
+    {
+      "id": 35,
+      "type": "SaltEpubReader",
+      "pos": [
+        1491.2899274159545,
+        799.4847886510936
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            30
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltEpubReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 37,
+      "type": "SaltChatEngine",
+      "pos": [
+        2141.289927415953,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            33
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 38,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2561.289927415953,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 33,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 36,
+      "type": "SaltSummaryIndex",
+      "pos": [
+        1821.2899274159545,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 45,
+          "slot_index": 0
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 34,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            32
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSummaryIndex"
+      }
+    },
+    {
+      "id": 41,
+      "type": "SaltSummaryIndex",
+      "pos": [
+        1821.2899274159545,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 44,
+          "slot_index": 0
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 42,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSummaryIndex"
+      }
+    },
+    {
+      "id": 43,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2561.289927415953,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 38,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 42,
+      "type": "SaltChatEngine",
+      "pos": [
+        2141.289927415953,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 45,
+      "type": "SaltSummaryIndex",
+      "pos": [
+        1821.2899274159545,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 46,
+          "slot_index": 0
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 43,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            40
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSummaryIndex"
+      }
+    },
+    {
+      "id": 47,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2561.289927415953,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 67,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 41,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 46,
+      "type": "SaltChatEngine",
+      "pos": [
+        2141.289927415953,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            41
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 40,
+      "type": "SaltHTMLTagReader",
+      "pos": [
+        1481.2899274159545,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            44
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltHTMLTagReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 50,
+      "type": "SaltHWPReader",
+      "pos": [
+        1481.2899274159545,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            46
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltHWPReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 49,
+      "type": "SaltFlatReader",
+      "pos": [
+        1491.2899274159545,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            45
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltFlatReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 23,
+      "type": "SaltServiceContextDefault",
+      "pos": [
+        1091.2899274159545,
+        219.4847886510935
+      ],
+      "size": {
+        "0": 267,
+        "1": 26
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "links": [
+            17,
+            24,
+            29,
+            34,
+            42,
+            43,
+            47
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltServiceContextDefault"
+      }
+    },
+    {
+      "id": 54,
+      "type": "SaltChatEngine",
+      "pos": [
+        3741.289927415953,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 68,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            50
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 55,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4161.2899274159545,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 80,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 50,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 58,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4161.2899274159545,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 81,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 53,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 61,
+      "type": "SaltChatEngine",
+      "pos": [
+        3741.289927415953,
+        799.4847886510936
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 70,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            56
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 62,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4161.2899274159545,
+        799.4847886510936
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 82,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 56,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 66,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4161.2899274159545,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 83,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 59,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 69,
+      "type": "SaltChatEngine",
+      "pos": [
+        3741.289927415953,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 72,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            62
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 70,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4161.2899274159545,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 84,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 62,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 72,
+      "type": "SaltChatEngine",
+      "pos": [
+        3741.289927415953,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 73,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 83
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            65
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 73,
+      "type": "ShowText|pysssss",
+      "pos": [
+        4161.2899274159545,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 85,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 65,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 65,
+      "type": "SaltChatEngine",
+      "pos": [
+        3741.289927415953,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 71,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 72,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            59
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 76,
+      "type": "SaltVectorStoreIndex",
+      "pos": [
+        3421.289927415953,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 93
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 87
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            72
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltVectorStoreIndex"
+      }
+    },
+    {
+      "id": 77,
+      "type": "SaltVectorStoreIndex",
+      "pos": [
+        3431.289927415953,
+        809.4847886510936
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 92,
+          "slot_index": 0
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 86
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            74
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltVectorStoreIndex"
+      }
+    },
+    {
+      "id": 78,
+      "type": "SaltVectorStoreIndex",
+      "pos": [
+        3431.289927415953,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 56,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 91
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 85
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            77
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltVectorStoreIndex"
+      }
+    },
+    {
+      "id": 57,
+      "type": "SaltChatEngine",
+      "pos": [
+        3741.289927415953,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 77,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            53
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 80,
+      "type": "SaltVectorStoreIndex",
+      "pos": [
+        3411.289927415953,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 94
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            81
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltVectorStoreIndex"
+      }
+    },
+    {
+      "id": 81,
+      "type": "SaltVectorStoreIndex",
+      "pos": [
+        3411.289927415953,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 95
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 89
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            83
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltVectorStoreIndex"
+      }
+    },
+    {
+      "id": 79,
+      "type": "SaltVectorStoreIndex",
+      "pos": [
+        3431.289927415953,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 90,
+          "slot_index": 0
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 84
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            79
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltVectorStoreIndex"
+      }
+    },
+    {
+      "id": 82,
+      "type": "SaltImageReader",
+      "pos": [
+        3091.289927415953,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            90
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltImageReader"
+      },
+      "widgets_values": [
+        "5678CD7DD8B4EC39F024B3208320E98B7A4472D3F22A49C5B5ABFD50F51B4349 (1).jpeg"
+      ]
+    },
+    {
+      "id": 83,
+      "type": "SaltImageCaptionReader",
+      "pos": [
+        3081.289927415953,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            91
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltImageCaptionReader"
+      },
+      "widgets_values": [
+        "5678CD7DD8B4EC39F024B3208320E98B7A4472D3F22A49C5B5ABFD50F51B4349 (1).jpeg"
+      ]
+    },
+    {
+      "id": 84,
+      "type": "SaltImageTabularChartReader",
+      "pos": [
+        3091.289927415953,
+        809.4847886510936
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            92
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltImageTabularChartReader"
+      },
+      "widgets_values": [
+        "5678CD7DD8B4EC39F024B3208320E98B7A4472D3F22A49C5B5ABFD50F51B4349 (1).jpeg"
+      ]
+    },
+    {
+      "id": 85,
+      "type": "SaltImageVisionLLMReader",
+      "pos": [
+        3081.289927415953,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            93
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltImageVisionLLMReader"
+      },
+      "widgets_values": [
+        "5678CD7DD8B4EC39F024B3208320E98B7A4472D3F22A49C5B5ABFD50F51B4349 (1).jpeg"
+      ]
+    },
+    {
+      "id": 86,
+      "type": "SaltIPYNBReader",
+      "pos": [
+        3081.289927415953,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            94
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltIPYNBReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 87,
+      "type": "SaltMarkdownReader",
+      "pos": [
+        3071.289927415953,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            95
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltMarkdownReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 89,
+      "type": "ShowText|pysssss",
+      "pos": [
+        5841.2899274159545,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 92,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 97,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 90,
+      "type": "SaltChatEngine",
+      "pos": [
+        5421.2899274159545,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 87,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 120,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            99
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 91,
+      "type": "ShowText|pysssss",
+      "pos": [
+        5841.2899274159545,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 93,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 99,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 92,
+      "type": "SaltChatEngine",
+      "pos": [
+        5421.2899274159545,
+        799.4847886510936
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 88,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 119
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            101
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 93,
+      "type": "ShowText|pysssss",
+      "pos": [
+        5841.2899274159545,
+        799.4847886510936
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 94,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 101,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 94,
+      "type": "SaltChatEngine",
+      "pos": [
+        5421.2899274159545,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 89,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 118,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            103
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 95,
+      "type": "ShowText|pysssss",
+      "pos": [
+        5841.2899274159545,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 95,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 103,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 96,
+      "type": "SaltChatEngine",
+      "pos": [
+        5421.2899274159545,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 90,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 117
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            105
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 97,
+      "type": "ShowText|pysssss",
+      "pos": [
+        5841.2899274159545,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 96,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 105,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 98,
+      "type": "SaltChatEngine",
+      "pos": [
+        5421.2899274159545,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 91,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 116
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            107
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 99,
+      "type": "ShowText|pysssss",
+      "pos": [
+        5841.2899274159545,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 97,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 107,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 51,
+      "type": "Reroute",
+      "pos": [
+        2967.8928903623564,
+        224.81885867296793
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "LLM_CONTEXT",
+          "links": [
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            114
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 88,
+      "type": "SaltChatEngine",
+      "pos": [
+        5421.2899274159545,
+        319.48478865109337
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 86,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 115,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            97
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 118,
+      "type": "SaltTreeIndex",
+      "pos": [
+        5071.2899274159545,
+        1539.484788651094
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 102
+      },
+      "flags": {},
+      "order": 79,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "link": 135
+        },
+        {
+          "name": "service_context",
+          "type": "LLM_CONTEXT",
+          "link": 126
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            116
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltTreeIndex"
+      },
+      "widgets_values": [
+        10,
+        true
+      ]
+    },
+    {
+      "id": 117,
+      "type": "SaltTreeIndex",
+      "pos": [
+        5071.2899274159545,
+        1289.484788651094
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 102
+      },
+      "flags": {},
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "link": 134
+        },
+        {
+          "name": "service_context",
+          "type": "LLM_CONTEXT",
+          "link": 125
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            117
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltTreeIndex"
+      },
+      "widgets_values": [
+        10,
+        true
+      ]
+    },
+    {
+      "id": 116,
+      "type": "SaltTreeIndex",
+      "pos": [
+        5071.2899274159545,
+        1039.4847886510938
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 102
+      },
+      "flags": {},
+      "order": 77,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "link": 133
+        },
+        {
+          "name": "service_context",
+          "type": "LLM_CONTEXT",
+          "link": 124
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            118
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltTreeIndex"
+      },
+      "widgets_values": [
+        10,
+        true
+      ]
+    },
+    {
+      "id": 115,
+      "type": "SaltTreeIndex",
+      "pos": [
+        5071.2899274159545,
+        799.4847886510936
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 102
+      },
+      "flags": {},
+      "order": 76,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "link": 132
+        },
+        {
+          "name": "service_context",
+          "type": "LLM_CONTEXT",
+          "link": 123
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            119
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltTreeIndex"
+      },
+      "widgets_values": [
+        10,
+        true
+      ]
+    },
+    {
+      "id": 114,
+      "type": "SaltTreeIndex",
+      "pos": [
+        5071.2899274159545,
+        559.4847886510935
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 102
+      },
+      "flags": {},
+      "order": 75,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "link": 130
+        },
+        {
+          "name": "service_context",
+          "type": "LLM_CONTEXT",
+          "link": 122
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            120
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltTreeIndex"
+      },
+      "widgets_values": [
+        10,
+        true
+      ]
+    },
+    {
+      "id": 112,
+      "type": "Reroute",
+      "pos": [
+        4545.2682732253625,
+        222.98652747998372
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 114
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "LLM_CONTEXT",
+          "links": [
+            121,
+            122,
+            123,
+            124,
+            125,
+            126
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 113,
+      "type": "SaltTreeIndex",
+      "pos": [
+        5071.2899274159545,
+        329.4847886510934
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 102
+      },
+      "flags": {},
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "link": 127,
+          "slot_index": 0
+        },
+        {
+          "name": "service_context",
+          "type": "LLM_CONTEXT",
+          "link": 121
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            115
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltTreeIndex"
+      },
+      "widgets_values": [
+        10,
+        true
+      ]
+    },
+    {
+      "id": 119,
+      "type": "SaltMboxReader",
+      "pos": [
+        4715.212927415957,
+        332.16428865109344
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            128
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltMboxReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 120,
+      "type": "SaltSentenceSplitterNodeCreator",
+      "pos": [
+        4711.2899274159545,
+        429.48478865109354
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 128,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "links": [
+            127
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSentenceSplitterNodeCreator"
+      },
+      "widgets_values": [
+        1024,
+        20
+      ]
+    },
+    {
+      "id": 123,
+      "type": "SaltPDFReader",
+      "pos": [
+        4711.2899274159545,
+        569.4847886510935
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            131
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltPDFReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 122,
+      "type": "SaltSentenceSplitterNodeCreator",
+      "pos": [
+        4710,
+        670
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 131,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "links": [
+            130
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSentenceSplitterNodeCreator"
+      },
+      "widgets_values": [
+        1024,
+        20
+      ]
+    },
+    {
+      "id": 124,
+      "type": "SaltSentenceSplitterNodeCreator",
+      "pos": [
+        4710,
+        910
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 136,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "links": [
+            132
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSentenceSplitterNodeCreator"
+      },
+      "widgets_values": [
+        1024,
+        20
+      ]
+    },
+    {
+      "id": 125,
+      "type": "SaltSentenceSplitterNodeCreator",
+      "pos": [
+        4710,
+        1170
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 137,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "links": [
+            133
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSentenceSplitterNodeCreator"
+      },
+      "widgets_values": [
+        1024,
+        20
+      ]
+    },
+    {
+      "id": 126,
+      "type": "SaltSentenceSplitterNodeCreator",
+      "pos": [
+        4710,
+        1420
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 138,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "links": [
+            134
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSentenceSplitterNodeCreator"
+      },
+      "widgets_values": [
+        1024,
+        20
+      ]
+    },
+    {
+      "id": 127,
+      "type": "SaltSentenceSplitterNodeCreator",
+      "pos": [
+        4710,
+        1660
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 139,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_nodes",
+          "type": "LLM_NODES",
+          "links": [
+            135
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSentenceSplitterNodeCreator"
+      },
+      "widgets_values": [
+        1024,
+        20
+      ]
+    },
+    {
+      "id": 128,
+      "type": "SaltPagedCSVReader",
+      "pos": [
+        4710,
+        810
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            136
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltPagedCSVReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 129,
+      "type": "SaltPandasCSVReader",
+      "pos": [
+        4710,
+        1070
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            137
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltPandasCSVReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 130,
+      "type": "SaltPptxReader",
+      "pos": [
+        4710,
+        1320
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            138
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltPptxReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    },
+    {
+      "id": 131,
+      "type": "SaltPyMuPDFReader",
+      "pos": [
+        4710,
+        1560
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            139
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltPyMuPDFReader"
+      },
+      "widgets_values": [
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      2,
+      3,
+      0,
+      2,
+      1,
+      "LIST"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "STRING"
+    ],
+    [
+      5,
+      7,
+      0,
+      6,
+      1,
+      "LIST"
+    ],
+    [
+      6,
+      6,
+      0,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      7,
+      9,
+      0,
+      6,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      9,
+      11,
+      0,
+      10,
+      1,
+      "LIST"
+    ],
+    [
+      10,
+      10,
+      0,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      11,
+      14,
+      0,
+      10,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      13,
+      16,
+      0,
+      15,
+      1,
+      "LIST"
+    ],
+    [
+      14,
+      15,
+      0,
+      17,
+      0,
+      "STRING"
+    ],
+    [
+      15,
+      19,
+      0,
+      15,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      16,
+      21,
+      0,
+      22,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      17,
+      23,
+      0,
+      22,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      18,
+      20,
+      0,
+      23,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      19,
+      22,
+      0,
+      24,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      20,
+      24,
+      0,
+      25,
+      0,
+      "STRING"
+    ],
+    [
+      22,
+      27,
+      0,
+      28,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      23,
+      28,
+      0,
+      29,
+      0,
+      "STRING"
+    ],
+    [
+      24,
+      23,
+      0,
+      27,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      25,
+      30,
+      0,
+      27,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      27,
+      31,
+      0,
+      32,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      28,
+      32,
+      0,
+      33,
+      0,
+      "STRING"
+    ],
+    [
+      29,
+      23,
+      0,
+      31,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      30,
+      35,
+      0,
+      31,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      32,
+      36,
+      0,
+      37,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      33,
+      37,
+      0,
+      38,
+      0,
+      "STRING"
+    ],
+    [
+      34,
+      23,
+      0,
+      36,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      37,
+      41,
+      0,
+      42,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      38,
+      42,
+      0,
+      43,
+      0,
+      "STRING"
+    ],
+    [
+      40,
+      45,
+      0,
+      46,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      41,
+      46,
+      0,
+      47,
+      0,
+      "STRING"
+    ],
+    [
+      42,
+      23,
+      0,
+      41,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      43,
+      23,
+      0,
+      45,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      44,
+      40,
+      0,
+      41,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      45,
+      49,
+      0,
+      36,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      46,
+      50,
+      0,
+      45,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      47,
+      23,
+      0,
+      51,
+      0,
+      "*"
+    ],
+    [
+      50,
+      54,
+      0,
+      55,
+      0,
+      "STRING"
+    ],
+    [
+      53,
+      57,
+      0,
+      58,
+      0,
+      "STRING"
+    ],
+    [
+      56,
+      61,
+      0,
+      62,
+      0,
+      "STRING"
+    ],
+    [
+      59,
+      65,
+      0,
+      66,
+      0,
+      "STRING"
+    ],
+    [
+      62,
+      69,
+      0,
+      70,
+      0,
+      "STRING"
+    ],
+    [
+      65,
+      72,
+      0,
+      73,
+      0,
+      "STRING"
+    ],
+    [
+      72,
+      76,
+      0,
+      65,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      74,
+      77,
+      0,
+      61,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      77,
+      78,
+      0,
+      57,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      79,
+      79,
+      0,
+      54,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      81,
+      80,
+      0,
+      69,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      83,
+      81,
+      0,
+      72,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      84,
+      51,
+      0,
+      79,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      85,
+      51,
+      0,
+      78,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      86,
+      51,
+      0,
+      77,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      87,
+      51,
+      0,
+      76,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      88,
+      51,
+      0,
+      80,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      89,
+      51,
+      0,
+      81,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      90,
+      82,
+      0,
+      79,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      91,
+      83,
+      0,
+      78,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      92,
+      84,
+      0,
+      77,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      93,
+      85,
+      0,
+      76,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      94,
+      86,
+      0,
+      80,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      95,
+      87,
+      0,
+      81,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      97,
+      88,
+      0,
+      89,
+      0,
+      "STRING"
+    ],
+    [
+      99,
+      90,
+      0,
+      91,
+      0,
+      "STRING"
+    ],
+    [
+      101,
+      92,
+      0,
+      93,
+      0,
+      "STRING"
+    ],
+    [
+      103,
+      94,
+      0,
+      95,
+      0,
+      "STRING"
+    ],
+    [
+      105,
+      96,
+      0,
+      97,
+      0,
+      "STRING"
+    ],
+    [
+      107,
+      98,
+      0,
+      99,
+      0,
+      "STRING"
+    ],
+    [
+      114,
+      51,
+      0,
+      112,
+      0,
+      "*"
+    ],
+    [
+      115,
+      113,
+      0,
+      88,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      116,
+      118,
+      0,
+      98,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      117,
+      117,
+      0,
+      96,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      118,
+      116,
+      0,
+      94,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      119,
+      115,
+      0,
+      92,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      120,
+      114,
+      0,
+      90,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      121,
+      112,
+      0,
+      113,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      122,
+      112,
+      0,
+      114,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      123,
+      112,
+      0,
+      115,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      124,
+      112,
+      0,
+      116,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      125,
+      112,
+      0,
+      117,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      126,
+      112,
+      0,
+      118,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      127,
+      120,
+      0,
+      113,
+      0,
+      "LLM_NODES"
+    ],
+    [
+      128,
+      119,
+      0,
+      120,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      130,
+      122,
+      0,
+      114,
+      0,
+      "LLM_NODES"
+    ],
+    [
+      131,
+      123,
+      0,
+      122,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      132,
+      124,
+      0,
+      115,
+      0,
+      "LLM_NODES"
+    ],
+    [
+      133,
+      125,
+      0,
+      116,
+      0,
+      "LLM_NODES"
+    ],
+    [
+      134,
+      126,
+      0,
+      117,
+      0,
+      "LLM_NODES"
+    ],
+    [
+      135,
+      127,
+      0,
+      118,
+      0,
+      "LLM_NODES"
+    ],
+    [
+      136,
+      128,
+      0,
+      124,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      137,
+      129,
+      0,
+      125,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      138,
+      130,
+      0,
+      126,
+      0,
+      "DOCUMENT"
+    ],
+    [
+      139,
+      131,
+      0,
+      127,
+      0,
+      "DOCUMENT"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "LLM Loader Testing",
+      "bounding": [
+        -73,
+        50,
+        1030,
+        1524
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Document Reader Testing",
+      "bounding": [
+        1081,
+        45,
+        5090,
+        1704
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
