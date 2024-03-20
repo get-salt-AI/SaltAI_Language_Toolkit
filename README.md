@@ -44,6 +44,13 @@ Not Ready Yet
 
 To install some of the requirements because of version collisions, this is likely because you don't have venv setup correctly.
 
+## Getting models
+
+You can install and use any GGUF files loaded into your `ComfyUI/custom_nodes/models/llm` folder.
+
+Here is probably the world's largest repository of those:
+https://huggingface.co/models?pipeline_tag=text-generation&sort=trending
+
 ## Examples
 
 ![Using on a CSV](examples/image.png)
