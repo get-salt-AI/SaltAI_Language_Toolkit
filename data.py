@@ -1151,7 +1151,7 @@ NODE_CLASS_MAPPINGS = {
 	"SaltSimpleWebPageReader": SaltSimpleWebPageReader,
 	"SaltTrafilaturaWebReader": SaltTrafilaturaWebReader,
 	"SaltRssReaderNode": SaltRssReaderNode,
-    "SaltInputToDocuments": SaltInputToDocuments,
+	"SaltInputToDocuments": SaltInputToDocuments,
 	"SaltPostProcessDocuments": SaltPostProcessDocuments,
 }
 
@@ -1185,6 +1185,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 	"SaltSimpleWebPageReader": "∞ Simple Web Page",
 	"SaltTrafilaturaWebReader": "∞ Trafilatura Web",
 	"SaltRssReaderNode": "∞ RSS"
-    "SaltInputToDocuments": "∞ Input to Documents",
+	"SaltInputToDocuments": "∞ Input to Documents",
 	"SaltPostProcessDocuments": "∞ Post Process Documents",
 }
