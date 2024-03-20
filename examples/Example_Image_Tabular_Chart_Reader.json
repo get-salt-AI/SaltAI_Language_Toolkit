@@ -1,0 +1,272 @@
+{
+  "last_node_id": 19,
+  "last_link_id": 13,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "LlamaCPPModel",
+      "pos": [
+        220,
+        -90
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Model",
+          "type": "LLM_MODEL",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LlamaCPPModel"
+      },
+      "widgets_values": [
+        "mistral-7b-instruct-v0.2.Q4_K_M.gguf"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "SaltServiceContextDefault",
+      "pos": [
+        220,
+        10
+      ],
+      "size": {
+        "0": 267,
+        "1": 26
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "links": [
+            10
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltServiceContextDefault"
+      }
+    },
+    {
+      "id": 17,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1070,
+        130
+      ],
+      "size": [
+        320,
+        80
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 12,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "You used 5.67 Gigajoules of gas in March."
+      ]
+    },
+    {
+      "id": 14,
+      "type": "SaltSummaryIndex",
+      "pos": [
+        630,
+        0
+      ],
+      "size": {
+        "0": 292.20001220703125,
+        "1": 46
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_documents",
+          "type": "DOCUMENT",
+          "link": 13,
+          "slot_index": 0
+        },
+        {
+          "name": "llm_context",
+          "type": "LLM_CONTEXT",
+          "link": 10,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            9
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltSummaryIndex"
+      }
+    },
+    {
+      "id": 19,
+      "type": "SaltImageTabularChartReader",
+      "pos": [
+        640,
+        -120
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            13
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltImageTabularChartReader"
+      },
+      "widgets_values": [
+        "gas-bill.png"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "SaltChatEngine",
+      "pos": [
+        1070,
+        -110
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            12
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltChatEngine"
+      },
+      "widgets_values": [
+        "How much gas did I use in March?"
+      ]
+    }
+  ],
+  "links": [
+    [
+      9,
+      14,
+      0,
+      15,
+      0,
+      "LLM_INDEX"
+    ],
+    [
+      10,
+      16,
+      0,
+      14,
+      1,
+      "LLM_CONTEXT"
+    ],
+    [
+      11,
+      11,
+      0,
+      16,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      12,
+      15,
+      0,
+      17,
+      0,
+      "STRING"
+    ],
+    [
+      13,
+      19,
+      0,
+      14,
+      0,
+      "DOCUMENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
