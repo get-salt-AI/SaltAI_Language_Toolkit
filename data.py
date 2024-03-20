@@ -688,6 +688,7 @@ class SaltPyMuPDFReader(PyMuPDFReader):
 #from llama_index.readers.file import RTFReader
 
 # Binding:
+"""
 class SaltRTFReader(RTFReader):
 	def __init__(self):
 		super().__init__()
@@ -714,7 +715,7 @@ class SaltRTFReader(RTFReader):
 		path = Path(path)
 		data = self.load_data(path, extra_info)
 		return (data, )
-
+"""
 
 # Source
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/unstructured/base.py
