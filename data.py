@@ -1184,7 +1184,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 	"SaltDirectoryReader": "∞ Simple Directory",
 	"SaltSimpleWebPageReader": "∞ Simple Web Page",
 	"SaltTrafilaturaWebReader": "∞ Trafilatura Web",
-	"SaltRssReaderNode": "∞ RSS"
+	"SaltRssReaderNode": "∞ RSS",
 	"SaltInputToDocuments": "∞ Input to Documents",
 	"SaltPostProcessDocuments": "∞ Post Process Documents",
 }
