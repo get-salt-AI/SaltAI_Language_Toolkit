@@ -27,7 +27,7 @@ You'll have to run against the environments python:
 
 1. Ensure you have venv set up properly according to your needs
 2. cd into your `ComfyUI/custom_nodes` folder
-3. git clone this project into your custom_nodes folder
+3. `git clone https://github.com/get-salt-AI/SaltAI_Llama-Index`
 4. `cd SaltAI_Llama-index`
 5. Execute `pip install -r requirements.txt`
 
