@@ -49,7 +49,7 @@ To install some of the requirements because of version collisions, this is likel
 You can install and use any GGUF files loaded into your `ComfyUI/custom_nodes/models/llm` folder.
 
 Here is probably the world's largest repository of those:
-https://huggingface.co/models?pipeline_tag=text-generation&sort=trending
+[Hugging Face LLM Category](https://huggingface.co/models?pipeline_tag=text-generation&sort=trending)
 
 ## Examples
 
