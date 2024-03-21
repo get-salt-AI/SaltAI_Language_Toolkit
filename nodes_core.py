@@ -151,7 +151,7 @@ class SaltServiceContextDefault:
 	def context(self, llm_model: Dict[str, Any]):
 		service_context = ServiceContext.from_defaults(
 			llm=llm_model['llm'],
-			embed_model=Settings.embed_model,
+			embed_model=llm_model['embed_model'],
 		)
 		return (service_context,)
 
