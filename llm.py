@@ -24,9 +24,6 @@ folder_paths.folder_names_and_paths["llm"] = ([Salt_LLM_DIR], Salt_LLM_supported
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import Settings
 
-Settings.embed_model = HuggingFaceEmbedding(
-    model_name="BAAI/bge-small-en-v1.5"
-)
 
 # Requirements:
 # llama-index
@@ -60,7 +57,8 @@ class SaltGemini:
 	def load_model(self, model: str) -> Dict[str, Any]:
 		name = f"{model}_{embed_model}"
 		llm = Gemini()
-		return ({"llm":llm, "embed_model":Settings.embed_model},)
+		embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+		return ({"llm":llm, "embed_model":embed_model},)
 
 """
 # Requirements:
@@ -102,7 +100,8 @@ class SaltLlamaCPP:
 		name = f"{ModelName}"
 		path = folder_paths.get_full_path('llm',ModelName)
 		llm = LlamaCPP(model_path=path)
-		return ({"llm":llm, "embed_model":Settings.embed_model},)
+		embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+		return ({"llm":llm, "embed_model":embed_model},)
 
 
 # Requirements:
@@ -143,7 +142,8 @@ class SaltMistralAI:
 		name = f"{ModelPath}"
 		path = folder_paths.get_full_path('llm',ModelPath)
 		llm = MistralAI(model=path)
-		return ({"llm":llm, "embed_model":Settings.embed_model},)
+		embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+		return ({"llm":llm, "embed_model":embed_model},)
 
 
 
@@ -180,7 +180,8 @@ class SaltOllama:
 		name = f"{ModelPath}"
 		path = folder_paths.get_full_path('llm',ModelPath)
 		llm = Ollama(model=path)
-		return ({"llm":llm, "embed_model":Settings.embed_model},)
+		embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+		return ({"llm":llm, "embed_model":embed_model},)
 
 
 # Requirements:
@@ -245,7 +246,7 @@ class SaltOpenAI:
 		llm = OpenAI(model=ModelName)
 		llm.api_key = api_key
 		embed_model = OpenAIEmbedding(model=EmbedModel)
-		return ({"llm":llm, "embed_model":EmbedModel},)
+		return ({"llm":llm, "embed_model":embed_model},)
 
 
 
