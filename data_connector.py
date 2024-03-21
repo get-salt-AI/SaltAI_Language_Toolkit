@@ -1,7 +1,7 @@
 
 """
 @BUGS: 
-	SaltGoogleDocsReader document ID is supposed to be a List[str] of *something*?
+	LLMGoogleDocsReader document ID is supposed to be a List[str] of *something*?
 
 """
 
@@ -36,7 +36,7 @@ from typing import List
 from llama_index.readers.google import GoogleDocsReader
 
 # Binding:
-class SaltGoogleDocsReader:
+class LLMGoogleDocsReader:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -62,7 +62,7 @@ class SaltGoogleDocsReader:
 # Imports:
 #from llama_index.readers.notion import NotionPageReader
 
-class SaltNotionReader:
+class LLMNotionReader:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -98,11 +98,11 @@ class SaltNotionReader:
 
 
 NODE_CLASS_MAPPINGS = {
-#	"GoogleDocsReader": SaltGoogleDocsReader,
-#	"NotionReader": SaltNotionReader,
+#	"LLMGoogleDocsReader": LLMGoogleDocsReader,
+#	"LLMNotionReader": LLMNotionReader,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-#	"GoogleDocsReader": "∞ GoogleDocs",
-#	"NotionReader": "∞ Notion",
+#	"LLMGoogleDocsReader": "∞ GoogleDocs",
+#	"LLMNotionReader": "∞ Notion",
 }
