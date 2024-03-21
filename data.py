@@ -65,7 +65,7 @@ defineInputFileExtensions()
 # Imports:
 from llama_index.readers.file import CSVReader
 
-class SaltCSVReader(CSVReader):
+class LLMCSVReader(CSVReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -102,7 +102,7 @@ class SaltCSVReader(CSVReader):
 from llama_index.readers.file import DocxReader
 
 # Binding:
-class SaltDocxReader(DocxReader):
+class LLMDocxReader(DocxReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -135,7 +135,7 @@ class SaltDocxReader(DocxReader):
 # Imports:
 from llama_index.readers.file import EpubReader
 
-class SaltEpubReader(EpubReader):
+class LLMEpubReader(EpubReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -169,7 +169,7 @@ class SaltEpubReader(EpubReader):
 # Imports:
 from llama_index.readers.file import FlatReader
 
-class SaltFlatReader(FlatReader):
+class LLMFlatReader(FlatReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -202,7 +202,7 @@ class SaltFlatReader(FlatReader):
 # Imports:
 from llama_index.readers.file import HTMLTagReader
 
-class SaltHTMLTagReader(HTMLTagReader):
+class LLMHTMLTagReader(HTMLTagReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -233,7 +233,7 @@ class SaltHTMLTagReader(HTMLTagReader):
 # Imports:
 from llama_index.readers.file import HWPReader
 
-class SaltHWPReader(HWPReader):
+class LLMHWPReader(HWPReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -267,7 +267,7 @@ class SaltHWPReader(HWPReader):
 # Imports:
 from llama_index.readers.file import ImageReader
 
-class SaltImageReader(ImageReader):
+class LLMImageReader(ImageReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -304,7 +304,7 @@ class SaltImageReader(ImageReader):
 # Imports:
 from llama_index.readers.file import ImageCaptionReader
 
-class SaltImageCaptionReader(ImageCaptionReader):
+class LLMImageCaptionReader(ImageCaptionReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -339,7 +339,7 @@ class SaltImageCaptionReader(ImageCaptionReader):
 # Imports:
 from llama_index.readers.file import ImageTabularChartReader
 
-class SaltImageTabularChartReader(ImageTabularChartReader):
+class LLMImageTabularChartReader(ImageTabularChartReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -373,7 +373,7 @@ class SaltImageTabularChartReader(ImageTabularChartReader):
 # Imports:
 from llama_index.readers.file import ImageVisionLLMReader
 
-class SaltImageVisionLLMReader(ImageVisionLLMReader):
+class LLMImageVisionLLMReader(ImageVisionLLMReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -407,7 +407,7 @@ class SaltImageVisionLLMReader(ImageVisionLLMReader):
 # Imports:
 from llama_index.readers.file import IPYNBReader
 
-class SaltIPYNBReader(IPYNBReader):
+class LLMIPYNBReader(IPYNBReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -440,7 +440,7 @@ class SaltIPYNBReader(IPYNBReader):
 # Imports:
 from llama_index.readers.file import MarkdownReader
 
-class SaltMarkdownReader(MarkdownReader):
+class LLMMarkdownReader(MarkdownReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -473,7 +473,7 @@ class SaltMarkdownReader(MarkdownReader):
 # Imports:
 from llama_index.readers.file import MboxReader
 
-class SaltMboxReader(MboxReader):
+class LLMMboxReader(MboxReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -508,7 +508,7 @@ class SaltMboxReader(MboxReader):
 from llama_index.readers.file import PDFReader
 
 # Binding:
-class SaltPDFReader(PDFReader):
+class LLMPDFReader(PDFReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -545,7 +545,7 @@ class SaltPDFReader(PDFReader):
 from llama_index.readers.file import PagedCSVReader
 
 # Binding:
-class SaltPagedCSVReader(PagedCSVReader):
+class LLMPagedCSVReader(PagedCSVReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -579,7 +579,7 @@ class SaltPagedCSVReader(PagedCSVReader):
 from llama_index.readers.file import PandasCSVReader
 
 # Binding:
-class SaltPandasCSVReader(PandasCSVReader):
+class LLMPandasCSVReader(PandasCSVReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -614,7 +614,7 @@ class SaltPandasCSVReader(PandasCSVReader):
 from llama_index.readers.file import PptxReader
 
 # Binding:
-class SaltPptxReader(PptxReader):
+class LLMPptxReader(PptxReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -651,7 +651,7 @@ class SaltPptxReader(PptxReader):
 from llama_index.readers.file import PyMuPDFReader
 
 # Binding:
-class SaltPyMuPDFReader(PyMuPDFReader):
+class LLMPyMuPDFReader(PyMuPDFReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -689,7 +689,7 @@ class SaltPyMuPDFReader(PyMuPDFReader):
 
 # Binding:
 """
-class SaltRTFReader(RTFReader):
+class LLMRTFReader(RTFReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -724,7 +724,7 @@ class SaltRTFReader(RTFReader):
 from llama_index.readers.file import UnstructuredReader
 
 # Binding:
-class SaltUnstructuredReader(UnstructuredReader):
+class LLMUnstructuredReader(UnstructuredReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -759,7 +759,7 @@ class SaltUnstructuredReader(UnstructuredReader):
 from llama_index.readers.file import VideoAudioReader
 
 # Binding:
-class SaltVideoAudioReader(VideoAudioReader):
+class LLMVideoAudioReader(VideoAudioReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -797,7 +797,7 @@ class SaltVideoAudioReader(VideoAudioReader):
 from llama_index.readers.file import XMLReader
 
 # Binding:
-class SaltXMLReader(XMLReader):
+class LLMXMLReader(XMLReader):
 	def __init__(self):
 		super().__init__()
 	
@@ -827,7 +827,7 @@ class SaltXMLReader(XMLReader):
 # Imports:
 from llama_index.core import SimpleDirectoryReader
  
-class SaltDirectoryReader:
+class LLMDirectoryReader:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -885,7 +885,7 @@ class SaltDirectoryReader:
 # Imports:
 from llama_index.readers.web import SimpleWebPageReader
 
-class SaltSimpleWebPageReader:
+class LLMSimpleWebPageReader:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -930,7 +930,7 @@ class SaltSimpleWebPageReader:
 # Imports:
 from llama_index.readers.web import TrafilaturaWebReader
 
-class SaltTrafilaturaWebReader:
+class LLMTrafilaturaWebReader:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -974,7 +974,7 @@ class SaltTrafilaturaWebReader:
 # Imports:
 from llama_index.readers.web import RssReader
   
-class SaltRssReaderNode:
+class LLMRssReaderNode:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -1017,7 +1017,7 @@ class SaltRssReaderNode:
 # Documents
 from llama_index.core import Document
 
-class SaltInputToDocuments:
+class LLMInputToDocuments:
 
     class AnyType(str):
         def __ne__(self, __value: object) -> bool:
@@ -1085,7 +1085,7 @@ class SaltInputToDocuments:
         return (documents,)
 
 # Processing
-class SaltPostProcessDocuments:
+class LLMPostProcessDocuments:
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -1123,68 +1123,68 @@ class SaltPostProcessDocuments:
 
 
 NODE_CLASS_MAPPINGS = {
-	"SaltCSVReader": SaltCSVReader,
-#	"SaltDocxReader": SaltDocxReader,
-#	"SaltEpubReader": SaltEpubReader,
-	"SaltFlatReader": SaltFlatReader,
-#	"SaltHTMLTagReader": SaltHTMLTagReader,
-#	"SaltHWPReader": SaltHWPReader,
-#	"SaltImageReader": SaltImageReader,
-	"SaltImageCaptionReader": SaltImageCaptionReader,
-	"SaltImageTabularChartReader": SaltImageTabularChartReader,
-	"SaltImageVisionLLMReader": SaltImageVisionLLMReader,
-#	"SaltIPYNBReader": SaltIPYNBReader,
-	"SaltMarkdownReader": SaltMarkdownReader,
-#	"SaltMboxReader": SaltMboxReader,
-	"SaltPDFReader": SaltPDFReader,
-	"SaltPagedCSVReader": SaltPagedCSVReader,
-	"SaltPandasCSVReader": SaltPandasCSVReader,
-	"SaltPptxReader": SaltPptxReader,
-#	"SaltPyMuPDFReader": SaltPyMuPDFReader,
-#	"SaltRTFReader": SaltRTFReader,
-#	"SaltUnstructuredReader": SaltUnstructuredReader,
-#	"SaltVideoAudioReader": SaltVideoAudioReader,
-#	"SaltXMLReader": SaltXMLReader,
+	"LLMCSVReader": LLMCSVReader,
+#	"LLMDocxReader": LLMDocxReader,
+#	"LLMEpubReader": LLMEpubReader,
+	"LLMFlatReader": LLMFlatReader,
+#	"LLMHTMLTagReader": LLMHTMLTagReader,
+#	"LLMHWPReader": LLMHWPReader,
+#	"LLMImageReader": LLMImageReader,
+	"LLMImageCaptionReader": LLMImageCaptionReader,
+	"LLMImageTabularChartReader": LLMImageTabularChartReader,
+	"LLMImageVisionLLMReader": LLMImageVisionLLMReader,
+#	"LLMIPYNBReader": LLMIPYNBReader,
+	"LLMMarkdownReader": LLMMarkdownReader,
+#	"LLMMboxReader": LLMMboxReader,
+	"LLMPDFReader": LLMPDFReader,
+	"LLMPagedCSVReader": LLMPagedCSVReader,
+	"LLMPandasCSVReader": LLMPandasCSVReader,
+	"LLMPptxReader": LLMPptxReader,
+#	"LLMPyMuPDFReader": LLMPyMuPDFReader,
+#	"LLMRTFReader": LLMRTFReader,
+#	"LLMUnstructuredReader": LLMUnstructuredReader,
+#	"LLMVideoAudioReader": LLMVideoAudioReader,
+#	"LLMXMLReader": LLMXMLReader,
 	
 # From nodes_core.py
-	"SaltDirectoryReader": SaltDirectoryReader,
-	"SaltSimpleWebPageReader": SaltSimpleWebPageReader,
-	"SaltTrafilaturaWebReader": SaltTrafilaturaWebReader,
-	"SaltRssReaderNode": SaltRssReaderNode,
-	"SaltInputToDocuments": SaltInputToDocuments,
-	"SaltPostProcessDocuments": SaltPostProcessDocuments,
+	"LLMDirectoryReader": LLMDirectoryReader,
+	"LLMSimpleWebPageReader": LLMSimpleWebPageReader,
+	"LLMTrafilaturaWebReader": LLMTrafilaturaWebReader,
+	"LLMRssReaderNode": LLMRssReaderNode,
+	"LLMInputToDocuments": LLMInputToDocuments,
+	"LLMPostProcessDocuments": LLMPostProcessDocuments,
 }
 
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-	"SaltCSVReader": "∞ CSV",
-#	"SaltDocxReader": "∞ Docx",
-#	"SaltEpubReader": "∞ Epub",
-	"SaltFlatReader": "∞ Flat",
-#	"SaltHTMLTagReader": "∞ HTML Tag",
-#	"SaltHWPReader": "∞ HWP",
-#	"SaltImageReader": "∞ Image",
-	"SaltImageCaptionReader": "∞ Image Caption",
-	"SaltImageTabularChartReader": "∞ Image Tabular Chart",
-	"SaltImageVisionLLMReader": "∞ Image Vision LLM",
-#	"SaltIPYNBReader": "∞ IPYNB",
-	"SaltMarkdownReader": "∞ Markdown",
-#	"SaltMboxReader": "∞ Mbox",
-	"SaltPDFReader": "∞ PDF",
-	"SaltPagedCSVReader": "∞ Paged CSV",
-	"SaltPandasCSVReader": "∞ Pandas CSV",
-	"SaltPptxReader": "∞ Pptx",
-#	"SaltPyMuPDFReader": "∞ PyMuPDF",
-#	"SaltRTFReader": "∞ RTF",
-#	"SaltUnstructuredReader": "∞ Unstructured File",
-#	"SaltVideoAudioReader": "∞ Video/Audio",
-#	"SaltXMLReader": "∞ XML",
+	"LLMCSVReader": "∞ CSV",
+#	"LLMDocxReader": "∞ Docx",
+#	"LLMEpubReader": "∞ Epub",
+	"LLMFlatReader": "∞ Flat",
+#	"LLMHTMLTagReader": "∞ HTML Tag",
+#	"LLMHWPReader": "∞ HWP",
+#	"LLMImageReader": "∞ Image",
+	"LLMImageCaptionReader": "∞ Image Caption",
+	"LLMImageTabularChartReader": "∞ Image Tabular Chart",
+	"LLMImageVisionLLMReader": "∞ Image Vision LLM",
+#	"LLMIPYNBReader": "∞ IPYNB",
+	"LLMMarkdownReader": "∞ Markdown",
+#	"LLMMboxReader": "∞ Mbox",
+	"LLMPDFReader": "∞ PDF",
+	"LLMPagedCSVReader": "∞ Paged CSV",
+	"LLMPandasCSVReader": "∞ Pandas CSV",
+	"LLMPptxReader": "∞ Pptx",
+#	"LLMPyMuPDFReader": "∞ PyMuPDF",
+#	"LLMRTFReader": "∞ RTF",
+#	"LLMUnstructuredReader": "∞ Unstructured File",
+#	"LLMVideoAudioReader": "∞ Video/Audio",
+#	"LLMXMLReader": "∞ XML",
 	
 # From nodes_core.py
-	"SaltDirectoryReader": "∞ Simple Directory",
-	"SaltSimpleWebPageReader": "∞ Simple Web Page",
-	"SaltTrafilaturaWebReader": "∞ Trafilatura Web",
-	"SaltRssReaderNode": "∞ RSS",
-	"SaltInputToDocuments": "∞ Input to Documents",
-	"SaltPostProcessDocuments": "∞ Post Process Documents",
+	"LLMDirectoryReader": "∞ Simple Directory",
+	"LLMSimpleWebPageReader": "∞ Simple Web Page",
+	"LLMTrafilaturaWebReader": "∞ Trafilatura Web",
+	"LLMRssReaderNode": "∞ RSS",
+	"LLMInputToDocuments": "∞ Input to Documents",
+	"LLMPostProcessDocuments": "∞ Post Process Documents",
 }
