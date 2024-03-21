@@ -56,7 +56,7 @@ def valid_url(url):
 
 # OpenAI
 
-class SaltChatMessages:
+class LLMChatMessages:
 	def __init__(self):
 		pass
 
@@ -82,7 +82,7 @@ class SaltChatMessages:
 		return (messages,)
 
 
-class SaltChatMessagesAdv:
+class LLMChatMessagesAdv:
 	def __init__(self):
 		pass
 
@@ -109,7 +109,7 @@ class SaltChatMessagesAdv:
 		return (messages,)
 
 
-class SaltChatMessageConcat:
+class LLMChatMessageConcat:
 	def __init__(self):
 		pass
 	
@@ -133,7 +133,7 @@ class SaltChatMessageConcat:
 
 
 # Service Context    
-class SaltServiceContextDefault:
+class LLMServiceContextDefault:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -155,7 +155,7 @@ class SaltServiceContextDefault:
 		)
 		return (service_context,)
 
-class SaltServiceContextAdv:
+class LLMServiceContextAdv:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -218,7 +218,7 @@ class SaltServiceContextAdv:
 
 
 # Index Store
-class SaltVectorStoreIndex:
+class LLMVectorStoreIndex:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -243,7 +243,7 @@ class SaltVectorStoreIndex:
 		return (index,)
 
 
-class SaltSummaryIndex:
+class LLMSummaryIndex:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -264,7 +264,7 @@ class SaltSummaryIndex:
 		return (index,)
 
 
-class SaltTreeIndex:
+class LLMTreeIndex:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -297,7 +297,7 @@ class SaltTreeIndex:
 
 
 # Node Parser
-class SaltSentenceSplitterNodeCreator:
+class LLMSentenceSplitterNodeCreator:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -323,7 +323,7 @@ class SaltSentenceSplitterNodeCreator:
 
 
 # TODO
-class SaltSemanticSplitterNodeParser:
+class LLMSemanticSplitterNodeParser:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -359,7 +359,7 @@ class SaltSemanticSplitterNodeParser:
 # Query Engine
     
 
-class SaltJSONQueryEngine:
+class LLMJSONQueryEngine:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -408,7 +408,7 @@ class SaltJSONQueryEngine:
 
 
 # Binding:
-class SaltChatEngine:
+class LLMChatEngine:
 		@classmethod
 		def INPUT_TYPES(cls):
 			return {
@@ -430,7 +430,7 @@ class SaltChatEngine:
 		
 
 # Binding:
-class SaltChat:
+class LLMChat:
 	def __init__(self):
 		pass
 
@@ -456,7 +456,7 @@ class SaltChat:
 
 
 # Binding:
-class SaltComplete:
+class LLMComplete:
 	def __init__(self):
 		pass
 	
@@ -484,29 +484,29 @@ class SaltComplete:
 NODE_CLASS_MAPPINGS = {
 
 	# Messages
-	"SaltChatMessages": SaltChatMessages,
-	"SaltChatMessagesAdv": SaltChatMessagesAdv,
-	"SaltChatMessageConcat": SaltChatMessageConcat,
+	"LLMChatMessages": LLMChatMessages,
+	"LLMChatMessagesAdv": LLMChatMessagesAdv,
+	"LLMChatMessageConcat": LLMChatMessageConcat,
 
 	# Service Context
-	"SaltServiceContextDefault": SaltServiceContextDefault,
-	"SaltServiceContextAdv": SaltServiceContextAdv,
+	"LLMServiceContextDefault": LLMServiceContextDefault,
+	"LLMServiceContextAdv": LLMServiceContextAdv,
 
 	# Indexing
-	"SaltVectorStoreIndex": SaltVectorStoreIndex,
-	"SaltSummaryIndex": SaltSummaryIndex,
-	"SaltTreeIndex": SaltTreeIndex,
+	"LLMVectorStoreIndex": LLMVectorStoreIndex,
+	"LLMSummaryIndex": LLMSummaryIndex,
+	"LLMTreeIndex": LLMTreeIndex,
 
 	# Nodes
-	"SaltSentenceSplitterNodeCreator": SaltSentenceSplitterNodeCreator,
+	"LLMSentenceSplitterNodeCreator": LLMSentenceSplitterNodeCreator,
 
 	# Parser
-	"SaltSemanticSplitterNodeParser": SaltSemanticSplitterNodeParser,
+	"LLMSemanticSplitterNodeParser": LLMSemanticSplitterNodeParser,
 
 	# Chat
-	"SaltChatEngine": SaltChatEngine,
-	"SaltChat": SaltChat,
-	"SaltComplete": SaltComplete,
+	"LLMChatEngine": LLMChatEngine,
+	"LLMChat": LLMChat,
+	"LLMComplete": LLMComplete,
 
 
 }
@@ -514,28 +514,28 @@ NODE_CLASS_MAPPINGS = {
 NODE_DISPLAY_NAME_MAPPINGS = {
 
 	# Messages
-	"SaltChatMessages": "∞ Message",
-	"SaltChatMessagesAdv": "∞ Message (Advanced)",
-	"SaltChatMessageConcat": "∞ Messages Concat",
+	"LLMChatMessages": "∞ Message",
+	"LLMChatMessagesAdv": "∞ Message (Advanced)",
+	"LLMChatMessageConcat": "∞ Messages Concat",
 
 	# Service Context
-	"SaltServiceContextDefault": "∞ Service Context",
-	"SaltServiceContextAdv": "∞ Service Context (Advanced)",
+	"LLMServiceContextDefault": "∞ Service Context",
+	"LLMServiceContextAdv": "∞ Service Context (Advanced)",
 
 	# Indexing
-	"SaltVectorStoreIndex": "∞ Vector Store Index",
-	"SaltSummaryIndex": "∞ Summary Index",
-	"SaltTreeIndex": "∞ Tree Index",
+	"LLMVectorStoreIndex": "∞ Vector Store Index",
+	"LLMSummaryIndex": "∞ Summary Index",
+	"LLMTreeIndex": "∞ Tree Index",
 
 	# Nodes
-	"SaltSentenceSplitterNodeCreator": "∞ Setence Splitter Node Creator",
+	"LLMSentenceSplitterNodeCreator": "∞ Setence Splitter Node Creator",
 
 	# Parsers
-	"SaltSemanticSplitterNodeParser": "∞ Semantics Splitter Node Parser",
+	"LLMSemanticSplitterNodeParser": "∞ Semantics Splitter Node Parser",
 
 	# Chat
-	"SaltChatEngine": "∞ Chat Engine",
-	"SaltChat": "∞ Chat",
-	"SaltComplete": "∞ Complete",
+	"LLMChatEngine": "∞ Chat Engine",
+	"LLMChat": "∞ Chat",
+	"LLMComplete": "∞ Complete",
 
 }

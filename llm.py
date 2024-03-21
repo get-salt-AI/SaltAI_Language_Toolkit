@@ -38,7 +38,7 @@ from llama_index.core import Settings
 # https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/gemini.ipynb
 
 # Binding:
-class SaltGemini:
+class LLMGemini:
 	def __init__(self):
 		pass
 	
@@ -78,7 +78,7 @@ from llama_index.llms.llama_cpp.llama_utils import (
 # https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/llama_2_llama_cpp.ipynb
 
 # Binding:
-class SaltLlamaCPP:
+class LLMLlamaCPP:
 	def __init__(self):
 		pass
 	
@@ -115,7 +115,7 @@ from llama_index.llms.mistralai import MistralAI
 # https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/mistralai.ipynb
 
 # Binding:
-class SaltMistralAI:
+class LLMMistralAI:
 	def __init__(self):
 		pass
 	
@@ -158,7 +158,7 @@ from llama_index.llms.ollama import Ollama
 # https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/ollama.ipynb
 
 # Binding:
-class SaltOllama:
+class LLMOllama:
 	def __init__(self):
 		pass
 	
@@ -197,7 +197,7 @@ from llama_index.embeddings.openai import OpenAIEmbedding, OpenAIEmbeddingModelT
 # https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/openai.ipynb
 
 # Binding:
-class SaltOpenAI:
+class LLMOpenAI:
 	def __init__(self):
 		pass
 	
@@ -252,16 +252,16 @@ class SaltOpenAI:
 
 
 NODE_CLASS_MAPPINGS = {
-#	"GeminiModel": SaltGemini,
-	"LlamaCPPModel": SaltLlamaCPP,
-#	"MistralAIModel": SaltMistralAI,
-#	"OllamaModel": SaltOllama,
-	"OpenAIModel": SaltOpenAI,
+#	"LLMGeminiModel": LLMGemini,
+	"LLMLlamaCPPModel": LLMLlamaCPP,
+#	"LLMMistralAIModel": LLMMistralAI,
+#	"LLMOllamaModel": LLMOllama,
+	"LLMOpenAIModel": LLMOpenAI,
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
-#	"GeminiModel": "∞ Gemini Model",
-	"LlamaCPPModel": "∞ LlamaCPP Model",
-#	"MistralAIModel": "∞ MistralAI Model",
-#	"OllamaModel": "∞ Ollama Model",
-	"OpenAIModel": "∞ OpenAI Model",
+#	"LLMGeminiModel": "∞ Gemini Model",
+	"LLMLlamaCPPModel": "∞ LlamaCPP Model",
+#	"LLMMistralAIModel": "∞ MistralAI Model",
+#	"LLMOllamaModel": "∞ Ollama Model",
+	"LLMOpenAIModel": "∞ OpenAI Model",
 }
