@@ -31,7 +31,7 @@ from typing import List
 
 
 # Binding:
-class SaltQueryEngine:
+class LLMQueryEngine:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -73,7 +73,7 @@ class SaltQueryEngine:
 		
 
 # Binding:
-class SaltQueryEngineAdv:
+class LLMQueryEngineAdv:
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -123,12 +123,12 @@ class SaltQueryEngineAdv:
 
 
 NODE_CLASS_MAPPINGS = {
-	"SaltQueryEngine": SaltQueryEngine,
-	"SaltQueryEngineAdv": SaltQueryEngineAdv,
+	"LLMQueryEngine": LLMQueryEngine,
+	"LLMQueryEngineAdv": LLMQueryEngineAdv,
 #	"SaltJSONQueryEngine": SaltJSONQueryEngine,
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
-	"SaltQueryEngine": "∞ Query Engine",
-	"SaltQueryEngineAdv": "∞ Query Engine (Advanced)",
+	"LLMQueryEngine": "∞ Query Engine",
+	"LLMQueryEngineAdv": "∞ Query Engine (Advanced)",
 #	"SaltJSONQueryEngine": "JSON Query Engine",
 }
