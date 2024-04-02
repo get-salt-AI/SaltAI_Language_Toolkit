@@ -68,25 +68,30 @@ from llama_index.readers.web import (
 )
 
 def defineInputFileExtensions():
+    # Legible file extension mapping
+    file_extensions = {
+        "csv": {'.csv'},
+        "docx": {'.docx', '.doc', '.dot', '.docm'},
+        "epub": {'.epub'},
+        "flat": {'.csv', '.tsv', '.txt'},
+        "html": {'.htm', '.html', '.php', '.htx'},
+        "hwp": {'.hwp'},
+        "img": {'.gif', '.tiff', '.jpg', '.jpeg', '.png', '.bmp', '.ppm'},
+        "ipynb": {'.ipynb'},
+        "mbox": {'.eml'},
+        "md": {'.md'},
+        "pdf": {'.pdf'},
+        "pptx": {'.pptx', '.ppt'},
+        "rtf": {'.rtf'},
+        "unstructured": {'.txt', '.docx', 'pptx', '.jpg', '.png', '.eml', '.html', 'pdf'},
+        "videoaudio": {'.mp3', '.mp4'},
+        "xml": {'.svg', '.xml', '.xhtml'},
+    }
 
-	Salt_READER_files_dir = folder_paths.get_input_directory()		
-
-	folder_paths.folder_names_and_paths["csv"] = ([Salt_READER_files_dir], {'.csv'})
-	folder_paths.folder_names_and_paths["docx"] = ([Salt_READER_files_dir], {'.docx', '.doc', '.dot', '.docm'})
-	folder_paths.folder_names_and_paths["epub"] = ([Salt_READER_files_dir], {'.epub'})
-	folder_paths.folder_names_and_paths["flat"] = ([Salt_READER_files_dir], {'.csv', '.tsv', '.txt'})
-	folder_paths.folder_names_and_paths["html"] = ([Salt_READER_files_dir], {'.htm', '.html', '.php', '.htx'})
-	folder_paths.folder_names_and_paths["hwp"] = ([Salt_READER_files_dir], {'.hwp'})
-	folder_paths.folder_names_and_paths["img"] = ([Salt_READER_files_dir], {'.gif', '.tiff', '.jpg', '.jpeg', '.png', '.bmp', '.ppm'})
-	folder_paths.folder_names_and_paths["ipynb"] = ([Salt_READER_files_dir], {'.ipynb'})
-	folder_paths.folder_names_and_paths["mbox"] = ([Salt_READER_files_dir], {'.mbox'})
-	folder_paths.folder_names_and_paths["md"] = ([Salt_READER_files_dir], {'.md'})
-	folder_paths.folder_names_and_paths["pdf"] = ([Salt_READER_files_dir], {'.pdf'})
-	folder_paths.folder_names_and_paths["pptx"] = ([Salt_READER_files_dir], {'.pptx', '.ppt'})
-	folder_paths.folder_names_and_paths["rtf"] = ([Salt_READER_files_dir], {'.rtf'})
-	folder_paths.folder_names_and_paths["unstructured"] = ([Salt_READER_files_dir], {'.txt', '.docx', 'pptx', '.jpg', '.png', '.eml', '.html', 'pdf'})
-	folder_paths.folder_names_and_paths["videoaudio"] = ([Salt_READER_files_dir], {'.mp3', '.mp4'})
-	folder_paths.folder_names_and_paths["xml"] = ([Salt_READER_files_dir], {'.svg', '.xml', '.xhtml'})
+    # Populate folder_paths.folder_names_and_paths for each file type
+    Salt_READER_files_dir = folder_paths.get_input_directory()
+    for file_type, extensions in file_extensions.items():
+        folder_paths.folder_names_and_paths[file_type] = ([Salt_READER_files_dir], extensions)
 
 defineInputFileExtensions()
 
