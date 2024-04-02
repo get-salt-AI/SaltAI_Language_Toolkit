@@ -31,35 +31,41 @@ from typing import List
 # Implementation of input folder generated dropdowns using ComfyUI.folder_paths
 import folder_paths
 
-from llama_index.core import Document
-from llama_index.core import SimpleDirectoryReader
+from llama_index.core import (
+    Document,
+    SimpleDirectoryReader,
+)
 
-from llama_index.readers.file import CSVReader
-from llama_index.readers.file import DocxReader
-from llama_index.readers.file import EpubReader
-from llama_index.readers.file import FlatReader
-from llama_index.readers.file import HTMLTagReader
-from llama_index.readers.file import HWPReader
-from llama_index.readers.file import ImageReader
-from llama_index.readers.file import ImageCaptionReader
-from llama_index.readers.file import ImageTabularChartReader
-from llama_index.readers.file import ImageVisionLLMReader
-from llama_index.readers.file import IPYNBReader
-from llama_index.readers.file import MarkdownReader
-from llama_index.readers.file import MboxReader
-#from llama_index.readers.file import RTFReader
-from llama_index.readers.file import PagedCSVReader
-from llama_index.readers.file import PandasCSVReader
-from llama_index.readers.file import PDFReader
-from llama_index.readers.file import PptxReader
-from llama_index.readers.file import PyMuPDFReader
-from llama_index.readers.file import UnstructuredReader
-from llama_index.readers.file import VideoAudioReader
-from llama_index.readers.file import XMLReader
+from llama_index.readers.file import (
+	CSVReader, 
+	DocxReader, 
+	EpubReader, 
+	FlatReader, 
+	HTMLTagReader,
+    HWPReader, 
+	ImageReader, 
+	ImageCaptionReader, 
+	ImageTabularChartReader,
+    ImageVisionLLMReader,
+	IPYNBReader, 
+	MarkdownReader, 
+	MboxReader,
+    # RTFReader, # Uncomment if you decide to use it later
+    PagedCSVReader, 
+	PandasCSVReader, 
+	PDFReader, 
+	PptxReader,
+	PyMuPDFReader, 
+	UnstructuredReader, 
+	VideoAudioReader, 
+	XMLReader,
+)
 
-from llama_index.readers.web import RssReader
-from llama_index.readers.web import SimpleWebPageReader
-from llama_index.readers.web import TrafilaturaWebReader
+from llama_index.readers.web import (
+	RssReader, 
+	SimpleWebPageReader, 
+	TrafilaturaWebReader,
+)
 
 def defineInputFileExtensions():
 
