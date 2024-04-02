@@ -1,14 +1,26 @@
-
-# ATTN: Classes are sorted alphabetically
-
 """
-@BUGS: 
-	
-	RTF Reader can't be found in imports
-	Notion Reader belongs in data_connectors
+@NOTE:
+	This is for Llama-Index Readers
 
-	Readers from nodes_core don't load from file, are weird
-	Image*Readers currently only accept files, should consider allowing IMAGE
+@NOTE: 
+	Classes are sorted alphabetically
+
+@TODO: 
+	* RTF Reader can't be found in imports
+	* Readers from nodes_core don't load from file, are weird
+	* Image*Readers currently only accept files, should consider allowing IMAGE
+
+@REQUIRE:
+	llama-index
+	llama-index-readers-file
+
+@DOCUMENTATION:
+	As of the time of this writing there was no documentation forthcoming as it's being rebuilt
+	These all extend BaseReader
+	https://llamahub.ai/l/readers/llama-index-readers-file?from=readers
+
+@SOURCE:
+	https://github.com/run-llama/llama_index/tree/main/llama-index-core/llama_index/core/readers
 """
 
 import json
@@ -17,21 +29,16 @@ import os
 import re
 import sys
 
+import folder_paths
 from pathlib import Path
 from typing import List
 
-# Requirements:
-# llama-index
-# llama-index-readers-file
+from llama_index.readers.file import CSVReader
 
-# Documentation:
-# As of the time of this writing there was no documentation forthcoming as it's being rebuilt
-# These all extend BaseReader
-# https://llamahub.ai/l/readers/llama-index-readers-file?from=readers
+
 
 
 # Implementation of input folder generated dropdowns using ComfyUI.folder_paths
-import folder_paths
 def defineInputFileExtensions():
 
 	Salt_READER_files_dir = folder_paths.get_input_directory()		
@@ -59,11 +66,8 @@ defineInputFileExtensions()
 
 
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
 
-# Imports:
-from llama_index.readers.file import CSVReader
+@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
 
 class LLMCSVReader(CSVReader):
 	def __init__(self):
