@@ -1,26 +1,21 @@
 """
 @NOTE:
-	This is for Llama-Index Readers
-
-@NOTE: 
 	Classes are sorted alphabetically
 
 @TODO: 
-	* RTF Reader can't be found in imports
-	* Readers from nodes_core don't load from file, are weird
-	* Image*Readers currently only accept files, should consider allowing IMAGE
+	RTF Reader can't be found in imports
 
-@REQUIRE:
+	Readers from nodes_core don't load from file, are weird
+	Image*Readers currently only accept files, should consider allowing IMAGE
+	
+@REQUIREMENTS:
 	llama-index
 	llama-index-readers-file
 
 @DOCUMENTATION:
 	As of the time of this writing there was no documentation forthcoming as it's being rebuilt
 	These all extend BaseReader
-	https://llamahub.ai/l/readers/llama-index-readers-file?from=readers
-
-@SOURCE:
-	https://github.com/run-llama/llama_index/tree/main/llama-index-core/llama_index/core/readers
+	https://github.com/run-llama/llama_index/blob/main/llama-index-core/llama_index/core/readers/base.py
 """
 
 import json
@@ -29,16 +24,43 @@ import os
 import re
 import sys
 
-import folder_paths
 from pathlib import Path
 from typing import List
 
-from llama_index.readers.file import CSVReader
-
-
-
 
 # Implementation of input folder generated dropdowns using ComfyUI.folder_paths
+import folder_paths
+
+from llama_index.core import Document
+from llama_index.core import SimpleDirectoryReader
+
+from llama_index.readers.file import CSVReader
+from llama_index.readers.file import DocxReader
+from llama_index.readers.file import EpubReader
+from llama_index.readers.file import FlatReader
+from llama_index.readers.file import HTMLTagReader
+from llama_index.readers.file import HWPReader
+from llama_index.readers.file import ImageReader
+from llama_index.readers.file import ImageCaptionReader
+from llama_index.readers.file import ImageTabularChartReader
+from llama_index.readers.file import ImageVisionLLMReader
+from llama_index.readers.file import IPYNBReader
+from llama_index.readers.file import MarkdownReader
+from llama_index.readers.file import MboxReader
+#from llama_index.readers.file import RTFReader
+from llama_index.readers.file import PagedCSVReader
+from llama_index.readers.file import PandasCSVReader
+from llama_index.readers.file import PDFReader
+from llama_index.readers.file import PptxReader
+from llama_index.readers.file import PyMuPDFReader
+from llama_index.readers.file import UnstructuredReader
+from llama_index.readers.file import VideoAudioReader
+from llama_index.readers.file import XMLReader
+
+from llama_index.readers.web import RssReader
+from llama_index.readers.web import SimpleWebPageReader
+from llama_index.readers.web import TrafilaturaWebReader
+
 def defineInputFileExtensions():
 
 	Salt_READER_files_dir = folder_paths.get_input_directory()		
@@ -66,9 +88,8 @@ defineInputFileExtensions()
 
 
 
-
-@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
-
+# Source:
+# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
 class LLMCSVReader(CSVReader):
 	def __init__(self):
 		super().__init__()
@@ -101,11 +122,6 @@ class LLMCSVReader(CSVReader):
 
 # Requirements:
 # docx2txt
-
-# Imports:
-from llama_index.readers.file import DocxReader
-
-# Binding:
 class LLMDocxReader(DocxReader):
 	def __init__(self):
 		super().__init__()
@@ -135,10 +151,6 @@ class LLMDocxReader(DocxReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/epub/base.py
-
-# Imports:
-from llama_index.readers.file import EpubReader
-
 class LLMEpubReader(EpubReader):
 	def __init__(self):
 		super().__init__()
@@ -169,10 +181,6 @@ class LLMEpubReader(EpubReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/flat/base.py
-
-# Imports:
-from llama_index.readers.file import FlatReader
-
 class LLMFlatReader(FlatReader):
 	def __init__(self):
 		super().__init__()
@@ -202,10 +210,6 @@ class LLMFlatReader(FlatReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/html/base.py
-
-# Imports:
-from llama_index.readers.file import HTMLTagReader
-
 class LLMHTMLTagReader(HTMLTagReader):
 	def __init__(self):
 		super().__init__()
@@ -233,9 +237,6 @@ class LLMHTMLTagReader(HTMLTagReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-
-# Imports:
-from llama_index.readers.file import HWPReader
 
 class LLMHWPReader(HWPReader):
 	def __init__(self):
@@ -267,10 +268,6 @@ class LLMHWPReader(HWPReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image/base.py
-
-# Imports:
-from llama_index.readers.file import ImageReader
-
 class LLMImageReader(ImageReader):
 	def __init__(self):
 		super().__init__()
@@ -304,10 +301,6 @@ class LLMImageReader(ImageReader):
 
 # Requirements:
 # torch transformers sentencepiece Pillow
-
-# Imports:
-from llama_index.readers.file import ImageCaptionReader
-
 class LLMImageCaptionReader(ImageCaptionReader):
 	def __init__(self):
 		super().__init__()
@@ -339,10 +332,6 @@ class LLMImageCaptionReader(ImageCaptionReader):
 # https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_deplot
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_deplot/base.py
-
-# Imports:
-from llama_index.readers.file import ImageTabularChartReader
-
 class LLMImageTabularChartReader(ImageTabularChartReader):
 	def __init__(self):
 		super().__init__()
@@ -373,10 +362,6 @@ class LLMImageTabularChartReader(ImageTabularChartReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_vision_llm/base.py
-
-# Imports:
-from llama_index.readers.file import ImageVisionLLMReader
-
 class LLMImageVisionLLMReader(ImageVisionLLMReader):
 	def __init__(self):
 		super().__init__()
@@ -407,10 +392,6 @@ class LLMImageVisionLLMReader(ImageVisionLLMReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/ipynb/base.py
-
-# Imports:
-from llama_index.readers.file import IPYNBReader
-
 class LLMIPYNBReader(IPYNBReader):
 	def __init__(self):
 		super().__init__()
@@ -440,10 +421,6 @@ class LLMIPYNBReader(IPYNBReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/markdown/base.py
-
-# Imports:
-from llama_index.readers.file import MarkdownReader
-
 class LLMMarkdownReader(MarkdownReader):
 	def __init__(self):
 		super().__init__()
@@ -473,10 +450,6 @@ class LLMMarkdownReader(MarkdownReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/mbox/base.py
-
-# Imports:
-from llama_index.readers.file import MboxReader
-
 class LLMMboxReader(MboxReader):
 	def __init__(self):
 		super().__init__()
@@ -507,11 +480,6 @@ class LLMMboxReader(MboxReader):
 # Source:
 # This one is weird, may change
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/docs/base.py
-
-# Imports:
-from llama_index.readers.file import PDFReader
-
-# Binding:
 class LLMPDFReader(PDFReader):
 	def __init__(self):
 		super().__init__()
@@ -544,11 +512,6 @@ class LLMPDFReader(PDFReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/paged_csv/base.py
-
-# Imports:
-from llama_index.readers.file import PagedCSVReader
-
-# Binding:
 class LLMPagedCSVReader(PagedCSVReader):
 	def __init__(self):
 		super().__init__()
@@ -578,11 +541,6 @@ class LLMPagedCSVReader(PagedCSVReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
-
-# Imports:
-from llama_index.readers.file import PandasCSVReader
-
-# Binding:
 class LLMPandasCSVReader(PandasCSVReader):
 	def __init__(self):
 		super().__init__()
@@ -613,11 +571,6 @@ class LLMPandasCSVReader(PandasCSVReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/slides/base.py
-
-# Imports:
-from llama_index.readers.file import PptxReader
-
-# Binding:
 class LLMPptxReader(PptxReader):
 	def __init__(self):
 		super().__init__()
@@ -650,11 +603,6 @@ class LLMPptxReader(PptxReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/pymu_pdf/base.py
-
-# Imports:
-from llama_index.readers.file import PyMuPDFReader
-
-# Binding:
 class LLMPyMuPDFReader(PyMuPDFReader):
 	def __init__(self):
 		super().__init__()
@@ -687,11 +635,6 @@ class LLMPyMuPDFReader(PyMuPDFReader):
 # https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/rtf
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/rtf/base.py
-
-# Imports:
-#from llama_index.readers.file import RTFReader
-
-# Binding:
 """
 class LLMRTFReader(RTFReader):
 	def __init__(self):
@@ -723,11 +666,6 @@ class LLMRTFReader(RTFReader):
 
 # Source
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/unstructured/base.py
-
-# Imports:
-from llama_index.readers.file import UnstructuredReader
-
-# Binding:
 class LLMUnstructuredReader(UnstructuredReader):
 	def __init__(self):
 		super().__init__()
@@ -758,11 +696,6 @@ class LLMUnstructuredReader(UnstructuredReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/video_audio/base.py
-
-# Imports:
-from llama_index.readers.file import VideoAudioReader
-
-# Binding:
 class LLMVideoAudioReader(VideoAudioReader):
 	def __init__(self):
 		super().__init__()
@@ -796,11 +729,6 @@ class LLMVideoAudioReader(VideoAudioReader):
 
 # Source:
 # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/xml/base.py
-
-# Imports:
-from llama_index.readers.file import XMLReader
-
-# Binding:
 class LLMXMLReader(XMLReader):
 	def __init__(self):
 		super().__init__()
@@ -828,8 +756,6 @@ class LLMXMLReader(XMLReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Imports:
-from llama_index.core import SimpleDirectoryReader
  
 class LLMDirectoryReader:
 	@classmethod
@@ -886,8 +812,6 @@ class LLMDirectoryReader:
 
 		return (documents,)
 
-# Imports:
-from llama_index.readers.web import SimpleWebPageReader
 
 class LLMSimpleWebPageReader:
 	@classmethod
@@ -931,9 +855,6 @@ class LLMSimpleWebPageReader:
 		return (documents,)
 
 
-# Imports:
-from llama_index.readers.web import TrafilaturaWebReader
-
 class LLMTrafilaturaWebReader:
 	@classmethod
 	def INPUT_TYPES(cls):
@@ -974,9 +895,6 @@ class LLMTrafilaturaWebReader:
 		documents = TrafilaturaWebReader().load_data(urls)
 		return (documents,)
 
-
-# Imports:
-from llama_index.readers.web import RssReader
   
 class LLMRssReaderNode:
 	@classmethod
@@ -1018,11 +936,8 @@ class LLMRssReaderNode:
 		documents = RssReader().load_data(urls)
 		return (documents,)
 
-# Documents
-from llama_index.core import Document
 
 class LLMInputToDocuments:
-
     class AnyType(str):
         def __ne__(self, __value: object) -> bool:
             return False
@@ -1186,9 +1101,9 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 	
 # From nodes_core.py
 	"LLMDirectoryReader": "∞ Simple Directory",
-	"LLMSimpleWebPageReader": "∞ Simple Web Page",
-	"LLMTrafilaturaWebReader": "∞ Trafilatura Web",
-	"LLMRssReaderNode": "∞ RSS",
 	"LLMInputToDocuments": "∞ Input to Documents",
 	"LLMPostProcessDocuments": "∞ Post Process Documents",
+	"LLMRssReaderNode": "∞ RSS",
+	"LLMSimpleWebPageReader": "∞ Simple Web Page",
+	"LLMTrafilaturaWebReader": "∞ Trafilatura Web",
 }
