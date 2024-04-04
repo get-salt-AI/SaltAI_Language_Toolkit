@@ -119,7 +119,7 @@ class LLMMistralAI:
 				"api_key": ("STRING", {
 					"multiline": False, 
 					"dynamicPrompts": False, 
-					"default": os.environ.get("MISTRAL_API_KEY", "")
+					"default": ""}) #os.environ.get("MISTRAL_API_KEY", "")
 				}),
 			},
 		}
@@ -201,7 +201,7 @@ class LLMOpenAI:
 				"api_key": ("STRING", {
 					"multiline": False, 
 					"dynamicPrompts": False, 
-					"default": os.environ.get("GOOGLE_API_KEY", "")
+					"default": "" # os.environ.get("GOOGLE_API_KEY", "")
 				}),
 			},
 		}
