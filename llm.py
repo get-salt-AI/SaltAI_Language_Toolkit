@@ -1,7 +1,23 @@
-
-# ATTN: Classes are sorted alphabetically
-
 """
+@NOTE:
+	Classes are sorted close to alphabetically
+
+@TODO: 
+
+	
+@REQUIREMENTS:
+	llama-index
+	# llama-index-llms-gemini #LLMGemini
+	llama-index-llms-llama-cpp #LLMLlamaCPP
+	# llama-index-llms-mistralai #LLMMistralAI
+	# llama-index-llms-ollama #LLMOllama
+	llama-index-llms-openai #LLMOpenAI
+
+	# pip install -q llama-index google-generativeai !!!!! this is weird, investigate
+
+@Source:
+
+
 @BUGS: 
 	Gemini is a Microsoft model and needs an API key and some OS environment stuff? - Daniel
 """
@@ -20,25 +36,25 @@ Salt_LLM_DIR = os.path.abspath(os.path.join(folder_paths.models_dir, 'llm'))
 Salt_LLM_supported_file_extensions = set(['.gguf'])
 folder_paths.folder_names_and_paths["llm"] = ([Salt_LLM_DIR], Salt_LLM_supported_file_extensions)
 
-# Set default embedding model to the free one:
+
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import Settings
+#from llama_index.llms.gemini import Gemini
+from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
+from llama_index.llms.llama_cpp import LlamaCPP
+from llama_index.llms.llama_cpp.llama_utils import (
+    messages_to_prompt,
+    completion_to_prompt,
+)
+from llama_index.llms.mistralai import MistralAI
+from llama_index.llms.ollama import Ollama
+import openai
+from llama_index.llms.openai import OpenAI
+from llama_index.embeddings.openai import OpenAIEmbedding, OpenAIEmbeddingModelType
 
 
-# Requirements:
-# llama-index
-# llama-index-llms-gemini
-# pip install -q llama-index google-generativeai !!!!! this is weird, investigate
-
-
-# Imports:
-# from llama_index.llms.gemini import Gemini
-
-# Documentation:
-# https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/gemini.ipynb
-
-# Binding:
 class LLMGemini:
+	#@Documentation: https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/gemini.ipynb
 	def __init__(self):
 		pass
 	
@@ -60,25 +76,10 @@ class LLMGemini:
 		embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 		return ({"llm":llm, "embed_model":embed_model},)
 
-"""
-# Requirements:
-# llama-index
-# llama-index-embeddings-huggingface
-# llama-index-llms-llama-cpp
-"""
-# Imports:
-from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
-from llama_index.llms.llama_cpp import LlamaCPP
-from llama_index.llms.llama_cpp.llama_utils import (
-    messages_to_prompt,
-    completion_to_prompt,
-)
 
-# Documentation:
-# https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/llama_2_llama_cpp.ipynb
-
-# Binding:
 class LLMLlamaCPP:
+	#@Documentation: https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/llama_2_llama_cpp.ipynb
+
 	def __init__(self):
 		pass
 	
@@ -104,18 +105,9 @@ class LLMLlamaCPP:
 		return ({"llm":llm, "embed_model":embed_model},)
 
 
-# Requirements:
-# llama-index
-# llama-index-llms-mistralai
-
-# Imports:
-from llama_index.llms.mistralai import MistralAI
-
-# Documentation:
-# https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/mistralai.ipynb
-
-# Binding:
 class LLMMistralAI:
+	#@Documentation: https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/mistralai.ipynb
+ 
 	def __init__(self):
 		pass
 	
@@ -146,19 +138,9 @@ class LLMMistralAI:
 		return ({"llm":llm, "embed_model":embed_model},)
 
 
-
-# Requirements:
-# llama-index
-# llama-index-llms-ollama
-
-# Imports:
-from llama_index.llms.ollama import Ollama
-
-# Documentation:
-# https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/ollama.ipynb
-
-# Binding:
 class LLMOllama:
+	#@Documentation: https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/ollama.ipynb
+	
 	def __init__(self):
 		pass
 	
@@ -184,20 +166,9 @@ class LLMOllama:
 		return ({"llm":llm, "embed_model":embed_model},)
 
 
-# Requirements:
-# llama-index
-# llama-index-llms-openai
-
-# Imports:
-import openai
-from llama_index.llms.openai import OpenAI
-from llama_index.embeddings.openai import OpenAIEmbedding, OpenAIEmbeddingModelType
-
-# Documentation:
-# https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/openai.ipynb
-
-# Binding:
 class LLMOpenAI:
+	#@Documentation: https://github.com/run-llama/llama_index/blob/main/docs/examples/llm/openai.ipynb
+
 	def __init__(self):
 		pass
 	
@@ -247,8 +218,6 @@ class LLMOpenAI:
 		llm.api_key = api_key
 		embed_model = OpenAIEmbedding(model=EmbedModel)
 		return ({"llm":llm, "embed_model":embed_model},)
-
-
 
 
 NODE_CLASS_MAPPINGS = {

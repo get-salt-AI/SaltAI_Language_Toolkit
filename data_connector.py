@@ -1,5 +1,22 @@
-
 """
+@NOTE:
+	Classes are sorted close to alphabetically
+
+@TODO:
+	Implement the rest of non-file readers
+
+@REQUIREMENTS:
+	llama-index
+	llama-index-readers-google #LLMGoogleDocsReader
+
+@DOCUMENTATION:
+	
+
+@Source:
+	Most of these are meant to be instances of:
+	https://github.com/run-llama/llama_index/tree/main/docs/examples/data_connectors
+
+
 @BUGS: 
 	LLMGoogleDocsReader document ID is supposed to be a List[str] of *something*?
 
@@ -13,30 +30,14 @@ import sys
 
 from typing import List
 
-# Requirements:
-# llama-index
+#from llama_index.readers.google import GoogleDocsReader
+#from llama_index.readers.notion import NotionPageReader
 
-# Source:
-# https://github.com/run-llama/llama_index/tree/main/docs/examples/data_connectors
-
-
-# Documentation:
-# https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-google/llama_index/readers/google/docs
-
-# Example:
-# https://github.com/run-llama/llama_index/blob/main/docs/examples/data_connectors/GoogleDocsDemo.ipynb
-
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-google/llama_index/readers/google/docs/base.py
-
-# Requirements:
-# llama-index-readers-google
-
-# Imports:
-from llama_index.readers.google import GoogleDocsReader
-
-# Binding:
 class LLMGoogleDocsReader:
+	#@API: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-google/llama_index/readers/google/docs
+	#@Examples: https://github.com/run-llama/llama_index/blob/main/docs/examples/data_connectors/GoogleDocsDemo.ipynb
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-google/llama_index/readers/google/docs/base.py
+
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -56,11 +57,6 @@ class LLMGoogleDocsReader:
 	def execute(self):
 		pass
 
-
-
-
-# Imports:
-#from llama_index.readers.notion import NotionPageReader
 
 class LLMNotionReader:
 	@classmethod

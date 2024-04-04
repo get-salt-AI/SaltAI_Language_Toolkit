@@ -54,8 +54,8 @@ def valid_url(url):
 		r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 	return re.match(regex, url) is not None
 
-# OpenAI
 
+# OpenAI
 class LLMChatMessages:
 	def __init__(self):
 		pass
@@ -154,6 +154,7 @@ class LLMServiceContextDefault:
 			embed_model=llm_model['embed_model'],
 		)
 		return (service_context,)
+
 
 class LLMServiceContextAdv:
 	@classmethod
@@ -357,8 +358,6 @@ class LLMSemanticSplitterNodeParser:
 
 
 # Query Engine
-    
-
 class LLMJSONQueryEngine:
 	@classmethod
 	def INPUT_TYPES(cls):
@@ -429,7 +428,6 @@ class LLMChatEngine:
 			return (response.response,)
 		
 
-# Binding:
 class LLMChat:
 	def __init__(self):
 		pass
@@ -455,7 +453,6 @@ class LLMChat:
 		return (response.message.content, )
 
 
-# Binding:
 class LLMComplete:
 	def __init__(self):
 		pass

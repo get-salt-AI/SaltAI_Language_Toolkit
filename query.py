@@ -1,14 +1,18 @@
-
-# ATTN: Classes are sorted alphabetically
-
 """
-@BUGS: 
+@NOTE:
+	Classes are sorted close to alphabetically
+
+@TODO: 
 	Need to get Embedding and Indexing done before this step
 	See documentation link, it's useful
-	
-	
-	
-	
+
+@Requirements:
+	llama-index
+	# llama-index-llms-openai
+	# llama-index-embeddings-openai
+
+@Documentation:
+	https://github.com/run-llama/llama_index/tree/main/docs/examples/query_engine
 """
 
 import json
@@ -19,18 +23,7 @@ import sys
 
 from typing import List
 
-# Requirements:
-# llama-index
-# llama-index-llms-openai
-# llama-index-embeddings-openai
 
-# Documentation:
-# https://github.com/run-llama/llama_index/tree/main/docs/examples/query_engine
-
-# Imports:
-
-
-# Binding:
 class LLMQueryEngine:
 	@classmethod
 	def INPUT_TYPES(cls):
@@ -72,7 +65,6 @@ class LLMQueryEngine:
 		return (response.response,)
 		
 
-# Binding:
 class LLMQueryEngineAdv:
 	@classmethod
 	def INPUT_TYPES(cls):
@@ -117,8 +109,6 @@ class LLMQueryEngineAdv:
 		response = query_engine.query(query_join)
 		pprint(response, indent=4)
 		return (response.response,)
-
-
 
 
 

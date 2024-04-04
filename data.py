@@ -1,6 +1,6 @@
 """
 @NOTE:
-	Classes are sorted alphabetically
+	Classes are sorted close to alphabetically
 
 @TODO: 
 	RTF Reader can't be found in imports
@@ -12,12 +12,15 @@
 	llama-index
 	llama-index-readers-file
 	# docx2txt #DocxReader
-	# torch #ImageCaptionReader
-	# transformers #ImageCaptionReader
-	# sentencepiece #ImageCaptionReader
-	# Pillow #ImageCaptionReader
+	torch #ImageCaptionReader
+	transformers #ImageCaptionReader
+	sentencepiece #ImageCaptionReader
+	Pillow #ImageCaptionReader
+	python-pptx #LLMPptxReader
+	# EbookLib #EpubReader
+	# html2text #HTMLTagReader
 
-@DOCUMENTATION:
+@Source:
 	As of the time of this writing there was no documentation forthcoming as it's being rebuilt
 	These all extend BaseReader
 	https://github.com/run-llama/llama_index/blob/main/llama-index-core/llama_index/core/readers/base.py
@@ -1012,7 +1015,7 @@ class LLMInputToDocuments:
 
 # Processing
 class LLMPostProcessDocuments:
-	
+
     @classmethod
     def INPUT_TYPES(cls):
         return {

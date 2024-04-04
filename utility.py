@@ -2,6 +2,7 @@ from typing import List, Dict, Any, Type, Tuple
 from pydantic import BaseModel, create_model
 import json
 
+
 class CreateOutputModel:
     @staticmethod
     def create(json_str: str, model_name: str) -> Type[BaseModel]:

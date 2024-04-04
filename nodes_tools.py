@@ -1,35 +1,11 @@
+
 import json
 from pydantic import create_model
 from .utility import CreateOutputModel
-
-"""
-The MIT License
-
-Copyright (c) Jerry Liu
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-"""
-
 from llama_index.core.response_synthesizers import TreeSummarize
 
-# JSON Composer Tool
 
+# JSON Composer Tool
 class LLMJsonComposer:
     @classmethod
     def INPUT_TYPES(cls):
@@ -55,6 +31,7 @@ class LLMJsonComposer:
         prompt = f"{text_input}\n\n###\n\nGiven the above text, create a valid JSON object utilizing *all* of the data; using the following classifiers: {classifier_list}.\n\n{extra_directions}\n\nPlease ensure the JSON output is properly formatted, and does not omit any data."
         response = llm_model.complete(prompt)
         return (response.text,)
+
 
 class LLMJsonRepair:
     @classmethod
@@ -87,6 +64,7 @@ class LLMJsonRepair:
         
         return (response.text,)
     
+
 class LLMYamlComposer:
     @classmethod
     def INPUT_TYPES(cls):
@@ -121,6 +99,7 @@ class LLMYamlComposer:
         
         return (response.text,)
 
+
 class LLMYamlRepair:
     @classmethod
     def INPUT_TYPES(cls):
@@ -152,6 +131,7 @@ class LLMYamlRepair:
         
         return (response.text,)
     
+
 class LLMMarkdownComposer:
     @classmethod
     def INPUT_TYPES(cls):
@@ -186,6 +166,7 @@ class LLMMarkdownComposer:
         
         return (response.text,)
 
+
 class LLMMarkdownRepair:
     @classmethod
     def INPUT_TYPES(cls):
@@ -216,6 +197,7 @@ class LLMMarkdownRepair:
         response = llm_model.complete(prompt)
         
         return (response.text,)
+
 
 class LLMHtmlComposer:
     @classmethod
@@ -253,6 +235,7 @@ class LLMHtmlComposer:
         
         return (response.text,)
 
+
 class LLMHtmlRepair:
     @classmethod
     def INPUT_TYPES(cls):
@@ -284,6 +267,7 @@ class LLMHtmlRepair:
         
         return (response.text,)
     
+
 class LLMRegexCreator:
     @classmethod
     def INPUT_TYPES(cls):
@@ -314,6 +298,7 @@ class LLMRegexCreator:
         response = llm_model.complete(prompt)
         
         return (response.text,)
+
 
 class LLMRegexRepair:
     @classmethod
@@ -347,8 +332,8 @@ class LLMRegexRepair:
         
         return (response.text,)
     
+    
 # Formatting
-
 class LLMPydanticOutput:
     def __init__(self):
         pass
