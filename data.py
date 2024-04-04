@@ -11,6 +11,11 @@
 @REQUIREMENTS:
 	llama-index
 	llama-index-readers-file
+	# docx2txt #DocxReader
+	# torch #ImageCaptionReader
+	# transformers #ImageCaptionReader
+	# sentencepiece #ImageCaptionReader
+	# Pillow #ImageCaptionReader
 
 @DOCUMENTATION:
 	As of the time of this writing there was no documentation forthcoming as it's being rebuilt
@@ -27,8 +32,6 @@ import sys
 from pathlib import Path
 from typing import List
 
-
-# Implementation of input folder generated dropdowns using ComfyUI.folder_paths
 import folder_paths
 
 from llama_index.core import (
@@ -96,12 +99,9 @@ def defineInputFileExtensions():
 defineInputFileExtensions()
 
 
-
-
-
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
 class LLMCSVReader(CSVReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
+
 	def __init__(self):
 		super().__init__()
 	
@@ -128,12 +128,10 @@ class LLMCSVReader(CSVReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/docs/base.py
 
-# Requirements:
-# docx2txt
 class LLMDocxReader(DocxReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/docs/base.py
+ 
 	def __init__(self):
 		super().__init__()
 	
@@ -160,9 +158,10 @@ class LLMDocxReader(DocxReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/epub/base.py
+
 class LLMEpubReader(EpubReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/epub/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -190,9 +189,9 @@ class LLMEpubReader(EpubReader):
 		return (data, )
 
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/flat/base.py
 class LLMFlatReader(FlatReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/flat/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -219,9 +218,9 @@ class LLMFlatReader(FlatReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/html/base.py
 class LLMHTMLTagReader(HTMLTagReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/html/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -250,6 +249,7 @@ class LLMHTMLTagReader(HTMLTagReader):
 
 
 class LLMHWPReader(HWPReader):
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -277,9 +277,9 @@ class LLMHWPReader(HWPReader):
 		return (data, )
 
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image/base.py
 class LLMImageReader(ImageReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -307,12 +307,9 @@ class LLMImageReader(ImageReader):
 		return (data, )
 
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_caption/base.py
-
-# Requirements:
-# torch transformers sentencepiece Pillow
 class LLMImageCaptionReader(ImageCaptionReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_caption/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -339,11 +336,10 @@ class LLMImageCaptionReader(ImageCaptionReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Documentation:
-# https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_deplot
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_deplot/base.py
 class LLMImageTabularChartReader(ImageTabularChartReader):
+	#@Documentation: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_deplot
+	#@Source: # https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_deplot/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -371,9 +367,10 @@ class LLMImageTabularChartReader(ImageTabularChartReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_vision_llm/base.py
+
 class LLMImageVisionLLMReader(ImageVisionLLMReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/image_vision_llm/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -401,9 +398,9 @@ class LLMImageVisionLLMReader(ImageVisionLLMReader):
 		return (data, )
 
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/ipynb/base.py
 class LLMIPYNBReader(IPYNBReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/ipynb/base.py
+
 	def __init__(self):
 		super().__init__()
 	
@@ -430,9 +427,9 @@ class LLMIPYNBReader(IPYNBReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/markdown/base.py
 class LLMMarkdownReader(MarkdownReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/markdown/base.py
+
 	def __init__(self):
 		super().__init__()
 	
@@ -459,9 +456,9 @@ class LLMMarkdownReader(MarkdownReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/mbox/base.py
 class LLMMboxReader(MboxReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/mbox/base.py
+
 	def __init__(self):
 		super().__init__()
 	
@@ -488,10 +485,10 @@ class LLMMboxReader(MboxReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 		
-# Source:
-# This one is weird, may change
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/docs/base.py
 class LLMPDFReader(PDFReader):
+	#@NOTE: This link is weird, may change
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/docs/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -518,12 +515,11 @@ class LLMPDFReader(PDFReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Documentation:
-# https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/paged_csv
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/paged_csv/base.py
 class LLMPagedCSVReader(PagedCSVReader):
+	#@Documentation: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/paged_csv
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/paged_csv/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -550,9 +546,9 @@ class LLMPagedCSVReader(PagedCSVReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
 class LLMPandasCSVReader(PandasCSVReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/tabular/base.py
+
 	def __init__(self):
 		super().__init__()
 	
@@ -580,9 +576,9 @@ class LLMPandasCSVReader(PandasCSVReader):
 		return (data, )
 
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/slides/base.py
 class LLMPptxReader(PptxReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/slides/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -609,12 +605,10 @@ class LLMPptxReader(PptxReader):
 		data = self.load_data(path, extra_info)
 		return (data, )
 
-# Documentation:
-# https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/pymu_pdf
-
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/pymu_pdf/base.py
 class LLMPyMuPDFReader(PyMuPDFReader):
+	#@Documentation: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/pymu_pdf
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/pymu_pdf/base.py
+
 	def __init__(self):
 		super().__init__()
 	
@@ -642,12 +636,11 @@ class LLMPyMuPDFReader(PyMuPDFReader):
 		return (data, )
 
 
-# Documentation:
-# https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/rtf
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/rtf/base.py
 """
 class LLMRTFReader(RTFReader):
+	#@Documentation: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/rtf
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/rtf/base.py
+
 	def __init__(self):
 		super().__init__()
 	
@@ -675,9 +668,9 @@ class LLMRTFReader(RTFReader):
 		return (data, )
 """
 
-# Source
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/unstructured/base.py
 class LLMUnstructuredReader(UnstructuredReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/unstructured/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -705,9 +698,9 @@ class LLMUnstructuredReader(UnstructuredReader):
 		return (data, )
 
 
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/video_audio/base.py
 class LLMVideoAudioReader(VideoAudioReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/video_audio/base.py
+
 	def __init__(self):
 		super().__init__()
 	
@@ -735,12 +728,10 @@ class LLMVideoAudioReader(VideoAudioReader):
 		return (data, )
 
 
-# Documentation:
-# https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/xml
-
-# Source:
-# https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/xml/base.py
 class LLMXMLReader(XMLReader):
+	#@Documentation: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/xml
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/xml/base.py
+	
 	def __init__(self):
 		super().__init__()
 	
@@ -769,6 +760,7 @@ class LLMXMLReader(XMLReader):
 
  
 class LLMDirectoryReader:
+
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -825,6 +817,7 @@ class LLMDirectoryReader:
 
 
 class LLMSimpleWebPageReader:
+
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -867,6 +860,7 @@ class LLMSimpleWebPageReader:
 
 
 class LLMTrafilaturaWebReader:
+
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -908,6 +902,7 @@ class LLMTrafilaturaWebReader:
 
   
 class LLMRssReaderNode:
+
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -949,6 +944,7 @@ class LLMRssReaderNode:
 
 
 class LLMInputToDocuments:
+
     class AnyType(str):
         def __ne__(self, __value: object) -> bool:
             return False
@@ -1016,6 +1012,7 @@ class LLMInputToDocuments:
 
 # Processing
 class LLMPostProcessDocuments:
+	
     @classmethod
     def INPUT_TYPES(cls):
         return {
