@@ -46,8 +46,8 @@ from llama_index.llms.llama_cpp.llama_utils import (
     messages_to_prompt,
     completion_to_prompt,
 )
-from llama_index.llms.mistralai import MistralAI
-from llama_index.llms.ollama import Ollama
+#from llama_index.llms.mistralai import MistralAI
+#from llama_index.llms.ollama import Ollama
 import openai
 from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding, OpenAIEmbeddingModelType
