@@ -366,7 +366,6 @@ class LLMImageTabularChartReader(ImageTabularChartReader):
 	def execute(self, file:str, extra_info = None, fs = None):
 		path = os.path.join(folder_paths.get_input_directory(), file)
 		path = Path(path)
-		print(f"@@@@@@{path}@@@@@")
 		data = self.load_data(path, extra_info)
 		return (data, )
 
