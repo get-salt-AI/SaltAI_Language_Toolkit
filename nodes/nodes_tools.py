@@ -1,7 +1,7 @@
 
 import json
 from pydantic import create_model
-from .utility import CreateOutputModel
+from ..modules.utility import CreateOutputModel
 from llama_index.core.response_synthesizers import TreeSummarize
 
 

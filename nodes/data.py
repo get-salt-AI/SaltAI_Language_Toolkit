@@ -54,6 +54,7 @@ from llama_index.readers.file import (
 	ImageTabularChartReader,
     ImageVisionLLMReader,
 	IPYNBReader, 
+#	JSONReader,
 	MarkdownReader, 
 	MboxReader,
     # RTFReader, # Uncomment if you decide to use it later
@@ -84,6 +85,7 @@ def defineInputFileExtensions():
         "hwp": {'.hwp'},
         "img": {'.gif', '.tiff', '.jpg', '.jpeg', '.png', '.bmp', '.ppm'},
         "ipynb": {'.ipynb'},
+		"json": {'.json'},
         "mbox": {'.eml'},
         "md": {'.md'},
         "pdf": {'.pdf'},
@@ -428,6 +430,37 @@ class LLMIPYNBReader(IPYNBReader):
 		path = Path(path)
 		data = self.load_data(path, extra_info)
 		return (data, )
+
+"""
+class LLMJSONReader(JSONReader):
+	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-core/llama_index/core/readers/json.py
+
+	def __init__(self):
+		super().__init__()
+	
+	@classmethod
+	def INPUT_TYPES(cls):
+		return {
+			"required": {
+				"file": (folder_paths.get_filename_list("json"), ), 
+				#extra_info: Optional[Dict] = None,
+				#"fs": Optional[AbstractFileSystem] = None,
+			},
+		}
+
+	#) -> List[Document]:
+	RETURN_TYPES = ("DOCUMENT", )
+	RETURN_NAMES = ("documents", )
+
+	FUNCTION = "execute"
+	CATEGORY = "SALT/Llama-Index/Readers"
+
+	def execute(self, file, extra_info = None, fs = None):
+		path = os.path.join(folder_paths.get_input_directory(), file)
+		path = Path(path)
+		data = self.load_data(path, extra_info)
+		return (data, )
+"""
 
 class LLMMarkdownReader(MarkdownReader):
 	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-file/llama_index/readers/file/markdown/base.py
@@ -1063,6 +1096,7 @@ NODE_CLASS_MAPPINGS = {
 	"LLMImageTabularChartReader": LLMImageTabularChartReader,
 	"LLMImageVisionLLMReader": LLMImageVisionLLMReader,
 #	"LLMIPYNBReader": LLMIPYNBReader,
+#	"LLMJSONReader": LLMJSONReader,
 	"LLMMarkdownReader": LLMMarkdownReader,
 #	"LLMMboxReader": LLMMboxReader,
 	"LLMPDFReader": LLMPDFReader,
@@ -1097,6 +1131,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 	"LLMImageTabularChartReader": "∞ Image Tabular Chart",
 	"LLMImageVisionLLMReader": "∞ Image Vision LLM",
 #	"LLMIPYNBReader": "∞ IPYNB",
+#	"LLMJSONReader": "∞ JSON"
 	"LLMMarkdownReader": "∞ Markdown",
 #	"LLMMboxReader": "∞ Mbox",
 	"LLMPDFReader": "∞ PDF",
