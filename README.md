@@ -31,14 +31,14 @@ You'll have to run against the environments python:
 4. `cd SaltAI_Llama-index`
 5. Execute `pip install -r requirements.txt`
 
-## Using ComfyUI Manager
+<!--## Using ComfyUI Manager
 
 Not Ready Yet
 
 [// Find our package on ComfyUI Manager]
 [// click install]
 [// click restart when ready]
-[// Hit Ctrl+F5 in the browser when ready]
+[// Hit Ctrl+F5 in the browser when ready] -->
 
 ## Debugging: If pip fails
 
