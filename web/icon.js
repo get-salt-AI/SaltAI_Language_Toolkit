@@ -1,5 +1,5 @@
 import { app } from "../../../scripts/app.js";
-
+/*
 
 const ext = {
 	// Unique name for the extension
@@ -26,3 +26,4 @@ const ext = {
 };
 
 app.registerExtension(ext);
+*/
