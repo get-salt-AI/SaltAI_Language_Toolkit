@@ -122,7 +122,7 @@ class LLMCSVReader(CSVReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -152,7 +152,7 @@ class LLMDocxReader(DocxReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -182,7 +182,7 @@ class LLMEpubReader(EpubReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -212,7 +212,7 @@ class LLMFlatReader(FlatReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -241,7 +241,7 @@ class LLMHTMLTagReader(HTMLTagReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -270,7 +270,7 @@ class LLMHWPReader(HWPReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -300,7 +300,7 @@ class LLMImageReader(ImageReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -330,7 +330,7 @@ class LLMImageCaptionReader(ImageCaptionReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -360,7 +360,7 @@ class LLMImageTabularChartReader(ImageTabularChartReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -390,7 +390,7 @@ class LLMImageVisionLLMReader(ImageVisionLLMReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -420,7 +420,7 @@ class LLMIPYNBReader(IPYNBReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -450,7 +450,7 @@ class LLMJSONReader(JSONReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -480,7 +480,7 @@ class LLMMarkdownReader(MarkdownReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -509,7 +509,7 @@ class LLMMboxReader(MboxReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -539,7 +539,7 @@ class LLMPDFReader(PDFReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -570,7 +570,7 @@ class LLMPagedCSVReader(PagedCSVReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -599,7 +599,7 @@ class LLMPandasCSVReader(PandasCSVReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -629,7 +629,7 @@ class LLMPptxReader(PptxReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -659,7 +659,7 @@ class LLMPyMuPDFReader(PyMuPDFReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -691,7 +691,7 @@ class LLMRTFReader(RTFReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -721,7 +721,7 @@ class LLMUnstructuredReader(UnstructuredReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -751,7 +751,7 @@ class LLMVideoAudioReader(VideoAudioReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -782,7 +782,7 @@ class LLMXMLReader(XMLReader):
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -811,7 +811,7 @@ class LLMDirectoryReader:
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "read_directory"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -869,7 +869,7 @@ class LLMSimpleWebPageReader:
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "read_web"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -911,7 +911,7 @@ class LLMTrafilaturaWebReader:
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "read_web_trafilatura"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -953,7 +953,7 @@ class LLMRssReaderNode:
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "read_rss"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -996,8 +996,8 @@ class LLMInputToDocuments:
             }
         }
 
-    RETURN_TYPES = ("LLM_DOCUMENTS",)
-    RETURN_NAMES = ("llm_documents",)
+    RETURN_TYPES = ("DOCUMENT",)
+    RETURN_NAMES = ("document",)
 
     FUNCTION = "to_documents"
     CATEGORY = "SALT/Llama-Index/Documents"
@@ -1052,7 +1052,7 @@ class LLMPostProcessDocuments:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "llm_documents": ("DOCUMENT",),
+                "document": ("DOCUMENT",),
             },
             "optional": {
                 "required_keywords": ("STRING", {}),
@@ -1061,7 +1061,7 @@ class LLMPostProcessDocuments:
         }
 
     RETURN_TYPES = ("DOCUMENT",)
-    RETURN_NAMES = ("llm_documents",)
+    RETURN_NAMES = ("document",)
 
     FUNCTION = "process_documents"
     CATEGORY = "SALT/Llama-Index/Tools"
