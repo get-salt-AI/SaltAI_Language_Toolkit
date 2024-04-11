@@ -41,11 +41,16 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import Settings
 #from llama_index.llms.gemini import Gemini
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
-from llama_index.llms.llama_cpp import LlamaCPP
-from llama_index.llms.llama_cpp.llama_utils import (
-    messages_to_prompt,
-    completion_to_prompt,
-)
+HAS_LLAMA_CPP = False
+try:
+	from llama_index.llms.llama_cpp import LlamaCPP
+	from llama_index.llms.llama_cpp.llama_utils import (
+		messages_to_prompt,
+		completion_to_prompt,
+	)
+	HAS_LLAMA_CPP = True
+except ImportError:
+	pass
 #from llama_index.llms.mistralai import MistralAI
 #from llama_index.llms.ollama import Ollama
 import openai
@@ -222,15 +227,17 @@ class LLMOpenAI:
 
 NODE_CLASS_MAPPINGS = {
 #	"LLMGeminiModel": LLMGemini,
-	"LLMLlamaCPPModel": LLMLlamaCPP,
 #	"LLMMistralAIModel": LLMMistralAI,
 #	"LLMOllamaModel": LLMOllama,
 	"LLMOpenAIModel": LLMOpenAI,
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
 #	"LLMGeminiModel": "∞ Gemini Model",
-	"LLMLlamaCPPModel": "∞ LlamaCPP Model",
 #	"LLMMistralAIModel": "∞ MistralAI Model",
 #	"LLMOllamaModel": "∞ Ollama Model",
 	"LLMOpenAIModel": "∞ OpenAI Model",
 }
+
+if HAS_LLAMA_CPP:
+	NODE_CLASS_MAPPINGS["LLMLlamaCPPModel"] = LLMLlamaCPP
+	NODE_DISPLAY_NAME_MAPPINGS["LLMLlamaCPPModel"] = "∞ LlamaCPP Model"
