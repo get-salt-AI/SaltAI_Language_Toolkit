@@ -1,5 +1,5 @@
 import { app } from "../../../scripts/app.js";
-/*
+
 
 const ext = {
 	// Unique name for the extension
@@ -13,7 +13,7 @@ const ext = {
 		) {
 			const result = origDrawNodeShape.apply(this, arguments);
 			
-			if(! node.title.startsWith('∞'))
+			if(!node || !node.title.startsWith('∞'))
 				return result;
 			
 			const icon = document.createElement('img');
@@ -26,4 +26,3 @@ const ext = {
 };
 
 app.registerExtension(ext);
-*/
