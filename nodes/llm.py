@@ -41,6 +41,7 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import Settings
 #from llama_index.llms.gemini import Gemini
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
+
 HAS_LLAMA_CPP = False
 try:
 	from llama_index.llms.llama_cpp import LlamaCPP
@@ -49,8 +50,9 @@ try:
 		completion_to_prompt,
 	)
 	HAS_LLAMA_CPP = True
-except ImportError:
+except Exception:
 	pass
+
 #from llama_index.llms.mistralai import MistralAI
 #from llama_index.llms.ollama import Ollama
 import openai
