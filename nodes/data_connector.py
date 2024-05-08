@@ -1,43 +1,25 @@
 """
 @NOTE:
-	Classes are sorted close to alphabetically
-
-@TODO:
-	Implement the rest of non-file readers
+	Classes are sorted almost alphabetically
 
 @REQUIREMENTS:
 	llama-index
-	llama-index-readers-google #LLMGoogleDocsReader
-
-@DOCUMENTATION:
-	
-
-@Source:
-	Most of these are meant to be instances of:
-	https://github.com/run-llama/llama_index/tree/main/docs/examples/data_connectors
-
+	# llama-index-readers-google
 
 @BUGS: 
 	LLMGoogleDocsReader document ID is supposed to be a List[str] of *something*?
-
 """
 
-import json
-import logging
-import os
-import re
-import sys
-
-from typing import List
-
+# Imports:
 #from llama_index.readers.google import GoogleDocsReader
-#from llama_index.readers.notion import NotionPageReader
+from llama_index.readers.notion import NotionPageReader
+
 
 class LLMGoogleDocsReader:
-	#@API: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-google/llama_index/readers/google/docs
-	#@Examples: https://github.com/run-llama/llama_index/blob/main/docs/examples/data_connectors/GoogleDocsDemo.ipynb
-	#@Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-google/llama_index/readers/google/docs/base.py
-
+	"""
+	Documentation: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-google/llama_index/readers/google/docs
+	Source: https://github.com/run-llama/llama_index/blob/main/llama-index-integrations/readers/llama-index-readers-google/llama_index/readers/google/docs/base.py
+	"""
 	@classmethod
 	def INPUT_TYPES(cls):
 		return {
@@ -49,7 +31,7 @@ class LLMGoogleDocsReader:
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "execute"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -71,7 +53,7 @@ class LLMNotionReader:
 
 	#) -> List[Document]:
 	RETURN_TYPES = ("DOCUMENT", )
-	RETURN_NAMES = ("documents", )
+	RETURN_NAMES = ("document", )
 
 	FUNCTION = "read_notion"
 	CATEGORY = "SALT/Llama-Index/Readers"
@@ -95,10 +77,10 @@ class LLMNotionReader:
 
 NODE_CLASS_MAPPINGS = {
 #	"LLMGoogleDocsReader": LLMGoogleDocsReader,
-#	"LLMNotionReader": LLMNotionReader,
+	#"LLMNotionReader": LLMNotionReader,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
 #	"LLMGoogleDocsReader": "∞ GoogleDocs",
-#	"LLMNotionReader": "∞ Notion",
+	#"LLMNotionReader": "∞ Notion",
 }
