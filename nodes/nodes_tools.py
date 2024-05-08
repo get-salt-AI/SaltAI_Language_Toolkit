@@ -1,11 +1,34 @@
-
 import json
 from pydantic import create_model
 from ..modules.utility import CreateOutputModel
+
+"""
+The MIT License
+
+Copyright (c) Jerry Liu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+"""
+
 from llama_index.core.response_synthesizers import TreeSummarize
 
 
-# JSON Composer Tool
 class LLMJsonComposer:
     @classmethod
     def INPUT_TYPES(cls):
@@ -29,7 +52,7 @@ class LLMJsonComposer:
     def compose_json(self, llm_model, text_input, classifier_list, extra_directions=""):
         classifier_list = [item.strip() for item in classifier_list.split(",") if item.strip()]
         prompt = f"{text_input}\n\n###\n\nGiven the above text, create a valid JSON object utilizing *all* of the data; using the following classifiers: {classifier_list}.\n\n{extra_directions}\n\nPlease ensure the JSON output is properly formatted, and does not omit any data."
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         return (response.text,)
 
 
@@ -60,10 +83,10 @@ class LLMJsonRepair:
             "Please ensure the JSON output is properly formatted, and does not omit any data."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
-    
+
 
 class LLMYamlComposer:
     @classmethod
@@ -95,7 +118,7 @@ class LLMYamlComposer:
             "Please ensure the YAML output is properly formatted, and does not omit any data."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
 
@@ -127,10 +150,10 @@ class LLMYamlRepair:
             "Please ensure the YAML output is properly formatted, and does not omit any data."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
-    
+
 
 class LLMMarkdownComposer:
     @classmethod
@@ -162,7 +185,7 @@ class LLMMarkdownComposer:
             "Please ensure the Markdown output is well-structured, and does not omit any data."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
 
@@ -194,7 +217,7 @@ class LLMMarkdownRepair:
             "Please ensure the Markdown output is well-structured, and does not omit any data."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
 
@@ -231,7 +254,7 @@ class LLMHtmlComposer:
             "Please ensure the HTML output is well-structured, valid, and does not omit any data."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
 
@@ -263,10 +286,10 @@ class LLMHtmlRepair:
             "Please ensure the HTML output is well-structured, valid,, and does not omit any data."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
-    
+
 
 class LLMRegexCreator:
     @classmethod
@@ -295,7 +318,7 @@ class LLMRegexCreator:
             "Please ensure the regex pattern is concise and accurately matches the described criteria."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
 
@@ -328,12 +351,11 @@ class LLMRegexRepair:
             "Please repair the regex pattern so it is well-formed and accurately matches the described criteria."
         )
         
-        response = llm_model.complete(prompt)
+        response = llm_model['llm'].complete(prompt)
         
         return (response.text,)
     
-    
-# Formatting
+
 class LLMPydanticOutput:
     def __init__(self):
         pass
@@ -343,7 +365,7 @@ class LLMPydanticOutput:
         return {
             "required": {
                 "llm_model": ("LLM_MODEL",),
-                "llm_documents": ("LLM_DOCUMENTS",),
+                "document": ("DOCUMENT",),
                 "output_model_name": ("STRING", {"default": "OutputModel"}),
                 "output_model": ("STRING", {"multiline": True, "dynamicPrompts": False, "placeholder": '''{
     "name": "",
@@ -364,14 +386,14 @@ class LLMPydanticOutput:
     FUNCTION = "generate_summary"
     CATEGORY = "SALT/Llama-Index/Summarization"
 
-    def generate_summary(self, llm_model, llm_documents, output_model_name, output_model, summary_query="Summarize"):
+    def generate_summary(self, llm_model, document, output_model_name, output_model, summary_query="Summarize"):
 
         output_model_json = json.loads(output_model)
         OutputModel = CreateOutputModel.create(output_model_json, output_model_name)
         summarizer = TreeSummarize(verbose=True, output_cls=OutputModel, llm=llm_model)
 
         responses = []
-        for doc in llm_documents:
+        for doc in document:
             response = summarizer.get_response(summary_query, doc.text)
             from pprint import pprint
             pprint(response)
@@ -380,7 +402,6 @@ class LLMPydanticOutput:
         string_response = repr(responses)
 
         return (string_response, responses)
-
 
 
 NODE_CLASS_MAPPINGS = {
@@ -406,5 +427,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "LLMHtmlComposer": "∞ HTML Composer",
     "LLMHtmlRepair": "∞ HTML Repair",
     "LLMRegexCreator": "∞ Regex Creator",
-    "LLMRegexRepair": "∞ Regex Repair"
+    "LLMRegexRepair": "∞ Regex Repair",
 }
