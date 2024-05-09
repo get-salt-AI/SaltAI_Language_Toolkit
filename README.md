@@ -26,7 +26,11 @@ Follow these steps to set up the environment:
 
 ## ComfyUI Manager
 
-_The integration with ComfyUI Manager is under development and will be available soon._
+1. Have ComfyUI-Manager installed.
+2. Open up Manager within ComfyUI and search for the nodepack "SaltAI_LlamaIndex"
+3. Install
+4. Restart the server.
+5. Ctrl+F5 Hard refresh the browser.
 
 ## Troubleshooting
 
