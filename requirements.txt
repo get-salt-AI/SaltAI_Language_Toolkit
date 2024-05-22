@@ -62,6 +62,7 @@ openpyxl
 pandas 
 pillow
 python-pptx
+pyarrow
 requests
 sentencepiece
 # torch # Omitted because this will re-install non-CUDA PyTorch
