@@ -3,6 +3,8 @@ import re
 from llama_index.core import Document
 from typing import Dict
 
+from .. import logger
+
 # TODO: create add/remove nodes and implement with LLMChatBot
 class DocumentStore:
     """
@@ -20,7 +22,7 @@ class DocumentStore:
             if not self.store.__contains__(key):
                 self.store[key] = document
             else:
-                print(f"DocumentStore: document already exists by the title `{key}`")
+                logger.error(f"DocumentStore: document already exists by the title `{key}`")
 
     def remove(self, key:str, delete:bool = False):
         if self.store.__contains__(key):
@@ -29,7 +31,7 @@ class DocumentStore:
                 del doc
             return self.store.pop(key)
         else:
-            print(f"DocumentStore: The document title `{key}` doesn't exist in the store.")
+            logger.error(f"DocumentStore: The document title `{key}` doesn't exist in the store.")
             return False
 
     def parse(text:str, document_store:Dict[str, Document]):

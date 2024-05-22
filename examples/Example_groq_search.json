@@ -1,487 +1,562 @@
 {
-  "last_node_id": 61,
-  "last_link_id": 72,
-  "nodes": [
-    {
-      "id": 55,
-      "type": "Note",
-      "pos": [
-        612,
-        324
-      ],
-      "size": {
-        "0": 409.3635559082031,
-        "1": 136.74034118652344
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "title": "Search the net with Tavily",
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Here we're utilizing the Tavily Research node to obtain our context documents. This node performs basic or advance searches, and can return answers and raw site content. \n\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 53,
-      "type": "Note",
-      "pos": [
-        145,
-        71
-      ],
-      "size": [
-        351.2498328282468,
-        172.67830729113757
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "title": "Groq Powered Search Engine Bot",
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "This workflow demonstrates creating a \"Search Engine Bot\" utilizing blazing fast Groq models. The only thing holding us back really is the speed at which we can obtain data on searches, and communicate with Groq. \n\nBe sure to input your keys! You can obtain them from:\nGroq: https://console.groq.com/keys \nOpenAI (for embeddings): https://openai.com/index/openai-api/\n\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 49,
-      "type": "LLMVectorStoreIndex",
-      "pos": [
-        1090,
-        340
-      ],
-      "size": {
-        "0": 398.48150634765625,
-        "1": 66
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
+    "last_node_id":69,
+    "last_link_id":98,
+    "nodes":[
         {
-          "name": "llm_model",
-          "type": "LLM_MODEL",
-          "link": 68
+            "id":57,
+            "type":"Note",
+            "pos":[
+                2290,
+                496
+            ],
+            "size":{
+                "0":394.0451354980469,
+                "1":127.75015258789062
+            },
+            "flags":{
+                
+            },
+            "order":0,
+            "mode":0,
+            "title":"System Prompt",
+            "properties":{
+                "text":""
+            },
+            "widgets_values":[
+                "Next step is to simply query the data we've obtained with our system prompt, and users question to guide the LLM on data parsing (especially helpful when search results could contain irrelevant matches). "
+            ],
+            "color":"#432",
+            "bgcolor":"#653"
         },
         {
-          "name": "document",
-          "type": "DOCUMENT",
-          "link": 67
+            "id":53,
+            "type":"Note",
+            "pos":[
+                141,
+                129
+            ],
+            "size":{
+                "0":359.1204833984375,
+                "1":118.43408203125
+            },
+            "flags":{
+                
+            },
+            "order":1,
+            "mode":0,
+            "title":"Groq Powered Search Engine Bot",
+            "properties":{
+                "text":""
+            },
+            "widgets_values":[
+                "This workflow demonstrates creating a \"Search Engine Bot\" utilizing blazing fast Groq models. The only thing holding us back really is the speed at which we can obtain data on searches, and communicate with Groq. \n\nBe sure to input your keys! You can obtain them from:\nGroq: https://console.groq.com/keys \nOpenAI (for embeddings): https://openai.com/index/openai-api/\n\n"
+            ],
+            "color":"#432",
+            "bgcolor":"#653"
         },
         {
-          "name": "optional_llm_context",
-          "type": "LLM_CONTEXT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "llm_index",
-          "type": "LLM_INDEX",
-          "links": [
-            65
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMVectorStoreIndex"
-      }
-    },
-    {
-      "id": 52,
-      "type": "LLMQueryEngine",
-      "pos": [
-        1520,
-        340
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "llm_model",
-          "type": "LLM_MODEL",
-          "link": 69
+            "id":55,
+            "type":"Note",
+            "pos":[
+                612,
+                324
+            ],
+            "size":{
+                "0":409.3635559082031,
+                "1":136.74034118652344
+            },
+            "flags":{
+                
+            },
+            "order":2,
+            "mode":0,
+            "title":"Search the net with Tavily",
+            "properties":{
+                "text":""
+            },
+            "widgets_values":[
+                "Here we're utilizing the Tavily Research node to obtain our context documents. This node performs basic or advance searches, and can return answers and raw site content. \n\n"
+            ],
+            "color":"#432",
+            "bgcolor":"#653"
         },
         {
-          "name": "llm_index",
-          "type": "LLM_INDEX",
-          "link": 65
+            "id":56,
+            "type":"Note",
+            "pos":[
+                1863,
+                631
+            ],
+            "size":{
+                "0":402.7608947753906,
+                "1":123.4981689453125
+            },
+            "flags":{
+                
+            },
+            "order":3,
+            "mode":0,
+            "title":"System Prompt",
+            "properties":{
+                "text":""
+            },
+            "widgets_values":[
+                "Coaching the LLM with a system prompt is an essential part of setting up your model to provide the best responses. \n\nHere we're directing the model to only output the provide the relevant data, and not to provide any fluff such as things like \"based on the provided context ...\" before actually giving the user any relevant data. \n"
+            ],
+            "color":"#432",
+            "bgcolor":"#653"
         },
         {
-          "name": "llm_message",
-          "type": "LIST",
-          "link": 72
-        }
-      ],
-      "outputs": [
-        {
-          "name": "results",
-          "type": "STRING",
-          "links": [
-            71
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMQueryEngine"
-      },
-      "widgets_values": [
-        ""
-      ]
-    },
-    {
-      "id": 57,
-      "type": "Note",
-      "pos": [
-        1520,
-        590
-      ],
-      "size": {
-        "0": 394.0451354980469,
-        "1": 127.75015258789062
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "title": "System Prompt",
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Next step is to simply query the data we've obtained with our system prompt, and users question to guide the LLM on data parsing (especially helpful when search results could contain irrelevant matches). "
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 59,
-      "type": "ShowText|pysssss",
-      "pos": [
-        1970,
-        350
-      ],
-      "size": [
-        747.8484497070312,
-        595.6047973632812
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 71,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "",
-        "**Large Language Models: Understanding their Capabilities and Limitations**\n====================================================================\n\nLarge language models, such as GPT, have demonstrated impressive capabilities in processing and generating human-like language. However, there is ongoing debate about their limitations and potential as a \"dead end\" in terms of their ability to truly understand and generate language.\n\n**The Magic of Generalization**\n-----------------------------\n\nOne of the remarkable aspects of large language models is their ability to generalize to new, unseen data. This is exemplified by their capacity to learn math problems in one language and then apply that knowledge to solve math problems in another language. This phenomenon suggests that there may be a hidden mathematical pattern in language that these models are able to exploit.\n\n**The Double-Descent Phenomenon**\n-------------------------------\n\nResearch has identified a phenomenon known as the double-descent phenomenon, where models appear to perform better, then worse, and then better again as they increase in size. This has been attributed to the way the complexity of the models is measured.\n\n**Lack of Consensus**\n---------------------\n\nDespite the impressive capabilities of large language models, there is no consensus on what exactly is going on beneath the surface. Further research is needed to fully understand the mechanisms that enable these models to perform so well.\n\n**Related Questions and Answers**\n--------------------------------\n\n* **Q:** Are large language models like GPT a dead end?\n* **A:** The answer is unclear, with some arguing that they have limitations, while others believe they have the potential to revolutionize language processing.\n\n**Citation(s)**\n--------------\n\n* [Are large language models like GPT a dead end?](https://www.reddit.com/r/singularity/comments/1062rw2/are_large_language_models_like_gpt_a_dead_end/)\n* [Large language models can do jaw-dropping things. But ...](https://www.technologyreview.com/2024/03/04/1089403/large-language-models-amazing-but-nobody-knows-why/)"
-      ]
-    },
-    {
-      "id": 61,
-      "type": "LLMChatMessages",
-      "pos": [
-        1076,
-        464
-      ],
-      "size": [
-        421.1357727050781,
-        239.99017333984375
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "llm_message",
-          "type": "LIST",
-          "links": [
-            72
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMChatMessages"
-      },
-      "widgets_values": [
-        "You are a search engine end-point that provides valid markdown as a response. You do not chat or talk to the users, but simply provide structured data.\n\nRULES THAT MUST BE FOLLOWED AT ALL TIMES:\n\nDO NOT SAY ANYTHING. Only provide the data requested; and elaborate on it as much as possible. At no point in time are you to talk to the user. You area  data end-point. \n\nIf there are related questions and answers, display them.\n\nBe sure to provide ALL source website titles and URLs where you obtained the knowledge at the footer titled \"Citation(s)\".",
-        "SYSTEM"
-      ]
-    },
-    {
-      "id": 56,
-      "type": "Note",
-      "pos": [
-        1088,
-        759
-      ],
-      "size": {
-        "0": 402.7608947753906,
-        "1": 123.4981689453125
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "title": "System Prompt",
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Coaching the LLM with a system prompt is an essential part of setting up your model to provide the best responses. \n\nHere we're directing the model to only output the provide the relevant data, and not to provide any fluff such as things like \"based on the provided context ...\" before actually giving the user any relevant data. \n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 58,
-      "type": "Text Multiline",
-      "pos": [
-        150,
-        520
-      ],
-      "size": [
-        355.9949951171875,
-        116.0474853515625
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            70
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Text Multiline"
-      },
-      "widgets_values": [
-        "Are large language models really powerful?"
-      ]
-    },
-    {
-      "id": 54,
-      "type": "Note",
-      "pos": [
-        157,
-        690
-      ],
-      "size": [
-        360.19475033013896,
-        203.6896809689938
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "title": "User Input",
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Here we're obtaining input from Salt Workflow Input, a node which can pass data in-workflow, or receive data from the Salt platform, such as from Discord. \n\nBe sure your `input_type` is set to \"STRING\" to pass string data. \n\n**API Currently Unavailable**\nWhen using the API, be sure your input_name reflects the key you're using on the API to input the data to the workflow. "
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 14,
-      "type": "LLMGroqModel",
-      "pos": [
-        140,
-        300
-      ],
-      "size": {
-        "0": 360.1957702636719,
-        "1": 150
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "llm_model",
-          "type": "LLM_MODEL",
-          "links": [
-            68,
-            69
-          ],
-          "shape": 3,
-          "slot_index": 0
+            "id":52,
+            "type":"LLMQueryEngine",
+            "pos":[
+                2290,
+                251
+            ],
+            "size":{
+                "0":400,
+                "1":200
+            },
+            "flags":{
+                
+            },
+            "order":10,
+            "mode":0,
+            "inputs":[
+                {
+                    "name":"llm_model",
+                    "type":"LLM_MODEL",
+                    "link":98
+                },
+                {
+                    "name":"llm_index",
+                    "type":"LLM_INDEX",
+                    "link":90
+                },
+                {
+                    "name":"llm_message",
+                    "type":"LIST",
+                    "link":66
+                }
+            ],
+            "outputs":[
+                {
+                    "name":"results",
+                    "type":"STRING",
+                    "links":[
+                        64
+                    ],
+                    "shape":3,
+                    "slot_index":0
+                }
+            ],
+            "properties":{
+                "Node name for S&R":"LLMQueryEngine"
+            },
+            "widgets_values":[
+                ""
+            ]
         },
         {
-          "name": "embed_model_only",
-          "type": "LLM_EMBED_MODEL",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMGroqModel"
-      },
-      "widgets_values": [
-        "llama3-70b-8192",
-        "",
-        "text-embedding-ada-002",
-        ""
-      ]
-    },
-    {
-      "id": 30,
-      "type": "LLMTavilyResearch",
-      "pos": [
-        612,
-        516
-      ],
-      "size": {
-        "0": 409.89569091796875,
-        "1": 358.2423400878906
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "search_query",
-          "type": "STRING",
-          "link": 70,
-          "widget": {
-            "name": "search_query"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Documents",
-          "type": "DOCUMENT",
-          "links": [
-            67
-          ],
-          "shape": 3,
-          "slot_index": 0
+            "id":65,
+            "type":"LLMVectorStoreIndexAdv",
+            "pos":[
+                1863,
+                193
+            ],
+            "size":{
+                "0":397,
+                "1":122
+            },
+            "flags":{
+                
+            },
+            "order":9,
+            "mode":0,
+            "inputs":[
+                {
+                    "name":"llm_model",
+                    "type":"LLM_MODEL",
+                    "link":97
+                },
+                {
+                    "name":"document",
+                    "type":"DOCUMENT",
+                    "link":93
+                },
+                {
+                    "name":"optional_llm_context",
+                    "type":"LLM_CONTEXT",
+                    "link":null
+                }
+            ],
+            "outputs":[
+                {
+                    "name":"llm_index",
+                    "type":"LLM_INDEX",
+                    "links":[
+                        90
+                    ],
+                    "shape":3,
+                    "slot_index":0
+                }
+            ],
+            "properties":{
+                "Node name for S&R":"LLMVectorStoreIndexAdv"
+            },
+            "widgets_values":[
+                1024,
+                0
+            ]
         },
         {
-          "name": "URLs",
-          "type": "LIST",
-          "links": [],
-          "shape": 3,
-          "slot_index": 1
+            "id":50,
+            "type":"LLMChatMessagesAdv",
+            "pos":[
+                1863,
+                370
+            ],
+            "size":{
+                "0":400,
+                "1":200
+            },
+            "flags":{
+                
+            },
+            "order":8,
+            "mode":0,
+            "inputs":[
+                {
+                    "name":"user_prompt",
+                    "type":"STRING",
+                    "link":94,
+                    "widget":{
+                        "name":"user_prompt"
+                    }
+                }
+            ],
+            "outputs":[
+                {
+                    "name":"llm_message",
+                    "type":"LIST",
+                    "links":[
+                        66
+                    ],
+                    "shape":3,
+                    "slot_index":0
+                }
+            ],
+            "properties":{
+                "Node name for S&R":"LLMChatMessagesAdv"
+            },
+            "widgets_values":[
+                "You are a search engine end-point that provides valid markdown as a response. You do not chat or talk to the users, but simply provide structured data.\n\nRULES THAT MUST BE FOLLOWED AT ALL TIMES:\n\nDO NOT SAY ANYTHING. Only provide the data requested; and elaborate on it as much as possible. At no point in time are you to talk to the user, or reveal you're analyzing \"the provided context\". You are a data end-point. \n\nIf there are related questions and answers, display them.\n\nBe sure to provide ALL source website titles and URL to the websites where you obtained the knowledge at the footer titled \"Citation(s)\".",
+                "Please summarize this data. "
+            ]
+        },
+        {
+            "id":51,
+            "type":"SaltDisplayAny",
+            "pos":[
+                2729,
+                250
+            ],
+            "size":{
+                "0":666.1389770507812,
+                "1":620.7523193359375
+            },
+            "flags":{
+                
+            },
+            "order":11,
+            "mode":0,
+            "inputs":[
+                {
+                    "name":"input_value",
+                    "type":"*",
+                    "link":64
+                }
+            ],
+            "outputs":[
+                {
+                    "name":"output",
+                    "type":"*",
+                    "links":null,
+                    "shape":3
+                }
+            ],
+            "properties":{
+                "Node name for S&R":"SaltDisplayAny"
+            },
+            "widgets_values":[
+                "## Getsalt.ai is a platform for building, deploying, and scaling AI workflows. \n\n**Key features:**\n\n* **Cloud-based platform:** Start building workflows immediately in your web browser without local software setup or infrastructure management.\n* **Simple and intuitive:** Designed for users of all skill levels.\n* **High performance:** Automatically provisions and optimizes cloud compute resources for effortless scaling.\n* **Open source:** Regularly shares back to the community with custom nodes and other contributions.\n\n**Getsalt.ai's mission:**\n\n* Democratize AI development by making it easier to build, deploy, and scale AI workflows.\n* Bridge the gap between experimentation and real-world applications.\n* Empower anyone to create impactful AI-powered solutions.\n\n**See the official website for more information:** https://getsalt.ai\n\n**Citation(s):**\n\n* Salt AI | LinkedIn: https://www.linkedin.com/company/getsalt-ai\n* Workflows for the Real World: Introducing Salt - blog.getsalt.ai: https://blog.getsalt.ai/post/workflows-for-the-real-world-introducing-salt-ai"
+            ]
+        },
+        {
+            "id":54,
+            "type":"Note",
+            "pos":[
+                140,
+                942
+            ],
+            "size":{
+                "0":359.74749755859375,
+                "1":165.04530334472656
+            },
+            "flags":{
+                
+            },
+            "order":4,
+            "mode":0,
+            "title":"User Input",
+            "properties":{
+                "text":""
+            },
+            "widgets_values":[
+                "Here we're obtaining input from Salt Workflow Input, a node which can pass data in-workflow, or receive data from the Salt platform, such as from Discord. \n\nBe sure your `input_type` is set to \"STRING\" to pass string data. \n\n**API Currently Unavailable**\nWhen using the API, be sure your input_name reflects the key you're using on the API to input the data to the workflow. "
+            ],
+            "color":"#432",
+            "bgcolor":"#653"
+        },
+        {
+            "id":48,
+            "type":"SaltInput",
+            "pos":[
+                137,
+                503
+            ],
+            "size":{
+                "0":360.7602844238281,
+                "1":389.8109130859375
+            },
+            "flags":{
+                
+            },
+            "order":5,
+            "mode":0,
+            "inputs":[
+                {
+                    "name":"input_image",
+                    "type":"IMAGE",
+                    "link":null
+                },
+                {
+                    "name":"input_mask",
+                    "type":"MASK",
+                    "link":null
+                }
+            ],
+            "outputs":[
+                {
+                    "name":"value",
+                    "type":"*",
+                    "links":[
+                        63,
+                        94
+                    ],
+                    "shape":3,
+                    "slot_index":0
+                }
+            ],
+            "properties":{
+                "Node name for S&R":"SaltInput"
+            },
+            "widgets_values":[
+                "search_query",
+                "",
+                "STRING",
+                "What is getsalt.ai?",
+                "",
+                false,
+                false,
+                "image"
+            ]
+        },
+        {
+            "id":14,
+            "type":"LLMGroqModel",
+            "pos":[
+                138,
+                297
+            ],
+            "size":{
+                "0":360.1957702636719,
+                "1":150
+            },
+            "flags":{
+                
+            },
+            "order":6,
+            "mode":0,
+            "outputs":[
+                {
+                    "name":"llm_model",
+                    "type":"LLM_MODEL",
+                    "links":[
+                        97,
+                        98
+                    ],
+                    "shape":3,
+                    "slot_index":0
+                },
+                {
+                    "name":"embed_model_only",
+                    "type":"LLM_EMBED_MODEL",
+                    "links":null,
+                    "shape":3
+                }
+            ],
+            "properties":{
+                "Node name for S&R":"LLMGroqModel"
+            },
+            "widgets_values":[
+                "gemma-7b-it",
+                "SALTAI_GROQ_KEY",
+                "text-embedding-ada-002",
+                "SALTAI_OPENAI_KEY"
+            ]
+        },
+        {
+            "id":30,
+            "type":"LLMTavilyResearch",
+            "pos":[
+                611,
+                516
+            ],
+            "size":{
+                "0":409.89569091796875,
+                "1":358.2423400878906
+            },
+            "flags":{
+                
+            },
+            "order":7,
+            "mode":0,
+            "inputs":[
+                {
+                    "name":"search_query",
+                    "type":"STRING",
+                    "link":63,
+                    "widget":{
+                        "name":"search_query"
+                    }
+                }
+            ],
+            "outputs":[
+                {
+                    "name":"Documents",
+                    "type":"DOCUMENT",
+                    "links":[
+                        93
+                    ],
+                    "shape":3,
+                    "slot_index":0
+                },
+                {
+                    "name":"URLs",
+                    "type":"LIST",
+                    "links":[
+                        
+                    ],
+                    "shape":3,
+                    "slot_index":1
+                }
+            ],
+            "properties":{
+                "Node name for S&R":"LLMTavilyResearch"
+            },
+            "widgets_values":[
+                "SALTAI_TAVILY_KEY",
+                "who did the Steelers drafted in the 2024 nfl draft",
+                "advanced",
+                4,
+                true,
+                true,
+                "",
+                "",
+                10
+            ]
         }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMTavilyResearch"
-      },
-      "widgets_values": [
-        "",
-        "who did the Steelers drafted in the 2024 nfl draft",
-        "basic",
-        4,
-        true,
-        false,
-        "",
-        "",
-        10
-      ]
+    ],
+    "links":[
+        [
+            63,
+            48,
+            0,
+            30,
+            0,
+            "STRING"
+        ],
+        [
+            64,
+            52,
+            0,
+            51,
+            0,
+            "*"
+        ],
+        [
+            66,
+            50,
+            0,
+            52,
+            2,
+            "LIST"
+        ],
+        [
+            90,
+            65,
+            0,
+            52,
+            1,
+            "LLM_INDEX"
+        ],
+        [
+            93,
+            30,
+            0,
+            65,
+            1,
+            "DOCUMENT"
+        ],
+        [
+            94,
+            48,
+            0,
+            50,
+            0,
+            "STRING"
+        ],
+        [
+            97,
+            14,
+            0,
+            65,
+            0,
+            "LLM_MODEL"
+        ],
+        [
+            98,
+            14,
+            0,
+            52,
+            0,
+            "LLM_MODEL"
+        ]
+    ],
+    "groups":[
+        
+    ],
+    "config":{
+        
+    },
+    "extra":{
+        
+    },
+    "version":0.4,
+    "viewport":{
+        "x":590.826171875,
+        "y":84.56425476074219,
+        "scale":0.8264462809917354
     }
-  ],
-  "links": [
-    [
-      65,
-      49,
-      0,
-      52,
-      1,
-      "LLM_INDEX"
-    ],
-    [
-      67,
-      30,
-      0,
-      49,
-      1,
-      "DOCUMENT"
-    ],
-    [
-      68,
-      14,
-      0,
-      49,
-      0,
-      "LLM_MODEL"
-    ],
-    [
-      69,
-      14,
-      0,
-      52,
-      0,
-      "LLM_MODEL"
-    ],
-    [
-      70,
-      58,
-      0,
-      30,
-      0,
-      "STRING"
-    ],
-    [
-      71,
-      52,
-      0,
-      59,
-      0,
-      "STRING"
-    ],
-    [
-      72,
-      61,
-      0,
-      52,
-      2,
-      "LIST"
-    ]
-  ],
-  "groups": [],
-  "config": {},
-  "extra": {},
-  "version": 0.4
 }

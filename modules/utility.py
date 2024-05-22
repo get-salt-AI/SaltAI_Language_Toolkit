@@ -1,10 +1,18 @@
 import json
 import os
+import requests
+import torch
+import numpy as np
+import uuid
 
+from PIL import Image
 from typing import List, Dict, Any, Type, Tuple
 from pydantic import BaseModel, create_model
+from urllib.parse import urlparse
 
 import folder_paths
+
+from .. import logger
 
 # Pydantic output model mock
 
@@ -45,7 +53,15 @@ class AnyType(str):
         
 WILDCARD = AnyType("*")
 
-# GET PATH
+# Comfy Tensor Conversion
+
+def tensor2pil(x):
+    return Image.fromarray(np.clip(255. * x.cpu().numpy().squeeze(), 0, 255).astype(np.uint8))
+        
+def pil2tensor(x):
+    return torch.from_numpy(np.array(x).astype(np.float32) / 255.0).unsqueeze(0)
+
+# Dynamic Pathing
 
 def get_full_path(dir_type, relative_path):
     '''
@@ -69,4 +85,51 @@ def get_full_path(dir_type, relative_path):
         
     return os.path.join(base_path, relative_path)
 
-    
+def resolve_path(path: str, cache_dir: str = None):
+    """Resolve a path, validating it, and if it's a URL, downloading it and providing the path to the file"""
+
+    def is_url(path):
+        try:
+            result = urlparse(path)
+            return all([result.scheme, result.netloc])
+        except ValueError:
+            return False
+
+    def download(url, cache_dir):
+        if not cache_dir:
+            cache_dir = get_full_path(1, "downloads")
+
+        if not os.path.exists(cache_dir):
+            os.makedirs(cache_dir)
+
+        filename = os.path.basename(urlparse(url).path) or str(uuid.uuid4())
+        file_path = os.path.join(cache_dir, filename)
+
+        if os.path.exists(file_path):
+            logger.warning(f"File already exists: {file_path}")
+            return file_path
+
+        response = requests.get(url, stream=True)
+        if response.status_code == 200:
+            with open(file_path, 'wb') as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            logger.info(f"File downloaded: {file_path}")
+        else:
+            raise Exception(f"Failed to download file from {url}. Status code: {response.status_code}")
+
+        return file_path
+
+    def validate(path):
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"The local path does not exist: {path}")
+        if not os.path.isfile(path):
+            raise ValueError(f"The path does not point to a valid file: {path}")
+
+    if is_url(path):
+        logger.info(f"Path is a URL. Downloading from: {path}")
+        return download(path, cache_dir)
+    else:
+        logger.info(f"Path is a local file: {path}")
+        validate(path)
+        return path

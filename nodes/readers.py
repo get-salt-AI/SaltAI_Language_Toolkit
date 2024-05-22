@@ -80,25 +80,23 @@ from llama_index.readers.web import (
 
 from tavily import TavilyClient
 
-from SaltAI_LlamaIndex.modules.utility import WILDCARD, get_full_path
-from SaltAI_LlamaIndex.modules.crawler import WebCrawler
+from .. import MENU_NAME, SUB_MENU_NAME, logger
+from ..modules.utility import WILDCARD, get_full_path
+from ..modules.crawler import WebCrawler
 
 import folder_paths
+from nodes import MAX_RESOLUTION
 
 def valid_url(url):
-    if not url:
-        return False
-    regex = r"^(?:http|https):\/\/(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$"
-    return re.match(regex, url) is not None
+    return url.startswith("http") or url.startswith('www.')
 
 def read_extra_info(input_str):
     try:
         dictionary = json.loads(input_str)
         return dictionary
     except Exception as e:
-        print("Parsing error:", e)
+        logger.error("Parsing error:", e)
         return None
-
 
 class LLMCSVReader(CSVReader):
     """
@@ -126,7 +124,7 @@ class LLMCSVReader(CSVReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, concat_rows:bool, extra_info:str):
         get_full_path(1, path)
@@ -164,7 +162,7 @@ class LLMDocxReader(DocxReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -200,7 +198,7 @@ class LLMEpubReader(EpubReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -236,7 +234,7 @@ class LLMFlatReader(FlatReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -275,7 +273,7 @@ class LLMHTMLTagReader(HTMLTagReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, tag:str="section", ignore_no_id:bool=False, extra_info:str="{}"):
         get_full_path(1, path)
@@ -313,7 +311,7 @@ class LLMHWPReader(HWPReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str,  extra_info:str, fs = None):
         get_full_path(1, path)
@@ -352,7 +350,7 @@ class LLMImageTextReader(ImageReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, parse_text:bool, extra_info:str, keep_image:bool=False, fs = None):
         get_full_path(1, path)
@@ -393,7 +391,7 @@ class LLMImageCaptionReader(ImageCaptionReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, prompt:str, extra_info:str, keep_image:bool=False):
         get_full_path(1, path)
@@ -435,7 +433,7 @@ class LLMImageTabularChartReader(ImageTabularChartReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, max_output_tokens:int=512, prompt:str=None, extra_info:str="{}"):
         get_full_path(1, path)
@@ -476,7 +474,7 @@ class LLMImageVisionLLMReader(ImageVisionLLMReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, warning:str, extra_info:str):
         get_full_path(1, path)
@@ -513,7 +511,7 @@ class LLMIPYNBReader(IPYNBReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -550,7 +548,7 @@ class LLMMarkdownReader(MarkdownReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -587,7 +585,7 @@ class LLMMboxReader(MboxReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -624,7 +622,7 @@ class LLMPDFReader(PDFReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -666,7 +664,7 @@ class LLMPagedCSVReader(PagedCSVReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, encoding:str, delimiter:str, quotechar:str):
         get_full_path(1, path)
@@ -708,7 +706,7 @@ class LLMPandasCSVReader(PandasCSVReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path, concat_rows, col_joiner, row_joiner, extra_info:str="{}", fs = None):
         get_full_path(1, path)
@@ -748,7 +746,7 @@ class LLMPptxReader(PptxReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -786,7 +784,7 @@ class LLMPyMuPDFReader(PyMuPDFReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, metadata:bool, extra_info:str):
         get_full_path(1, path)
@@ -823,7 +821,7 @@ class LLMRTFReader(RTFReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str):
         get_full_path(1, path)
@@ -861,7 +859,7 @@ class LLMUnstructuredReader(UnstructuredReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, split_documents:bool = False):
         get_full_path(1, path)
@@ -898,7 +896,7 @@ class LLMVideoAudioReader(VideoAudioReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str, fs = None):
         get_full_path(1, path)
@@ -935,7 +933,7 @@ class LLMXMLReader(XMLReader):
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "execute"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def execute(self, path:str, extra_info:str):
         get_full_path(1, path)
@@ -966,7 +964,7 @@ class LLMDirectoryReader:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "read_directory"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def read_directory(self, input_directory, optional_path_list=[], recursive=False, required_ext_list=None, exclude_glob_list=None):
 
@@ -980,8 +978,8 @@ class LLMDirectoryReader:
         else:
             exclude = None
 
-        print("Excluding: ", exclude)
-        print("Required Extensions: ", required_exts)
+        logger.info("Excluding: ", exclude)
+        logger.info("Required Extensions: ", required_exts)
 
         if not optional_path_list:
             full_path = get_full_path(1, input_directory.strip())
@@ -1037,7 +1035,7 @@ class LLMSimpleWebPageReader:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "read_web"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def read_web(self, url_1, url_2=None, url_3=None, url_4=None, html_to_text=True):
         if not url_1.strip():
@@ -1054,11 +1052,11 @@ class LLMSimpleWebPageReader:
         valid_urls = []
         for url in urls:
             if not valid_url(url):
-                print("Skipping invalid URL", url)
+                logger.warning("Skipping invalid URL", url)
                 continue
             valid_urls.append(url)
 
-        print("Valided URLs:", valid_urls)
+        logger.info("Valided URLs:", valid_urls)
 
         documents = SimpleWebPageReader(html_to_text=html_to_text).load_data(valid_urls)
         return (documents,)
@@ -1080,7 +1078,7 @@ class LLMSimpleWebPageReaderAdv:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "read_web"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def read_web(self, urls, html_to_text=True):
 
@@ -1090,11 +1088,11 @@ class LLMSimpleWebPageReaderAdv:
         valid_urls = []
         for url in urls:
             if not valid_url(url):
-                print("Skipping invalid URL", url)
+                logger.warning("Skipping invalid URL", url)
                 continue
             valid_urls.append(url)
 
-        print("Valided URLs:", valid_urls)
+        logger.info("Valided URLs:", valid_urls)
 
         documents = SimpleWebPageReader(html_to_text=html_to_text).load_data(valid_urls)
         return (documents,)
@@ -1118,7 +1116,7 @@ class LLMTrafilaturaWebReader:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "read_web_trafilatura"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def read_web_trafilatura(self, url_1, url_2=None, url_3=None, url_4=None):
         if not url_1.strip():
@@ -1135,11 +1133,11 @@ class LLMTrafilaturaWebReader:
         valid_urls = []
         for url in urls:
             if not valid_url(url):
-                print("Skipping invalid URL", url)
+                logger.warning("Skipping invalid URL", url)
                 continue
             valid_urls.append(url)
 
-        print("Valided URLs:", valid_urls)
+        logger.info("Valided URLs:", valid_urls)
 
         documents = TrafilaturaWebReader().load_data(valid_urls)
         return (documents,)
@@ -1158,7 +1156,7 @@ class LLMTrafilaturaWebReaderAdv:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "read_web_trafilatura"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def read_web_trafilatura(self, urls):
 
@@ -1168,11 +1166,11 @@ class LLMTrafilaturaWebReaderAdv:
         valid_urls = []
         for url in urls:
             if not valid_url(url):
-                print("Skipping invalid URL", url)
+                logger.warning("Skipping invalid URL", url)
                 continue
             valid_urls.append(url)
 
-        print("Valided URLs:", valid_urls)
+        logger.info("Valided URLs:", valid_urls)
 
         documents = TrafilaturaWebReader().load_data(valid_urls)
         return (documents,)
@@ -1197,7 +1195,7 @@ class LLMRssReaderNode:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "read_rss"
-    CATEGORY = "SALT/Llama-Index/Readers"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Readers"
 
     def read_rss(self, url_1, url_2=None, url_3=None, url_4=None):
         if not url_1.strip():
@@ -1213,7 +1211,7 @@ class LLMRssReaderNode:
 
         urls = [url for url in urls if valid_url(url)]
 
-        print("Valided URLs:", urls)
+        logger.info("Valided URLs:", urls)
 
         documents = RssReader().load_data(urls)
         return (documents,)
@@ -1229,7 +1227,10 @@ class LLMInputToDocuments:
             },
             "optional": {
                 "extra_info": ("STRING", {"default": "{}"}),
-                "concat_input": ("BOOLEAN", {"default": False})
+                "concat_input": ("BOOLEAN", {"default": False}),
+                "resize_images": ("BOOLEAN", {"default": True}),
+                "max_image_width": ("INT", {"default": 1024, "min": 64, "max": MAX_RESOLUTION}),
+                "max_image_height": ("INT", {"default": 1024, "min": 64, "max": MAX_RESOLUTION})
             }
         }
 
@@ -1237,20 +1238,20 @@ class LLMInputToDocuments:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "to_documents"
-    CATEGORY = "SALT/Llama-Index/Documents"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Documents"
 
-    def to_documents(self, input_data, extra_info="{}", concat_input=False):
+    def to_documents(self, input_data, extra_info="{}", concat_input=False, resize_images=True, max_image_width=1024, max_image_height=1024):
         documents = []
 
         # Try to parse extra_info
         try:
             extra_info = json.loads(extra_info) if extra_info.strip() else {}
         except json.JSONDecodeError:
-            print("Invalid JSON for `extra_info` supplied, defaulting to empty `extra_info` dict.")
+            logger.error("Invalid JSON for `extra_info` supplied, defaulting to empty `extra_info` dict.")
             extra_info = {}
 
         if not isinstance(extra_info, dict):
-            print("Failed to decode `extra_info`, defaulting to empty `extra_info` dict.")
+            logger.error("Failed to decode `extra_info`, defaulting to empty `extra_info` dict.")
             extra_info = {}
 
         # Dict to string doc
@@ -1297,6 +1298,8 @@ class LLMInputToDocuments:
             
             try:
                 for index, pil_image in enumerate(images):
+                    if resize_images:
+                        pil_image = self.resize_image(pil_image, max_size=(max_image_width, max_image_height))
                     file_prefix = "llm_image_input_"
                     file_ext = ".jpeg"
                     filename = f"{file_prefix}_{index:04d}{file_ext}"
@@ -1305,9 +1308,9 @@ class LLMInputToDocuments:
                     image_paths.append(image_path)
 
                     if os.path.exists(image_path):
-                        print(f"[SALT] Saved LLM document image to `{image_path}`")
+                        logger.info(f"[SALT] Saved LLM document image to `{image_path}`")
                     else:
-                        print(f"[SALT] Unable to save LLM document image to `{image_path}`")
+                        logger.error(f"[SALT] Unable to save LLM document image to `{image_path}`")
 
             except Exception as e:
                 raise e
@@ -1326,8 +1329,6 @@ class LLMInputToDocuments:
         else:
             raise ValueError(f"LLMInputToDocuments does not support type `{type(input_data).__name__}`. Please provide: dict, list, str, int, float.")
 
-        pprint(documents, indent=4)
-
         return (documents,)
     
     def tensor2pil(self, x):
@@ -1336,12 +1337,16 @@ class LLMInputToDocuments:
     def mask2pil(self, x):
         x = 1. - x
         if x.ndim != 3:
-            print(f"Expected a 3D tensor ([N, H, W]). Got {x.ndim} dimensions.")
+            logger.warning(f"Expected a 3D tensor ([N, H, W]). Got {x.ndim} dimensions.")
             x = x.unsqueeze(0) 
         x_np = x.cpu().numpy()
         if x_np.ndim != 3:
             x_np = np.expand_dims(x_np, axis=0) 
         return Image.fromarray(np.clip(255. * x_np[0, :, :], 0, 255).astype(np.uint8), 'L')
+    
+    def resize_image(self, image, max_size=(1024, 1024)):
+        image.thumbnail(max_size, Image.Resampling.LANCZOS)
+        return image
 
 
 class LLMDocumentListAppend:
@@ -1361,7 +1366,7 @@ class LLMDocumentListAppend:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "document_append"
-    CATEGORY = "SALT/Llama-Index/Documents"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Documents"
 
     def document_append(self, llm_documents, append_llm_documents, extra_info={}):
         extra_info = json.loads(extra_info)
@@ -1391,7 +1396,7 @@ class LLMPostProcessDocuments:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "process_documents"
-    CATEGORY = "SALT/Llama-Index/Tools"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Tools"
 
     def process_documents(self, document, required_keywords=[], exclude_keywords=[]):
 
@@ -1442,7 +1447,7 @@ class LLMTavilyResearch:
     RETURN_NAMES = ("documents", "urls")
 
     FUNCTION = "search"
-    CATEGORY = "SALT/Llama-Index/Tools"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Tools"
 
     def search(self, tavily_api_key, search_query, search_depth="basic", max_results=1, include_answer=False, include_raw_content=False, include_domains="google.com", exclude_domains=None, keep_looking_limit=10):
         
@@ -1462,7 +1467,7 @@ class LLMTavilyResearch:
                     ", ") if include_domains is not None and exclude_domains != "" else None,
             )
         
-        print("Tavily Search Query:", search_query)
+        logger.info("Tavily Search Query:", search_query)
 
         # Increment the search results because when using `include_raw_content` 
         # results are found in order of accessibility, so first X results may not 
@@ -1474,11 +1479,9 @@ class LLMTavilyResearch:
         while "results" not in response or not response["results"] and max_results < adjusted_max_results:
                 max_results += 1
                 if current_retry > 0:
-                    print(f"Unable find any results. Continuing Search...\nRetry {current_retry} of {keep_looking_limit}")
+                    logger.warning(f"Unable find any results. Continuing Search...\nRetry {current_retry} of {keep_looking_limit}")
                 response = tavily_search()
                 current_retry += 1
-
-        pprint(response, indent=4)
 
         results = response.get("results", None)
         urls = []
@@ -1509,12 +1512,16 @@ class LLMSaltWebCrawler:
             "optional": {
                 "url": ("STRING", {}),
                 "urls": ("LIST", {}),
-                "max_depth": ("INT", {"min": 1, "max": 4, "default": 2}),
-                "max_links": ("INT", {"min": 1, "max": 6, "default": 2}),
+                "max_depth": ("INT", {"min": 1, "max": 12, "default": 2}),
+                "max_links": ("INT", {"min": 1, "max": 100, "default": 2}),
                 "trim_line_breaks": ("BOOLEAN", {"default": True}),
                 "verify_ssl": ("BOOLEAN", {"default": True}),
-                "exclude_domains": ("STRING", {"multiline": True, "dynamicPrompts": False, "placeholder": "Optional exclude domains, eg: example.com, example2.com"}),
-                "keywords": ("STRING", {"multiline": True, "dynamicPrompts": False, "placeholder": "Optional relevancy keywords, eg: artificial intelligence, ai"})
+                "exclude_domains": ("STRING", {"multiline": True, "dynamicPrompts": False, "placeholder": "Optional exclude domains, eg: example.com, example2.com\nUse an asterisk (*) to exclude all domains that aren't listed in the input URLs"}),
+                "keywords": ("STRING", {"multiline": True, "dynamicPrompts": False, "placeholder": "Optional relevancy keywords, eg: artificial intelligence, ai"}),
+                "relevant_links": ("BOOLEAN", {"default": True}),
+                "relevant_page_content": ("BOOLEAN", {"default": True}),
+                "max_threads": ("INT", {"min": 1, "max": 64, "default": 2}),
+                "use_jina": ("BOOLEAN", {"default": False})
             }
         }
     
@@ -1523,16 +1530,33 @@ class LLMSaltWebCrawler:
     RETURN_NAMES = ("documents",)
 
     FUNCTION = "crawl"
-    CATEGORY = "SALT/Llama-Index/Tools"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Tools"
 
-    def crawl(self, url:str="google.com", urls:list=None, max_depth:int=2, max_links:int=2, trim_line_breaks:bool=True, verify_ssl:bool=True, exclude_domains:str="", keywords:str="") -> list:
+    def crawl(
+            self, 
+            url:str="google.com", 
+            urls:list=None, 
+            max_depth:int=2, 
+            max_links:int=2, 
+            trim_line_breaks:bool=True, 
+            verify_ssl:bool=True, 
+            exclude_domains:str="", 
+            keywords:str=None, 
+            relevant_links:bool=True, 
+            relevant_page_content:bool=True, 
+            max_threads:int=2,
+            use_jina:bool=False
+        ) -> list:
 
         search_urls = []
-
-        print(urls)
-
         if not url.strip() and not urls:
             raise Exception("Please provide at lease one URL")
+        
+        logger.info("Keyword:", keywords)
+        if keywords in ("", "undefined") or keywords is None:
+            keywords = None
+            relevant_links = False
+            relevant_page_content = False
         
         url = url.strip()
         if url != "" and valid_url(url):
@@ -1540,14 +1564,21 @@ class LLMSaltWebCrawler:
         if urls:
             search_urls.extend([url for url in urls if valid_url(url)])
 
-        print(search_urls)
+        logger.info("Valid URLs:")
+        logger.info(search_urls)
 
-        crawler = WebCrawler(search_urls, exclude_domains=exclude_domains, relevancy_keywords=keywords, max_links=max_links)
+        crawler = WebCrawler(
+            search_urls, 
+            exclude_domains=exclude_domains, 
+            keywords=keywords, 
+            max_links=max_links, 
+            evaluate_links=relevant_links, 
+            evaluate_page_content=relevant_page_content, 
+            max_threads=max_threads,
+            jina_scrape=use_jina
+        )
 
         results = crawler.parse_sites(crawl=True, max_depth=max_depth, trim_line_breaks=trim_line_breaks, verify_ssl=verify_ssl)
-
-        from pprint import pprint
-        pprint(results.to_dict(), indent=4)
 
         return (results.to_documents(), )
 

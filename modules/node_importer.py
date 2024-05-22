@@ -3,6 +3,8 @@ import time
 import traceback
 import importlib
 
+from .. import logger
+
 
 class ModuleLoader:
     def __init__(self, package):
@@ -87,16 +89,16 @@ class ModuleLoader:
                 self.module_timings[module.__file__ if success else filename] = (timing, success, error)
     
     def report(self, NAME):
-        print(f"\33[1mImport times for {NAME} Node Modules:\33[0m")
+        logger.info(f"\33[1mImport times for {NAME} Node Modules:\33[0m")
         for module, (timing, success, error) in self.module_timings.items():
-            print(f"   {timing:.1f} seconds{('' if success else ' (IMPORT FAILED)')}: {module}")
+            logger.info(f"   {timing:.1f} seconds{('' if success else ' (IMPORT FAILED)')}: {module}")
             if error:
-                print("Error:", error)
+                logger.error("Error:", error)
 
         loaded_nodes = []
         for class_name in self.NODE_CLASS_MAPPINGS.keys():
             suffix = f' [{self.NODE_DISPLAY_NAME_MAPPINGS[class_name]}]' if self.NODE_DISPLAY_NAME_MAPPINGS.__contains__(class_name) else ''
             loaded_nodes.append(f"\33[1m{class_name}\33[0m{suffix}")
 
-        print(f"\n\33[1mLoaded Nodes:\33[0m\n" + "\33[93m,\33[0m ".join(loaded_nodes))
+        logger.info(f"\n\33[1mLoaded {len(self.NODE_CLASS_MAPPINGS.keys())} Nodes:\33[0m\n" + "\33[93m,\33[0m ".join(loaded_nodes))
 

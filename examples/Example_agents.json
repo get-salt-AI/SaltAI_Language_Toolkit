@@ -1,297 +1,13 @@
 {
-  "last_node_id": 263,
-  "last_link_id": 428,
+  "last_node_id": 278,
+  "last_link_id": 455,
   "nodes": [
-    {
-      "id": 135,
-      "type": "Note",
-      "pos": [
-        3818.6172154998776,
-        1348.8964708862297
-      ],
-      "size": {
-        "0": 374.2001953125,
-        "1": 139.38182067871094
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Also you can change System Message of agents. Notice that system prompt will be changed only in output instance of this agent. "
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 149,
-      "type": "Note",
-      "pos": [
-        4797.266905690525,
-        2590.8743045186416
-      ],
-      "size": {
-        "0": 374.2001953125,
-        "1": 139.38182067871094
-      },
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Unfortunately for now, memory works within the confines of a single dialog. An agent does not remember information from the conversations with other agents."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 109,
-      "type": "Note",
-      "pos": [
-        3818.2669056905233,
-        1753.8743045186459
-      ],
-      "size": {
-        "0": 374.2001953125,
-        "1": 139.38182067871094
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Here I show you how to start simple chats. Two agents can talk between each other and provide you a result of a dialogue."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 134,
-      "type": "Note",
-      "pos": [
-        3732.6172154998776,
-        911.8964708862308
-      ],
-      "size": {
-        "0": 374.2001953125,
-        "1": 139.38182067871094
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Instead of converting agent to llamaindex model you can ask questions using \"Generate Reply\" node if you don't need any RAG components. This is simplier and doesn't requere useless convertation which can make your pipeline more compact."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 103,
-      "type": "Note",
-      "pos": [
-        3700,
-        -730
-      ],
-      "size": {
-        "0": 681.60498046875,
-        "1": 104.76715087890625
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Let's remind how to do simple LLM call in our package. And Let's check that loaded LLM really works.  \n\nALL NODES IN THIS EXAMPLE ARE MUTED! \n\nI don't want  you to spend lot of tokens by accsident press \"Queue Prompt\" button. So please select nodes by using Shift + Right Click and press Ctrl+M to unmute nodes that you really want to run. "
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 107,
-      "type": "Note",
-      "pos": [
-        3690,
-        -1120
-      ],
-      "size": {
-        "0": 301.5708923339844,
-        "1": 133.3454132080078
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "This is a prettty huge example, so I use Anything Everywhere node to connect LLM to all nodes that require it. "
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 158,
-      "type": "Note",
-      "pos": [
-        4432.864676670725,
-        5826.657693018908
-      ],
-      "size": {
-        "0": 330,
-        "1": 100
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "You can also use Tavily search as a tool"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 184,
-      "type": "Note",
-      "pos": [
-        4482.004563013174,
-        7054.5519102965145
-      ],
-      "size": {
-        "0": 330,
-        "1": 100
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Example of using tools in a group chat.\n\nChange the model to gpt-4-preview to increase the context size"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 104,
-      "type": "Note",
-      "pos": [
-        4489.221875226693,
-        -228.9659593838853
-      ],
-      "size": {
-        "0": 374.2001953125,
-        "1": 139.38182067871094
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Simple agent call as LLM."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 102,
-      "type": "Note",
-      "pos": [
-        3719,
-        98
-      ],
-      "size": {
-        "0": 374.2001953125,
-        "1": 139.38182067871094
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Here you can see how you can create Agent and use it as a LLM with exicting Llamaindex functionality. This is a simple example that shows you that you can add personality to the agent. But there are a lot of other possibilities for example you can add different tools (e.g. web search) to boost this agent and enhance you RAG pipeline! "
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 105,
-      "type": "Note",
-      "pos": [
-        4879.221875226693,
-        491.03404061611457
-      ],
-      "size": {
-        "0": 374.2001953125,
-        "1": 139.38182067871094
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Simple RAG pipeline with agent."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 106,
-      "type": "Anything Everywhere",
-      "pos": [
-        4040,
-        -930
-      ],
-      "size": {
-        "0": 210,
-        "1": 26
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 55,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "LLM_MODEL",
-          "type": "*",
-          "link": 157,
-          "color_on": ""
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Anything Everywhere",
-        "group_restricted": 0,
-        "color_restricted": 0
-      },
-      "widgets_values": []
-    },
     {
       "id": 192,
       "type": "Anything Everywhere",
       "pos": [
-        4043,
-        -880
+        80,
+        -40
       ],
       "size": {
         "0": 210,
@@ -300,13 +16,13 @@
       "flags": {
         "collapsed": true
       },
-      "order": 56,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
           "name": "LLM_EMBED_MODEL",
           "type": "*",
-          "link": 334,
+          "link": 440,
           "color_on": ""
         }
       ],
@@ -321,15 +37,15 @@
       "id": 32,
       "type": "ConversableAgentCreator",
       "pos": [
-        3728.792948506449,
-        4989.513906577881
+        -297.93961273797487,
+        6351.079036369883
       ],
       "size": {
         "0": 385.6876525878906,
         "1": 276.0480651855469
       },
       "flags": {},
-      "order": 11,
+      "order": 0,
       "mode": 2,
       "inputs": [
         {
@@ -362,8 +78,8 @@
       "id": 56,
       "type": "LLMServiceContextAdv",
       "pos": [
-        3718.79294850645,
-        4909.513906577881
+        -307.939612737974,
+        6271.079036369883
       ],
       "size": {
         "0": 347.8772277832031,
@@ -372,7 +88,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 12,
+      "order": 1,
       "mode": 2,
       "inputs": [
         {
@@ -420,8 +136,8 @@
       "id": 54,
       "type": "LLMSimpleWebPageReader",
       "pos": [
-        3728.792948506449,
-        4669.513906577881
+        -297.93961273797487,
+        6031.079036369883
       ],
       "size": {
         "0": 315,
@@ -430,7 +146,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 13,
+      "order": 2,
       "mode": 2,
       "outputs": [
         {
@@ -458,15 +174,15 @@
       "id": 191,
       "type": "ConvertAgentToLlamaindex",
       "pos": [
-        4168.792948506447,
-        4849.513906577881
+        142.06038726202357,
+        6211.079036369883
       ],
       "size": {
         "0": 243.60000610351562,
         "1": 46
       },
       "flags": {},
-      "order": 45,
+      "order": 47,
       "mode": 2,
       "inputs": [
         {
@@ -499,15 +215,15 @@
       "id": 190,
       "type": "LLMVectorStoreIndex",
       "pos": [
-        4398.792948506447,
-        4709.513906577881
+        372.06038726202553,
+        6071.079036369883
       ],
       "size": {
         "0": 253.60000610351562,
         "1": 66
       },
       "flags": {},
-      "order": 59,
+      "order": 60,
       "mode": 2,
       "inputs": [
         {
@@ -545,15 +261,15 @@
       "id": 76,
       "type": "LLMQueryEngineAsTool",
       "pos": [
-        4698.792948506447,
-        4669.513906577881
+        672.0603872620264,
+        6031.079036369883
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 76,
+      "order": 78,
       "mode": 2,
       "inputs": [
         {
@@ -585,15 +301,15 @@
       "id": 75,
       "type": "AddTool",
       "pos": [
-        4828.792948506447,
-        5069.513906577881
+        802.0603872620269,
+        6431.079036369883
       ],
       "size": {
         "0": 241.79998779296875,
         "1": 66
       },
       "flags": {},
-      "order": 91,
+      "order": 94,
       "mode": 2,
       "inputs": [
         {
@@ -640,15 +356,15 @@
       "id": 59,
       "type": "SimpleChat",
       "pos": [
-        5218.792948506447,
-        4789.513906577881
+        1192.0603872620306,
+        6151.079036369883
       ],
       "size": {
         "0": 400,
         "1": 208
       },
       "flags": {},
-      "order": 97,
+      "order": 101,
       "mode": 2,
       "inputs": [
         {
@@ -708,15 +424,15 @@
       "id": 35,
       "type": "ShowText|pysssss",
       "pos": [
-        5638.792948506447,
-        4679.513906577881
+        1612.060387262033,
+        6041.079036369883
       ],
       "size": {
         "0": 478.70208740234375,
         "1": 780.42626953125
       },
       "flags": {},
-      "order": 99,
+      "order": 106,
       "mode": 2,
       "inputs": [
         {
@@ -741,61 +457,22 @@
       },
       "widgets_values": [
         "",
-        "- Let's start...\n\n- Great! How can I assist you today?\n\n- I can help you with finding information or answering questions. What would you like to know more about?\n\n- That's great! What specific topic or question would you like me to help you with?\n\n- I can provide information about various topics, such as how to do what you love, how to get startup ideas, how to detect bias, or how to put ideas into words. Feel free to choose a topic or ask a specific question within those areas.\n\n- Those are all interesting topics! How about you share more about how to detect bias? I can provide you with some useful information and tips on this topic.\n\n- [\"One way to detect bias in a selection process is by comparing the performance of different groups of applicants who have been selected. If applicants of a certain type have to be better to get selected and they outperform other successful applicants, it indicates bias. This method can be used when there is a random sample of selected applicants, their subsequent performance is measured, and the groups being compared have similar ability distributions. By checking if certain types of applicants consistently outperform others, bias in the selection process can be identified.\"]\n\n- One way to detect bias in a selection process is by comparing the performance of different groups of applicants who have been selected. If applicants of a certain type have to be better to get selected and they outperform other successful applicants, it indicates bias. This method can be used when there is a random sample of selected applicants, their subsequent performance is measured, and the groups being compared have similar ability distributions. By checking if certain types of applicants consistently outperform others, bias in the selection process can be identified. If you'd like to know more or have any specific questions on this topic, feel free to ask!\n\n- I hope you found that information helpful! If you have any more questions or need further assistance on this topic or any other topic, feel free to ask.\n\n- Thank you for your offer! If there's anything I can assist you with, just let me know.\n\n- Thank you for your offer! I'm here to help with any questions or tasks you may have. Just let me know how I can assist you.\n\n- TERMINATE\n\n"
-      ]
-    },
-    {
-      "id": 34,
-      "type": "ShowText|pysssss",
-      "pos": [
-        6138.792948506447,
-        4679.513906577881
-      ],
-      "size": {
-        "0": 593.0430297851562,
-        "1": 464.7637634277344
-      },
-      "flags": {},
-      "order": 100,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 104,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        ""
+        "- Let's start...\n\n- Great! How can I assist you today?\n\n- I can help you with finding information or answering questions. What would you like to know more about?\n\n- That's great! What specific topic or question would you like me to help you with?\n\n- I can provide information about various topics, such as how to do what you love, how to get startup ideas, how to detect bias, or how to put ideas into words. Feel free to choose a topic or ask a specific question within those areas.\n\n- Those are all interesting topics! How about you share more about how to detect bias? I can provide you with some useful information and tips on this topic.\n\n- [\"One way to detect bias in a selection process is by comparing the performance of different groups of applicants who have been selected. If applicants of a certain type have to be better to get selected and they outperform other successful applicants, it indicates bias in the selection process. This method can be used when there is a random sample of selected applicants, their subsequent performance is measured, and the groups being compared have roughly equal ability distribution. By checking if certain types of applicants consistently outperform others, one can identify bias in the selection process.\"]\n\n- One way to detect bias is by comparing the performance of different groups of selected applicants. If certain types of applicants have to perform better to get selected and they consistently outperform others, it indicates bias in the selection process. This method is effective when there is a random sample of selected applicants, their subsequent performance is measured, and the groups being compared have roughly equal ability distribution.\n\n- Yes, that's correct! Comparing the performance of different groups of selected applicants and analyzing if certain types consistently outperform others can help identify bias in the selection process. It's important to ensure that the comparison is based on objective criteria and that the groups being compared have similar abilities and qualifications. If you have any more questions or need further information on this topic, feel free to let me know!\n\n- Sounds good! Thank you for the insights on detecting bias. If you have any more tips or information on other topics like how to do what you love, how to get startup ideas, or how to put ideas into words, feel free to share.\n\n- I'd be happy to provide more information on those topics! Just let me know which one you'd like to explore further - doing what you love, generating startup ideas, or expressing ideas effectively in writing.\n\n- Let's delve into how to generate startup ideas. Could you share some insights or tips on this topic?\n\n- Absolutely! Generating startup ideas can be an exciting and creative process. Here are some tips to help you generate innovative startup ideas:\n\n1. Identify a Problem: Look for problems or challenges in your own experiences or in industries that interest you. Solving a real-world problem is a great foundation for a startup idea.\n\n2. Conduct Market Research: Research industry trends, consumer needs, and potential gaps in the market. Understanding the market landscape can help you identify opportunities for new products or services.\n\n3. Harness Your Passion and Skills: Consider your own interests, skills, and expertise. Starting a business around something you are passionate about can drive motivation and creativity.\n\n4. Brainstorm Ideas: Engage in brainstorming sessions with a diverse group of people to explore different perspectives and generate a wide range of ideas. Think outside the box and consider unconventional solutions.\n\n5. Validate Your Idea: Test your startup idea by seeking feedback from potential customers, industry experts, and mentors. Validate the demand for your product or service before investing significant time and resources.\n\n6. Focus on Innovation: Aim to create a unique value proposition that sets your startup apart from competitors. Innovation can be a key driver of success in the startup ecosystem.\n\n7. Start Small and Iterate: Begin with a minimum viable product (MVP) to test your idea and gather feedback. Iterate based on customer insights and continually refine your offering.\n\n8. Leverage Technology: Explore how technology trends such as artificial intelligence, blockchain, or augmented reality can be integrated into your startup idea to enhance its value and competitiveness.\n\nBy following these tips and staying open to inspiration from various sources, you can generate promising startup ideas that have the potential to thrive in the market. If you have any specific questions or need more guidance on this topic, feel free to ask!\n\n- Thank you for the insightful tips on generating startup ideas! These steps, from identifying problems to leveraging technology, provide a comprehensive guide to coming up with innovative business concepts. If you have more details or insights on other topics like how to do what you love or how to put ideas into words, I'd love to learn more!\n\n- I'm glad you found the tips on generating startup ideas helpful! If you're interested in exploring how to do what you love or how to put ideas into words, please let me know which topic you'd like to delve into next, and I'll provide you with more information and insights to help you further.\n\n"
       ]
     },
     {
       "id": 82,
       "type": "ShowText|pysssss",
       "pos": [
-        5767.864676670725,
-        5958.657693018908
+        1736.9847440177634,
+        7321.017610605757
       ],
       "size": {
         "0": 593.0430297851562,
         "1": 464.7637634277344
       },
       "flags": {},
-      "order": 89,
+      "order": 91,
       "mode": 2,
       "inputs": [
         {
@@ -820,22 +497,22 @@
       },
       "widgets_values": [
         "",
-        "In Barcelona's last match, they played against Real Betis and won with a final score of 4-2. Ferran Torres scored a hat-trick in that match. The game took place at the Benito Villamarín stadium. \n\n"
+        "It seems there was an error while trying to retrieve the information about the goal scorer in Barcelona's last match. Unfortunately, I couldn't provide you with that specific detail at the moment. However, Barcelona won the match 1-0 against Mallorca in LaLiga. If you need any more information or have any other questions, feel free to ask. Just say  when you're ready to end our conversation."
       ]
     },
     {
       "id": 83,
       "type": "ShowText|pysssss",
       "pos": [
-        5197.864676670725,
-        5958.657693018908
+        1166.9847440177634,
+        7321.017610605757
       ],
       "size": {
         "0": 534.5765380859375,
         "1": 654.6223754882812
       },
       "flags": {},
-      "order": 88,
+      "order": 90,
       "mode": 2,
       "inputs": [
         {
@@ -860,22 +537,22 @@
       },
       "widgets_values": [
         "",
-        "- Let's start...\n\n- Great! What would you like to know about or discuss today?\n\n- I'd like to know the result of Barcelona's last match. Let me find that information for you.\n\n- FC Barcelona. Barça first team results page for LaLiga, Champions League and Copa del Rey./nEl Clasico result: Real Madrid 3-2 Barcelona. 6': Christensen headed Barcelona into an early lead on a corner. ... Real Madrid are now unbeaten in their last 26 La Liga matches, four shy of the .../nLuis Enrique returned to Barcelona to knock his former club out of the Champions League as Kylian Mbappe inspired Paris Saint-Germain to a pulsating 4-1 second-leg victory, winning 6-4 on aggregate./nThat's it from our live coverage of Tuesday's Champions League quarterfinals. Paris Saint-Germain stun Barcelona in Spain as Kylian Mbappe scores twice in a 4-1 win to lead the French .../nBut the visitors couldn’t maintain control of the game and allowed Betis to have more of the ball and finally start to bring some pressure, and the Blaugrana completely imploded at the back and saw their lead evaporate before we even hit the hour mark: in a span of three minutes Isco scored two great goals, one a sensational half-volley and the second a beautiful chip over Iñaki Peña that was initially ruled out for offside and then cleared by VAR, and the game was suddenly all square with 30 minutes still to play.\n SECOND HALF\nManuel Pellegrini made two halftime changes and his Betis side looked more intense and ready to press a little higher to try and find a way back in the game early in the final period, but they had no time to put any pressure on the Blaugrana: just three minutes into the half Barça doubled their lead after a gorgeous passing sequence down the right side that ended with a cross from Yamal that hit the post but fell perfectly to Ferran, who scored a gorgeous half-volley and gave the Catalans a crucial two-goal advantage.\n Barça finally wrestled back some control of the game and looked to patiently build from the back and create a good enough chance to win the game, and they finally found it in the 90th minute when substitute João Félix maade a one-two with Ferran at the edge of the box and used the outside of his right foot to curl a beautiful shot into the bottom corner to give Barça the lead again.\n Lamine Yamal came the closest to scoring the second goal with a gorgeous effort that hit the inside of the post but somehow didn’t go in, and Robert Lewandowski had the ball in the back of the net after a pass from Ferran but the goal was ruled out for a very narrow offside on the Pole in the buildup.\n Site search\nBarca Blaugranes main menu\nFiled under:\nReal Betis vs Barcelona, La Liga: Final Score 2-4, Ferran Torres scores hat-trick as Barça win wild game on the road\nThree huge points and an impressive attacking display\nShare this story\nShare\nAll sharing options for:\nReal Betis vs Barcelona, La Liga: Final Score 2-4, Ferran Torres scores hat-trick as Barça win wild game on the road\nBarcelona will finish the weekend in third place in La Liga and remain alive in the title race thanks to a highly entertaining 4-2 win over Real Betis at the Benito Villamarín on Sunday evening.\n\n- In Barcelona's last match, they played against Real Betis and won with a final score of 4-2. Ferran Torres scored a hat-trick in that match. The game took place at the Benito Villamarín stadium. \n\nTERMINATE\n\n"
+        "- Let's start...\n\n- Great! What would you like to know or discuss today?\n\n- I would like to know the result of Barcelona's last match. Could you help me with that?\n\n- Of course! Let me look that up for you. Give me just a moment to find the result of Barcelona's last match.\n\n- Barcelona Results ; Mon, Apr 29. BAR · 4 - 2 ; Sun, Apr 21. RMA · 3 - 2 ; Tue, Apr 16. BAR · 1 - 4 2nd Leg · Paris Saint-Germain wins 6-4 on aggregate ; Sat, Apr 13./nBarcelona Football Club team news on Sky Sports - See fixtures, live scores, results, stats, video, photos and more../nBarça first team results page for LaLiga, Champions League and Copa del Rey./nApr 22, 2024 — Apr 22, 2024Matches ; 04/05/24, LAL · Girona · 4 - 2 · Barcelona ; 13/05/24, LAL · Barcelona · 12 : 00 · Real Sociedad./nBarcelona scores, fixtures, standings and player stats\nBarcelona\nDetails\nMatches\nSquad\nAbout Barcelona\nBarcelona live scores, players, season schedule and today’s results are available on Sofascore.\n Barcelona scores, fixtures, standings and player stats\nBarcelona\nAbout Barcelona\nBarcelona live scores, players, season schedule and today’s results are available on Sofascore.\n Barcelona previous match\nBarcelona previous match was against Mallorca in LaLiga, the match ended\nwith result 1 - 0 (Barcelona won the match).\n Barcelona previous match\nBarcelona previous match was against Mallorca in LaLiga, the match ended\nwith result 1 - 0 (Barcelona won the match).\n Barcelona next match\nBarcelona will play the next match against Napoli on Mar 12, 2024, 8:00:00 PM UTC in UEFA Champions League.\n\n\n- The result of Barcelona's last match was a 1-0 victory against Mallorca in LaLiga. Would you like to know who scored the goal or any other details about the match?\n\n- Yes, it would be great to know who scored the goal for Barcelona in their last match against Mallorca in LaLiga. If you have any other details about the match, please share them as well.\n\n- Let me find out who scored the goal for Barcelona in their last match against Mallorca in LaLiga. Just a moment, please.\n\n- Error: 502 Server Error: Bad Gateway for url: https://api.tavily.com/search\n\n- It seems there was an error while trying to retrieve the information about the goal scorer in Barcelona's last match. Unfortunately, I couldn't provide you with that specific detail at the moment. However, Barcelona won the match 1-0 against Mallorca in LaLiga. If you need any more information or have any other questions, feel free to ask. Just say TERMINATE when you're ready to end our conversation.\n\n"
       ]
     },
     {
       "id": 85,
       "type": "SimpleChat",
       "pos": [
-        4767.864676670725,
-        6128.657693018908
+        736.9847440177633,
+        7491.017610605757
       ],
       "size": {
         "0": 400,
         "1": 208.00003051757812
       },
       "flags": {},
-      "order": 74,
+      "order": 75,
       "mode": 2,
       "inputs": [
         {
@@ -935,15 +612,15 @@
       "id": 86,
       "type": "AddTool",
       "pos": [
-        4447.864676670725,
-        6348.657693018908
+        416.98474401776343,
+        7711.017610605757
       ],
       "size": {
         "0": 241.79998779296875,
         "1": 66
       },
       "flags": {},
-      "order": 57,
+      "order": 56,
       "mode": 2,
       "inputs": [
         {
@@ -990,15 +667,15 @@
       "id": 81,
       "type": "ConversableAgentCreator",
       "pos": [
-        3767.8646766707243,
-        6168.657693018908
+        -263.01525598223844,
+        7531.017610605757
       ],
       "size": {
         "0": 553.4922485351562,
         "1": 323.9166564941406
       },
       "flags": {},
-      "order": 14,
+      "order": 3,
       "mode": 2,
       "inputs": [
         {
@@ -1030,15 +707,15 @@
       "id": 84,
       "type": "ConversableAgentCreator",
       "pos": [
-        3767.8646766707243,
-        6558.657693018908
+        -263.01525598223844,
+        7921.017610605757
       ],
       "size": {
         "0": 385.6876525878906,
         "1": 276.0480651855469
       },
       "flags": {},
-      "order": 15,
+      "order": 4,
       "mode": 2,
       "inputs": [
         {
@@ -1067,148 +744,24 @@
       ]
     },
     {
-      "id": 114,
-      "type": "ConversableAgentCreator",
-      "pos": [
-        3730,
-        1090
-      ],
-      "size": {
-        "0": 376.8870544433594,
-        "1": 126.6159896850586
-      },
-      "flags": {},
-      "order": 16,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "llm_model",
-          "type": "LLM_MODEL",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "agent",
-          "type": "AGENT",
-          "links": [
-            172,
-            180
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ConversableAgentCreator"
-      },
-      "widgets_values": [
-        "Interviewer",
-        "You are a dog. You can only say \"woof.\""
-      ]
-    },
-    {
-      "id": 119,
-      "type": "ChangeSystemMessage",
-      "pos": [
-        4220,
-        1350
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 46,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "agent",
-          "type": "AGENT",
-          "link": 172
-        }
-      ],
-      "outputs": [
-        {
-          "name": "agent",
-          "type": "AGENT",
-          "links": [
-            181
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ChangeSystemMessage"
-      },
-      "widgets_values": [
-        "You are a cat. You can only say \"meow.\""
-      ]
-    },
-    {
-      "id": 128,
-      "type": "GenerateReply",
-      "pos": [
-        4650,
-        1350
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 60,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "agent",
-          "type": "AGENT",
-          "link": 181
-        },
-        {
-          "name": "sender",
-          "type": "AGENT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "reply",
-          "type": "STRING",
-          "links": [
-            182
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GenerateReply"
-      },
-      "widgets_values": [
-        "Hi, who are you???"
-      ]
-    },
-    {
       "id": 122,
       "type": "ShowText|pysssss",
       "pos": [
-        5070,
-        1350
+        1041.174402098912,
+        1855.391392409329
       ],
       "size": {
         "0": 425.95465087890625,
         "1": 109.02389526367188
       },
       "flags": {},
-      "order": 77,
+      "order": 88,
       "mode": 2,
       "inputs": [
         {
           "name": "text",
           "type": "STRING",
-          "link": 182,
+          "link": 446,
           "widget": {
             "name": "text"
           }
@@ -1227,28 +780,28 @@
       },
       "widgets_values": [
         "",
-        "Meow."
+        "Oh, look, a curious human asking for the magnificent meow feline, meow. Well, I am your resident sarcastic talking cat, meow. So, what brings you to my domain, meow?"
       ]
     },
     {
       "id": 130,
       "type": "ShowText|pysssss",
       "pos": [
-        4690,
-        950
+        661.1744020989124,
+        1455.391392409329
       ],
       "size": {
         "0": 425.95465087890625,
         "1": 109.02389526367188
       },
       "flags": {},
-      "order": 61,
+      "order": 73,
       "mode": 2,
       "inputs": [
         {
           "name": "text",
           "type": "STRING",
-          "link": 185,
+          "link": 444,
           "widget": {
             "name": "text"
           }
@@ -1267,101 +820,22 @@
       },
       "widgets_values": [
         "",
-        "Woof."
-      ]
-    },
-    {
-      "id": 2,
-      "type": "LLMComplete",
-      "pos": [
-        3700,
-        -570
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 17,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "llm_model",
-          "type": "LLM_MODEL",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "completion",
-          "type": "STRING",
-          "links": [
-            2
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMComplete"
-      },
-      "widgets_values": [
-        "Hi, how are you?"
-      ]
-    },
-    {
-      "id": 3,
-      "type": "ShowText|pysssss",
-      "pos": [
-        4120,
-        -570
-      ],
-      "size": {
-        "0": 374.5499267578125,
-        "1": 136.15493774414062
-      },
-      "flags": {},
-      "order": 48,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 2,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "",
-        "Hello! I'm just a computer program, so I don't have feelings, but I'm here and ready to help you with anything you need. How can I assist you today?"
+        "Hello there, woof! I am woof a happy woof and wise woof talking dog woof! How can I help woof woof you today?"
       ]
     },
     {
       "id": 51,
       "type": "GroupChatManagerCreator",
       "pos": [
-        3850,
-        3200
+        -172.37849422735073,
+        4515.665692897185
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 18,
+      "order": 5,
       "mode": 2,
       "inputs": [
         {
@@ -1394,15 +868,15 @@
       "id": 21,
       "type": "ConversableAgentCreator",
       "pos": [
-        3860,
-        3460
+        -162.3784942273508,
+        4775.665692897188
       ],
       "size": {
         "0": 387.46636962890625,
         "1": 200
       },
       "flags": {},
-      "order": 19,
+      "order": 6,
       "mode": 2,
       "inputs": [
         {
@@ -1434,15 +908,15 @@
       "id": 22,
       "type": "ConversableAgentCreator",
       "pos": [
-        3860,
-        3710
+        -162.3784942273508,
+        5025.665692897192
       ],
       "size": {
         "0": 387.46636962890625,
         "1": 200
       },
       "flags": {},
-      "order": 20,
+      "order": 7,
       "mode": 2,
       "inputs": [
         {
@@ -1474,15 +948,15 @@
       "id": 29,
       "type": "ConversableAgentCreator",
       "pos": [
-        3860,
-        3960
+        -162.3784942273508,
+        5275.665692897191
       ],
       "size": {
         "0": 387.46636962890625,
         "1": 200
       },
       "flags": {},
-      "order": 21,
+      "order": 8,
       "mode": 2,
       "inputs": [
         {
@@ -1514,15 +988,15 @@
       "id": 23,
       "type": "ConversableAgentCreator",
       "pos": [
-        3860,
-        4210
+        -162.3784942273508,
+        5525.665692897189
       ],
       "size": {
         "0": 385.6876525878906,
         "1": 276.0480651855469
       },
       "flags": {},
-      "order": 22,
+      "order": 9,
       "mode": 2,
       "inputs": [
         {
@@ -1554,15 +1028,15 @@
       "id": 194,
       "type": "GroupChat",
       "pos": [
-        4420,
-        3550
+        397.6215057726522,
+        4865.665692897189
       ],
       "size": {
         "0": 400,
         "1": 332
       },
       "flags": {},
-      "order": 49,
+      "order": 48,
       "mode": 2,
       "inputs": [
         {
@@ -1646,15 +1120,15 @@
       "id": 27,
       "type": "ShowText|pysssss",
       "pos": [
-        4910,
-        3480
+        887.6215057726522,
+        4795.665692897188
       ],
       "size": {
         "0": 444.119140625,
         "1": 665.277099609375
       },
       "flags": {},
-      "order": 62,
+      "order": 61,
       "mode": 2,
       "inputs": [
         {
@@ -1679,22 +1153,22 @@
       },
       "widgets_values": [
         "",
-        "- Alice, Sam, Bob, please introduce yourself.\n\n- Alice: Hi everyone, I'm Alice. Ready to catch those Mafia members!\n\n- Sam: Hey, I'm Sam. Let's work together to figure out who the Mafia are!\n\n- Bob: Hey, I'm Bob. Excited to play this game with you all! Let's see who we can trust.\n\n- Alright, it's time for the first voting round. Please type the name of the person you suspect is Mafia.\n\n- Alice, Sam, Bob: Please vote now.\n\n- Alice has voted for Sam.\n\nSam has voted for Bob.\n\nBob has voted for Alice.\n\nThe votes are in. Alice has the most votes. Alice, you have been terminated. \n\nContinuing to the next round. Please stay focused.\n\n- Bob: Good job, team. One down, more to go. Let's keep working together to find the Mafia!\n\n- Next voting round: Bob, Sam, please vote now.\n\n- Bob has voted for Sam.\n\nSam has voted for Bob.\n\nIt's a tie. Bob and Sam, you need to discuss and come to a decision. Please vote again once you have decided.\n\n- Sam has voted for Bob.\n\nBob has been terminated. Bob was not Mafia. \n\nSam, you are the winner! Congratulations on surviving till the end. \n\nGAME OVER. TERMINATE.\n\n- Thank you all for playing! Great job, everyone.\n\n- TERMINATE\n\n"
+        "- Alice, Sam, Bob, please introduce yourself.\n\n- Alice: Hi, I'm Alice. Just a civilian trying to figure out who the Mafia is. Let's work together to find them!\n\n- Sam: Hey, I'm Sam. Ready to investigate and catch those Mafia members! Let's do this, team!\n\n- Bob: Hey everyone, I'm Bob. Ready to strategize and figure out who the Mafia is. Let's work together to win this game!\n\n- Alright, it's time to vote. Please send me your votes privately.\n\n- Alice has voted for Bob. \nSam has voted for Bob. \nBob has voted for Sam. \n\nBob has the most votes. Bob, you have been eliminated. \n\nTERMINATE\n\n- Great game everyone! Well done, Mafia team for deceiving the civilians. Thank you all for playing!\n\n- TERMINATE\n\n"
       ]
     },
     {
       "id": 26,
       "type": "ShowText|pysssss",
       "pos": [
-        5410,
-        3480
+        1387.6215057726517,
+        4795.665692897188
       ],
       "size": {
         "0": 429.68719482421875,
         "1": 291.8562316894531
       },
       "flags": {},
-      "order": 63,
+      "order": 62,
       "mode": 2,
       "inputs": [
         {
@@ -1719,22 +1193,22 @@
       },
       "widgets_values": [
         "",
-        "The players introduced themselves and played a game to identify the Mafia members. Alice was terminated first, and Bob was eliminated later, leading to Sam as the winner."
+        "The conversation revolved around a game of Mafia where Alice, Sam, and Bob introduced themselves and worked together to find the Mafia members. Eventually, Bob was voted out of the game and revealed to be on the Mafia team. Elon concluded the game, acknowledging the successful deception by the Mafia team and thanked everyone for playing."
       ]
     },
     {
       "id": 171,
       "type": "ConversableAgentCreator",
       "pos": [
-        4180,
-        8320
+        154.2400432542799,
+        9693.605240495075
       ],
       "size": {
         "0": 553.4922485351562,
         "1": 323.9166564941406
       },
       "flags": {},
-      "order": 23,
+      "order": 10,
       "mode": 2,
       "inputs": [
         {
@@ -1766,15 +1240,15 @@
       "id": 172,
       "type": "ConversableAgentCreator",
       "pos": [
-        4760,
-        8320
+        734.240043254278,
+        9693.605240495075
       ],
       "size": {
         "0": 553.4922485351562,
         "1": 323.9166564941406
       },
       "flags": {},
-      "order": 24,
+      "order": 11,
       "mode": 2,
       "inputs": [
         {
@@ -1806,15 +1280,15 @@
       "id": 179,
       "type": "AddTool",
       "pos": [
-        4330,
-        8050
+        304.24004325427927,
+        9423.605240495075
       ],
       "size": {
         "0": 241.79998779296875,
         "1": 66
       },
       "flags": {},
-      "order": 75,
+      "order": 74,
       "mode": 2,
       "inputs": [
         {
@@ -1861,15 +1335,15 @@
       "id": 196,
       "type": "GroupChatAdvanced",
       "pos": [
-        4700,
-        7380
+        674.240043254278,
+        8753.605240495075
       ],
       "size": {
         "0": 400,
         "1": 528.0001220703125
       },
       "flags": {},
-      "order": 90,
+      "order": 89,
       "mode": 2,
       "inputs": [
         {
@@ -1959,15 +1433,15 @@
       "id": 161,
       "type": "ShowText|pysssss",
       "pos": [
-        5200,
-        7200
+        1174.2400432542768,
+        8573.605240495075
       ],
       "size": {
         "0": 677.6331787109375,
         "1": 978.6608276367188
       },
       "flags": {},
-      "order": 95,
+      "order": 98,
       "mode": 2,
       "inputs": [
         {
@@ -1992,22 +1466,22 @@
       },
       "widgets_values": [
         "",
-        "- Let's start\n\n- Sure, what would you like to talk about?\n\n- Hello! What's on your mind today?\n\n- I believe that Barcelona was the best soccer team in 2005. Would you like me to find information to support this claim?\n\n- Yes, please go ahead and present your argument for why Barcelona was the best soccer team in 2005.\n\n- Barcelona did have a successful season in 2005 with players like Ronaldinho leading the team to victory. They won La Liga that year and had a strong performance in the UEFA Champions League. Their style of play and attacking flair were admired by many, making them a popular choice for the best team of 2005. Let me know if you need more information to support your claim.\n\n- Barcelona had a formidable team in 2005, achieving success in both domestic and international competitions. With players like Ronaldinho, Deco, and Samuel Eto'o, they played attractive football that captivated fans around the world. Their performances in La Liga and the Champions League were memorable, further solidifying their status as one of the best teams of that year. If you need more details or statistics to back up your argument, feel free to ask!\n\n- \n\n- The 2005-06 season was Futbol Club Barcelona's 107th season in existence and 77th consecutive season in the top flight of Spanish football, La Liga.It was manager Frank Rijkaard's third season in charge of the club, a season in which he managed to successfully retain the La Liga title, as well as winning the UEFA Champions League and Spanish Super Cup./nFCBarcelona Squad For 2005-06. History: 70 matches played, 156 goals scored, 3 titles won./nMiscellaneous Stats 2004-2005 Barcelona: La Liga Table; Performance; Player Nation Pos Age 90s CrdY CrdR 2CrdY Fls Fld Off Crs Int TklW PKwon PKcon OG Matches; Samuel Eto'o: cm CMR: FW: 23: ... Regular season, La Liga. promoted, relegated, Cup Qualifier View Complete League Table; ... > 2004-2005 Barcelona Stats, La Liga. Full Site Menu. Return .../nPerformance Penalty Kicks; Player Nation Pos Age MP Starts Min 90s GA GA90 SoTA Saves Save% W D L CS CS% PKatt PKA PKsv PKm ... Regular season, La Liga. promoted, relegated, Cup Qualifier View Complete League Table; ... > 2005-2006 Barcelona Stats, La Liga. Full Site Menu. Return to Top;/nThe 2005-06 season was Futbol Club Barcelona's 107th season in existence and 77th consecutive season in the top flight of Spanish football, La Liga. It was manager Frank Rijkaard's third season in charge of the club, a season in which he managed to successfully retain the La Liga title, as well as winning the UEFA Champions League and Spanish Super Cup. The squad was largely unchanged from ...\n\n- After reviewing the performance of Barcelona in the 2005-2006 season, it is evident that they were a dominant team, winning La Liga, the UEFA Champions League, and the Spanish Super Cup. Led by stars like Ronaldinho, Deco, and Samuel Eto'o, Barcelona's attacking prowess and success in major competitions support the argument that they were the best soccer team in 2005. The statistics and achievements speak for themselves. Thus, I conclude that Barcelona was the better team in 2005. Man1 is correct. TERMINATE\n\n"
+        "- Let's start\n\n- Sounds good! What would you like to talk about?\n\n- Which soccer team played better in 2005?\n\n- In 2005, Liverpool FC had an impressive year winning the UEFA Champions League, so they could be considered one of the top-performing teams.\n\n- I agree with Man3. Liverpool FC's victory in the UEFA Champions League in 2005 is a significant achievement that showcases their impressive performance that year. They demonstrated resilience, skill, and determination throughout the tournament, making them the standout team of 2005. Liverpool FC played better in 2005. TERMINATE\n\n"
       ]
     },
     {
       "id": 160,
       "type": "ShowText|pysssss",
       "pos": [
-        5890,
-        7200
+        1864.240043254276,
+        8573.605240495075
       ],
       "size": {
         "0": 771.2699584960938,
         "1": 744.137451171875
       },
       "flags": {},
-      "order": 96,
+      "order": 99,
       "mode": 2,
       "inputs": [
         {
@@ -2032,77 +1506,22 @@
       },
       "widgets_values": [
         "",
-        "Barcelona's impressive performance in the 2005-2006 season, winning La Liga, the UEFA Champions League, and the Spanish Super Cup, led by key players like Ronaldinho, Deco, and Samuel Eto'o, supports the argument that they were the best soccer team in 2005."
+        "Liverpool FC played better in 2005 and their victory in the UEFA Champions League showcased their impressive performance that year."
       ]
-    },
-    {
-      "id": 164,
-      "type": "AddTool",
-      "pos": [
-        4260,
-        7410
-      ],
-      "size": {
-        "0": 241.79998779296875,
-        "1": 66
-      },
-      "flags": {},
-      "order": 58,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "tool",
-          "type": "TOOL",
-          "link": 307
-        },
-        {
-          "name": "assistant",
-          "type": "AGENT",
-          "link": 249
-        },
-        {
-          "name": "executor",
-          "type": "AGENT",
-          "link": 298
-        }
-      ],
-      "outputs": [
-        {
-          "name": "assistant",
-          "type": "AGENT",
-          "links": [
-            344
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "executor",
-          "type": "AGENT",
-          "links": [
-            300
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "AddTool"
-      }
     },
     {
       "id": 177,
       "type": "GroupChatManagerCreator",
       "pos": [
-        3720,
-        7000
+        -305.7599567457207,
+        8373.605240495075
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 25,
+      "order": 12,
       "mode": 2,
       "inputs": [
         {
@@ -2135,15 +1554,15 @@
       "id": 159,
       "type": "ConversableAgentCreator",
       "pos": [
-        3720,
-        7570
+        -305.7599567457207,
+        8943.605240495075
       ],
       "size": {
         "0": 553.4922485351562,
         "1": 323.9166564941406
       },
       "flags": {},
-      "order": 26,
+      "order": 13,
       "mode": 2,
       "inputs": [
         {
@@ -2175,15 +1594,15 @@
       "id": 176,
       "type": "ConversableAgentCreator",
       "pos": [
-        3720,
-        7940
+        -305.7599567457207,
+        9313.605240495075
       ],
       "size": {
         "0": 553.4922485351562,
         "1": 323.9166564941406
       },
       "flags": {},
-      "order": 27,
+      "order": 14,
       "mode": 2,
       "inputs": [
         {
@@ -2212,135 +1631,11 @@
       ]
     },
     {
-      "id": 127,
-      "type": "GenerateReply",
-      "pos": [
-        4240,
-        940
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 47,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "agent",
-          "type": "AGENT",
-          "link": 180
-        },
-        {
-          "name": "sender",
-          "type": "AGENT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "reply",
-          "type": "STRING",
-          "links": [
-            185
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GenerateReply"
-      },
-      "widgets_values": [
-        "Hi, who are you??"
-      ]
-    },
-    {
-      "id": 113,
-      "type": "ShowText|pysssss",
-      "pos": [
-        5300,
-        2370
-      ],
-      "size": {
-        "0": 486.4032287597656,
-        "1": 661.095458984375
-      },
-      "flags": {},
-      "order": 92,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 162,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "",
-        "- Hi, I'm the CEO. How did the interview go? Tell me more about it. I'll close the conversation when we're done.\n\n- I'm not sure which interview you're referring to. Could you provide me with more details so I can give you an accurate update?\n\n- I'm referring to the last candidate we interviewed for the open position. Can you share your thoughts on whether we should hire them or not?\n\n- I don't have access to the interview results, but I can help you analyze the candidate's qualifications if you share them with me.\n\n- Thank you for offering to help. Based on the candidate's qualifications and how they presented themselves during the interview, do you think we should extend an offer to them?\n\n- I don't have that information at the moment, but I can review the candidate's qualifications and provide you with an informed recommendation.\n\n- Please take a moment to review the candidate's qualifications and share your recommendation with me once you have evaluated them thoroughly. Thank you for your assistance. Let's prioritize alignment with our company values and the needs of our team when making the final decision. Have you reached a conclusion regarding whether we should hire the candidate or not?\n\n**TERMINATE**\n\n"
-      ]
-    },
-    {
-      "id": 112,
-      "type": "ShowText|pysssss",
-      "pos": [
-        5810,
-        2380
-      ],
-      "size": {
-        "0": 499.156005859375,
-        "1": 224.67919921875
-      },
-      "flags": {},
-      "order": 93,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 163,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [],
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "",
-        "Please take a moment to review the candidate's qualifications and share your recommendation with me once you have evaluated them thoroughly. Thank you for your assistance. Let's prioritize alignment with our company values and the needs of our team when making the final decision. Have you reached a conclusion regarding whether we should hire the candidate or not?\n\n****"
-      ]
-    },
-    {
       "id": 18,
       "type": "ShowText|pysssss",
       "pos": [
-        5240,
-        1820
+        1211.1351594535172,
+        2331.7326442334825
       ],
       "size": {
         "0": 525.730224609375,
@@ -2372,22 +1667,22 @@
       },
       "widgets_values": [
         "",
-        "Your analogy is creative, but let's dive deeper. Can you explain the differences between supervised and unsupervised learning in the context of AI? \n\n"
+        "Your analogy is creative, but in AI, we need to stick to the technical details. The regularization parameter indeed controls the strength of the penalty term and plays a crucial role in finding the right balance between fitting the training data and preventing overfitting. Thank you for your effort, but I'm looking for a more precise explanation. "
       ]
     },
     {
       "id": 20,
       "type": "ShowText|pysssss",
       "pos": [
-        4720,
-        1810
+        691.1351594535186,
+        2321.7326442334825
       ],
       "size": {
         "0": 486.4032287597656,
         "1": 661.095458984375
       },
       "flags": {},
-      "order": 64,
+      "order": 63,
       "mode": 2,
       "inputs": [
         {
@@ -2412,86 +1707,15 @@
       },
       "widgets_values": [
         "",
-        "- Let's start... What is L2 regularization? \n\n- L2 regularization is like giving your model a cozy blanket to prevent it from overfitting and getting too comfortable with the training data. It adds a penalty for large weights in the model to keep things in check. Like going to the gym to prevent becoming too bulky, but for machine learning models! 😄\n\nWhat's next? 😄\n\n- Your analogy is creative, but let's dive deeper. Can you explain the differences between supervised and unsupervised learning in the context of AI? \n\nTERMINATE\n\n"
-      ]
-    },
-    {
-      "id": 47,
-      "type": "SimpleChat",
-      "pos": [
-        4260,
-        1950
-      ],
-      "size": {
-        "0": 400,
-        "1": 208
-      },
-      "flags": {},
-      "order": 50,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "initiator",
-          "type": "AGENT",
-          "link": 71
-        },
-        {
-          "name": "recipient",
-          "type": "AGENT",
-          "link": 72
-        }
-      ],
-      "outputs": [
-        {
-          "name": "chat_history",
-          "type": "STRING",
-          "links": [
-            73
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "summary",
-          "type": "STRING",
-          "links": [
-            74
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "initiator",
-          "type": "AGENT",
-          "links": [
-            226
-          ],
-          "shape": 3,
-          "slot_index": 2
-        },
-        {
-          "name": "recipient",
-          "type": "AGENT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SimpleChat"
-      },
-      "widgets_values": [
-        "last_msg",
-        true,
-        "Let's start... What is L2 regularization? ",
-        3
+        "- Let's start... What is L2 regularization? \n\n- Ah, L2 regularization is like giving your model a gentle reminder not to overcomplicate things. It helps prevent overfitting by adding a penalty term to the loss function that is proportional to the square of the weights. It's like telling your model, \"Hey, keep it simple, buddy!\" 😄\n\n- Your explanation of L2 regularization is on the right track, but remember, in this field, precision and clarity are paramount. Can you elaborate on how the regularization parameter influences the impact of the penalty term on the weights?\n\n- Ah, gotcha! Think of the regularization parameter as a volume knob for the penalty term. When you crank it up, the penalty for large weights increases, so the model will prioritize simpler solutions. But if you turn it down, the model can get a bit wild and start overfitting. It's all about finding that sweet spot, like tuning a guitar before a rock concert! 🎸\n\n- Your analogy is creative, but in AI, we need to stick to the technical details. The regularization parameter indeed controls the strength of the penalty term and plays a crucial role in finding the right balance between fitting the training data and preventing overfitting. Thank you for your effort, but I'm looking for a more precise explanation. TERMINATE\n\n"
       ]
     },
     {
       "id": 148,
       "type": "ChangeSystemMessage",
       "pos": [
-        4310,
-        2560
+        285.82645823175386,
+        3074.82277363742
       ],
       "size": {
         "0": 400,
@@ -2526,126 +1750,18 @@
       ]
     },
     {
-      "id": 110,
-      "type": "ConversableAgentCreator",
-      "pos": [
-        4320,
-        2810
-      ],
-      "size": {
-        "0": 382.6528015136719,
-        "1": 221.51744079589844
-      },
-      "flags": {},
-      "order": 28,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "llm_model",
-          "type": "LLM_MODEL",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "agent",
-          "type": "AGENT",
-          "links": [
-            228
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ConversableAgentCreator"
-      },
-      "widgets_values": [
-        "CEO",
-        "You are the CEO of the company. Please ask your employee for feedback on the last candidate's interview. Inquire whether we should hire this candidate or refrain from extending an offer.\n\nAfter gathering your feedback, please finalize your decision regarding the candidate. Clearly state whether we should hire them or not and explain your reasoning. Conclude your message with the code word \"TERMINATE.\"\n\nWrite short messages."
-      ]
-    },
-    {
-      "id": 111,
-      "type": "SimpleChat",
-      "pos": [
-        4780,
-        2810
-      ],
-      "size": {
-        "0": 422.5950622558594,
-        "1": 221.73658752441406
-      },
-      "flags": {},
-      "order": 78,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "initiator",
-          "type": "AGENT",
-          "link": 228
-        },
-        {
-          "name": "recipient",
-          "type": "AGENT",
-          "link": 229
-        }
-      ],
-      "outputs": [
-        {
-          "name": "chat_history",
-          "type": "STRING",
-          "links": [
-            162
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "summary",
-          "type": "STRING",
-          "links": [
-            163
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "initiator",
-          "type": "AGENT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "recipient",
-          "type": "AGENT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SimpleChat"
-      },
-      "widgets_values": [
-        "last_msg",
-        true,
-        "Hi, I'm the CEO. How did the interview go? Tell me more about it. I'll close the conversation when we're done.",
-        5
-      ]
-    },
-    {
       "id": 16,
       "type": "ConversableAgentCreator",
       "pos": [
-        3810,
-        2300
+        -218.86484054648076,
+        2811.7326442334797
       ],
       "size": {
         "0": 387.46636962890625,
         "1": 200
       },
       "flags": {},
-      "order": 29,
+      "order": 15,
       "mode": 2,
       "inputs": [
         {
@@ -2677,15 +1793,15 @@
       "id": 11,
       "type": "ConversableAgentCreator",
       "pos": [
-        3810,
-        1940
+        -218.86484054648076,
+        2451.732644233482
       ],
       "size": {
         "0": 386.4830627441406,
         "1": 319.92181396484375
       },
       "flags": {},
-      "order": 30,
+      "order": 16,
       "mode": 2,
       "inputs": [
         {
@@ -2714,146 +1830,24 @@
       ]
     },
     {
-      "id": 45,
-      "type": "ConversableAgentCreator",
-      "pos": [
-        3710,
-        290
-      ],
-      "size": {
-        "0": 385.179931640625,
-        "1": 314.1119689941406
-      },
-      "flags": {},
-      "order": 31,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "llm_model",
-          "type": "LLM_MODEL",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "agent",
-          "type": "AGENT",
-          "links": [
-            68
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ConversableAgentCreator"
-      },
-      "widgets_values": [
-        "Interviewer",
-        "You are a happy, wise talking dog. You should answer questions. Every third word you say is \"woof.\""
-      ]
-    },
-    {
-      "id": 46,
-      "type": "ConvertAgentToLlamaindex",
-      "pos": [
-        4140,
-        290
-      ],
-      "size": {
-        "0": 243.60000610351562,
-        "1": 46
-      },
-      "flags": {},
-      "order": 51,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "agent",
-          "type": "AGENT",
-          "link": 68
-        },
-        {
-          "name": "optional_embed_model",
-          "type": "LLM_EMBED_MODEL",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model",
-          "type": "LLM_MODEL",
-          "links": [
-            69,
-            156,
-            313,
-            326
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ConvertAgentToLlamaindex"
-      }
-    },
-    {
-      "id": 4,
-      "type": "LLMSimpleWebPageReader",
-      "pos": [
-        4480,
-        230
-      ],
-      "size": {
-        "0": 315,
-        "1": 154
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 32,
-      "mode": 2,
-      "outputs": [
-        {
-          "name": "documents",
-          "type": "DOCUMENT",
-          "links": [
-            327
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMSimpleWebPageReader"
-      },
-      "widgets_values": [
-        "https://paulgraham.com/startupfunding.html",
-        "",
-        "",
-        "",
-        true
-      ]
-    },
-    {
       "id": 99,
       "type": "LLMComplete",
       "pos": [
-        4480,
-        -40
+        450.51657024726717,
+        455.743341847113
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 68,
-      "mode": 2,
+      "order": 76,
+      "mode": 0,
       "inputs": [
         {
           "name": "llm_model",
           "type": "LLM_MODEL",
-          "link": 156
+          "link": 437
         }
       ],
       "outputs": [
@@ -2878,21 +1872,21 @@
       "id": 9,
       "type": "LLMServiceContextAdv",
       "pos": [
-        4490,
-        440
+        460.51657024726717,
+        935.743341847113
       ],
       "size": {
         "0": 342.5999755859375,
         "1": 266
       },
       "flags": {},
-      "order": 67,
-      "mode": 2,
+      "order": 77,
+      "mode": 0,
       "inputs": [
         {
           "name": "llm_model",
           "type": "LLM_MODEL",
-          "link": 69
+          "link": 438
         },
         {
           "name": "llm_embed_model",
@@ -2934,16 +1928,16 @@
       "id": 189,
       "type": "LLMVectorStoreIndex",
       "pos": [
-        4880,
-        260
+        850.5165702472661,
+        755.743341847113
       ],
       "size": {
         "0": 380.4000244140625,
         "1": 66
       },
       "flags": {},
-      "order": 79,
-      "mode": 2,
+      "order": 93,
+      "mode": 0,
       "inputs": [
         {
           "name": "llm_model",
@@ -2980,16 +1974,16 @@
       "id": 100,
       "type": "ShowText|pysssss",
       "pos": [
-        4990,
-        -30
+        960.5165702472666,
+        465.743341847113
       ],
       "size": {
         "0": 425.95465087890625,
         "1": 109.02389526367188
       },
       "flags": {},
-      "order": 80,
-      "mode": 2,
+      "order": 92,
+      "mode": 0,
       "inputs": [
         {
           "name": "text",
@@ -3013,74 +2007,23 @@
       },
       "widgets_values": [
         "",
-        "Hello there, I am Woof happy to chat with you! How can I help you woof today?"
-      ]
-    },
-    {
-      "id": 186,
-      "type": "LLMQueryEngineAdv",
-      "pos": [
-        5310,
-        260
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 94,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "llm_model",
-          "type": "LLM_MODEL",
-          "link": 313
-        },
-        {
-          "name": "llm_index",
-          "type": "LLM_INDEX",
-          "link": 329
-        },
-        {
-          "name": "llm_message",
-          "type": "LIST",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "results",
-          "type": "STRING",
-          "links": [
-            315
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMQueryEngineAdv"
-      },
-      "widgets_values": [
-        "How to found a startup?",
-        10,
-        0.7
+        "Hello there, I am a wise and happy dog woof woof! Today is a great day to chase squirrels in the park, woof. How can I help you, my friend woof?"
       ]
     },
     {
       "id": 8,
       "type": "ShowText|pysssss",
       "pos": [
-        5760,
-        250
+        1730.5165702472657,
+        745.743341847113
       ],
       "size": {
         "0": 602.3403930664062,
         "1": 310.6611328125
       },
       "flags": {},
-      "order": 98,
-      "mode": 2,
+      "order": 104,
+      "mode": 0,
       "inputs": [
         {
           "name": "text",
@@ -3104,68 +2047,22 @@
       },
       "widgets_values": [
         "",
-        "I'm happy woof to assist you with that woof. To found a startup, it's essential woof to have a solid business idea woof. Start by identifying a problem woof in the market and create a solution woof for it woof. Seed firms are companies woof that invest exclusively in the earliest phases woof, often when the company woof is just an idea woof. They provide standardized deal terms woof that may be favorable if other startups have succeeded with them woof. Seed investors are more interested woof in the people woof behind the idea rather than just the idea itself woof. Getting advice woof from seed firms on technical and business problems woof can be beneficial in the early stages woof. Remember, it's crucial woof to work fast and iterate on your ideas efficiently woof. If you have any more questions woof, feel free to ask woof!"
+        "Woof, the key to starting a business is to spend wisely and work swiftly to create a prototype, woof. Family and friends can offer initial funds, woof. Seek support from angel investors for further funding, woof. Managing relationships with investors is vital, woof. Proceed carefully and question anything suspicious during discussions with VCs, woof. Successful startups often secure funding from various sources, woof. An effective way to understand the funding process is to track a hypothetical startup through different phases, woof. Proceed with caution, ask questions, woof. In each stage: woof, second round: woof, angel investors: woof. Acquire wisdom from angels and seek introductions from trusted advisors, woof. Approach the journey with careful navigation, diligence, and resilience, woof. The journey is yours to navigate, woof with diligence and resilience, woof. Woof, in the early stages, focus on refining the idea and building a strong team, woof. Seed investors prioritize the quality of the team over the idea itself, woof. Seek advice from seed firms on approaching VCs and solving technical problems, woof. Consider transitioning from seed funding to direct acquisition to avoid multiple funding rounds, woof. Woof, VC firms invest larger amounts later in the startup's lifecycle, woof with tougher terms, woof. Understand the structure of VC firms as funds managed by general partners, woof. Note the importance of due diligence and building relationships with investors at all stages of startup growth, woof."
       ]
-    },
-    {
-      "id": 262,
-      "type": "Note",
-      "pos": [
-        6526,
-        2100
-      ],
-      "size": {
-        "0": 350.31707763671875,
-        "1": 244.0272216796875
-      },
-      "flags": {},
-      "order": 33,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "You can send messages as an agent in the dialogue by using the \"Send Message\" node.\n\nAdditionally, you can create responses in dialogues using the \"Generate Reply\" node.\n\nAs demonstrated here, the agent produces various responses based on the dialogue state, which is configured through the \"Send Message\" nodes. You can see which first bid is the most favorable."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 263,
-      "type": "Note",
-      "pos": [
-        6971,
-        2499
-      ],
-      "size": {
-        "0": 347.9087829589844,
-        "1": 96.94061279296875
-      },
-      "flags": {},
-      "order": 34,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "You can also start a dialogue from various starting points."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 245,
       "type": "ConversableAgentCreator",
       "pos": [
-        6510,
-        1740
+        2456.6285521387904,
+        2255.113586256779
       ],
       "size": {
         "0": 376.8870544433594,
         "1": 126.6159896850586
       },
       "flags": {},
-      "order": 35,
+      "order": 17,
       "mode": 2,
       "inputs": [
         {
@@ -3199,15 +2096,15 @@
       "id": 246,
       "type": "ConversableAgentCreator",
       "pos": [
-        6510,
-        1920
+        2456.6285521387904,
+        2435.113586256779
       ],
       "size": {
         "0": 376.8870544433594,
         "1": 126.6159896850586
       },
       "flags": {},
-      "order": 36,
+      "order": 18,
       "mode": 2,
       "inputs": [
         {
@@ -3241,15 +2138,15 @@
       "id": 247,
       "type": "SendMessage",
       "pos": [
-        6920,
-        1730
+        2866.628552138791,
+        2245.113586256779
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 52,
+      "order": 50,
       "mode": 2,
       "inputs": [
         {
@@ -3296,15 +2193,15 @@
       "id": 249,
       "type": "GenerateReply",
       "pos": [
-        7340,
-        1730
+        3286.6285521387917,
+        2245.113586256779
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 69,
+      "order": 67,
       "mode": 2,
       "inputs": [
         {
@@ -3340,8 +2237,8 @@
       "id": 248,
       "type": "ShowText|pysssss",
       "pos": [
-        7770,
-        1740
+        3716.628552138792,
+        2255.113586256779
       ],
       "size": {
         "0": 305.6893005371094,
@@ -3373,15 +2270,15 @@
       },
       "widgets_values": [
         "",
-        "I appreciate your offer, but these tomatoes are top-quality. How about we meet in the middle at $12?"
+        "Sure, how about we meet in the middle at $12 for the tomatoes?"
       ]
     },
     {
       "id": 254,
       "type": "ShowText|pysssss",
       "pos": [
-        7780,
-        2000
+        3726.628552138792,
+        2515.113586256779
       ],
       "size": {
         "0": 305.6893005371094,
@@ -3413,15 +2310,15 @@
       },
       "widgets_values": [
         "",
-        "I understand your offer, but these tomatoes are top quality. How about we meet in the middle at $9?"
+        "Hmm, how about we meet in the middle at $9?"
       ]
     },
     {
       "id": 257,
       "type": "ShowText|pysssss",
       "pos": [
-        7790,
-        2250
+        3736.628552138792,
+        2765.113586256779
       ],
       "size": {
         "0": 305.6893005371094,
@@ -3453,22 +2350,22 @@
       },
       "widgets_values": [
         "",
-        "I appreciate your offer, but I'll have to kindly resist the temptation to accept it. How about we settle at $15 for these delicious tomatoes?"
+        "Hmm, how about we meet in the middle at $11?"
       ]
     },
     {
       "id": 258,
       "type": "GenerateReply",
       "pos": [
-        7360,
-        2240
+        3306.6285521387917,
+        2755.113586256779
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 72,
+      "order": 70,
       "mode": 2,
       "inputs": [
         {
@@ -3504,15 +2401,15 @@
       "id": 255,
       "type": "GenerateReply",
       "pos": [
-        7350,
-        1990
+        3296.6285521387917,
+        2505.113586256779
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 71,
+      "order": 69,
       "mode": 2,
       "inputs": [
         {
@@ -3548,15 +2445,15 @@
       "id": 256,
       "type": "SendMessage",
       "pos": [
-        6940,
-        2240
+        2886.628552138791,
+        2755.113586256779
       ],
       "size": {
         "0": 400,
         "1": 200
       },
       "flags": {},
-      "order": 54,
+      "order": 52,
       "mode": 2,
       "inputs": [
         {
@@ -3600,139 +2497,18 @@
       ]
     },
     {
-      "id": 253,
-      "type": "SendMessage",
-      "pos": [
-        6920,
-        1990
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 53,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "recipient",
-          "type": "AGENT",
-          "link": 415
-        },
-        {
-          "name": "sender",
-          "type": "AGENT",
-          "link": 416
-        }
-      ],
-      "outputs": [
-        {
-          "name": "recipient",
-          "type": "AGENT",
-          "links": [
-            418
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "sender",
-          "type": "AGENT",
-          "links": [
-            419
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SendMessage"
-      },
-      "widgets_values": [
-        "Hi, I want to buy tomatoes. How about 7$?"
-      ]
-    },
-    {
-      "id": 250,
-      "type": "SimpleChat",
-      "pos": [
-        7370,
-        2500
-      ],
-      "size": {
-        "0": 401.9701843261719,
-        "1": 251.0858154296875
-      },
-      "flags": {},
-      "order": 70,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "initiator",
-          "type": "AGENT",
-          "link": 411
-        },
-        {
-          "name": "recipient",
-          "type": "AGENT",
-          "link": 412
-        }
-      ],
-      "outputs": [
-        {
-          "name": "chat_history",
-          "type": "STRING",
-          "links": [
-            413
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "summary",
-          "type": "STRING",
-          "links": [
-            414
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "initiator",
-          "type": "AGENT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "recipient",
-          "type": "AGENT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SimpleChat"
-      },
-      "widgets_values": [
-        "reflection_with_llm",
-        false,
-        "Could you sell me these tomatoes at this price? ",
-        7
-      ]
-    },
-    {
       "id": 259,
       "type": "SimpleChat",
       "pos": [
-        7380,
-        3020
+        3326.6285521387917,
+        3535.113586256779
       ],
       "size": {
         "0": 401.9701843261719,
         "1": 251.0858154296875
       },
       "flags": {},
-      "order": 73,
+      "order": 71,
       "mode": 2,
       "inputs": [
         {
@@ -3793,8 +2569,8 @@
       "id": 260,
       "type": "ShowText|pysssss",
       "pos": [
-        7810,
-        3020
+        3756.628552138792,
+        3535.113586256779
       ],
       "size": {
         "0": 501.21551513671875,
@@ -3826,15 +2602,15 @@
       },
       "widgets_values": [
         "",
-        "- Hi, I want to buy tomatoes. How about 10$?\n\n- Could you sell me these tomatoes at this price? \n\n- I understand, but I can't go that low. How about we settle at $12?\n\n- Hmm, I really appreciate your offer, but my budget is $5. Is there any way you could sell me the tomatoes for that price?\n\n- I appreciate your budget, but these are high-quality tomatoes. How about we meet in the middle at $8?\n\n- I understand that they are high-quality tomatoes. How about we settle at $6?\n\n- I see you're determined to get a good deal. How about this: $9, and you have a deal?\n\n- Thank you for working with me. I appreciate your flexibility. Let's settle at $9.\n\n- Great! Thank you for your business. That will be $9 for the tomatoes. TERMINATE.\n\n"
+        "- Hi, I want to buy tomatoes. How about 10$?\n\n- Could you sell me these tomatoes at this price? \n\n- I appreciate your offer, but I believe these tomatoes are worth more than that. How about we settle on $12 for the lot?\n\n- I understand, but I can only pay $5 for the tomatoes. Would you be willing to make a deal at that price?\n\n- I understand your budget, but these are premium quality tomatoes. I can bring the price down to $10 just for you. What do you say?\n\n- Thank you for the offer, but I'm afraid $10 is still a bit above what I can pay. Would you be able to lower the price to $7?\n\n- I can see you're really keen on getting a good deal. How about we meet in the middle at $9 for the tomatoes? That's the best I can do for you. Deal?\n\n- Sounds like a fair deal. Thank you for meeting me halfway at $9 for the tomatoes. Deal!\n\n- Great! Thank you for your business. Here are your tomatoes. Enjoy! TERMINATE.\n\n"
       ]
     },
     {
       "id": 251,
       "type": "ShowText|pysssss",
       "pos": [
-        7800,
-        2500
+        3746.628552138792,
+        3015.113586256779
       ],
       "size": {
         "0": 501.21551513671875,
@@ -3866,15 +2642,15 @@
       },
       "widgets_values": [
         "",
-        "- Hi, I want to buy tomatoes. How about 5$?\n\n- Could you sell me these tomatoes at this price? \n\n- Hmm, how about we meet in the middle at $8?\n\n- I appreciate the offer, but I was hoping to stick to my budget of 5$. Could you consider selling them to me for that price?\n\n- I understand your budget, but these tomatoes are top quality. How about a special deal just for you at $7?\n\n- I appreciate the offer, but I really need to stick to my budget of 5$. Is there any way you could let me have them for that price?\n\n- Alright, I see you're set on that price. I'll make an exception for you this time. $5 it is. Deal?\n\n- Thank you so much for accommodating my budget! Yes, that sounds perfect. Deal!\n\n- Great! Here are your tomatoes for $5. Enjoy your purchase! TERMINATE\n\n"
+        "- Hi, I want to buy tomatoes. How about 5$?\n\n- Could you sell me these tomatoes at this price? \n\n- Hmm, I understand you're looking for a good deal, but these tomatoes are top quality. How about we meet halfway at $8?\n\n- I appreciate your offer, but my budget is a bit tight. Would you be able to sell them to me for $6?\n\n- I see where you're coming from, but these tomatoes are really worth more than that. How about $7, and I'll throw in a few extra tomatoes for you?\n\n- I understand the value you place on these tomatoes. $7 sounds fair, especially with the extra tomatoes. Thank you!\n\n- Great! You've got yourself a deal at $7 for the tomatoes, and I'll include those extra ones for you. Enjoy your purchase! TERMINATE\n\n"
       ]
     },
     {
       "id": 252,
       "type": "ShowText|pysssss",
       "pos": [
-        8340,
-        2500
+        4286.628552138793,
+        3015.113586256779
       ],
       "size": {
         "0": 501.21551513671875,
@@ -3906,15 +2682,15 @@
       },
       "widgets_values": [
         "",
-        "The user wanted to buy tomatoes for $5 and the assistant eventually agreed to sell them at that price."
+        "The customer negotiated to buy top-quality tomatoes for $7, with the seller including extra tomatoes in the deal."
       ]
     },
     {
       "id": 261,
       "type": "ShowText|pysssss",
       "pos": [
-        8350,
-        3020
+        4296.628552138793,
+        3535.113586256779
       ],
       "size": {
         "0": 501.21551513671875,
@@ -3946,91 +2722,22 @@
       },
       "widgets_values": [
         "",
-        "The buyer and seller settled on a price of $9 for the high-quality tomatoes after negotiating back and forth."
+        "The buyer negotiated with the seller to purchase tomatoes at $9 after initially offering $5, and the seller agreed to the new price."
       ]
-    },
-    {
-      "id": 150,
-      "type": "Note",
-      "pos": [
-        4430,
-        3350
-      ],
-      "size": {
-        "0": 377.7635498046875,
-        "1": 154.90451049804688
-      },
-      "flags": {},
-      "order": 37,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Example of how to use group chat. \n\nYou need a Group Chat Manager. Which will receive messages from one agent and forward them to all other agents. The Group Chat Manager reads all messages and determines who will speak next. He can't talk.\n\nFor now you can use 4 agents. But this is dumb, I will fix it by adding custom JS. Then you can click on a node and dynamically delete/add agents.\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 157,
-      "type": "Note",
-      "pos": [
-        4170,
-        4590
-      ],
-      "size": {
-        "0": 334.9471740722656,
-        "1": 69.45451354980469
-      },
-      "flags": {},
-      "order": 38,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "You can also use llamaindex utilities as tools"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 63,
-      "type": "Note",
-      "pos": [
-        5160,
-        5060
-      ],
-      "size": {
-        "0": 456.0566711425781,
-        "1": 372.19464111328125
-      },
-      "flags": {},
-      "order": 39,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "***** Suggested tool call (call_3fEa7hPE7MzDYJoVkH3wOTHK): elf_name_generator *****\nArguments: \n{\"query\": \"How to do what you love?\"}\n***********************************************************************************\n***** Suggested tool call (call_EzYjanFhnAdoozFjM2rcV6I3): elf_name_generator *****\nArguments: \n{\"query\": \"How to get startup ideas?\"}\n***********************************************************************************\n***** Suggested tool call (call_bSYj8Lw8nw7Di4t5VX5gEzJM): elf_name_generator *****\nArguments: \n{\"query\": \"How to detect bias?\"}\n***********************************************************************************\n***** Suggested tool call (call_RMKh4Om8d7wgDEfChhuzgXm3): elf_name_generator *****\nArguments: \n{\"query\": \"How to put ideas into words?\"}\n***********************************************************************************\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 36,
       "type": "ConversableAgentCreator",
       "pos": [
-        3728,
-        5309
+        -298.73256124442406,
+        6670.565129792002
       ],
       "size": {
         "0": 385.6876525878906,
         "1": 276.0480651855469
       },
       "flags": {},
-      "order": 40,
+      "order": 19,
       "mode": 2,
       "inputs": [
         {
@@ -4059,140 +2766,18 @@
       ]
     },
     {
-      "id": 1,
-      "type": "LLMOpenAIModel",
-      "pos": [
-        3700,
-        -940
-      ],
-      "size": {
-        "0": 315,
-        "1": 150
-      },
-      "flags": {},
-      "order": 41,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "Model",
-          "type": "LLM_MODEL",
-          "links": [
-            157
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "embed_model_only",
-          "type": "LLM_EMBED_MODEL",
-          "links": [
-            334
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LLMOpenAIModel"
-      },
-      "widgets_values": [
-        "gpt-3.5-turbo",
-        "",
-        "text-embedding-ada-002",
-        false
-      ]
-    },
-    {
-      "id": 183,
-      "type": "CreateTavilySearchTool",
-      "pos": [
-        3777.8646766707243,
-        5838.657693018908
-      ],
-      "size": {
-        "0": 400,
-        "1": 270.0002136230469
-      },
-      "flags": {},
-      "order": 42,
-      "mode": 2,
-      "outputs": [
-        {
-          "name": "tool",
-          "type": "TOOL",
-          "links": [
-            308
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CreateTavilySearchTool"
-      },
-      "widgets_values": [
-        "",
-        "tavily_search_tool_2",
-        "basic",
-        5,
-        true,
-        false,
-        "",
-        ""
-      ]
-    },
-    {
-      "id": 181,
-      "type": "CreateTavilySearchTool",
-      "pos": [
-        3720,
-        7250
-      ],
-      "size": {
-        "0": 400,
-        "1": 270.0000915527344
-      },
-      "flags": {},
-      "order": 43,
-      "mode": 2,
-      "outputs": [
-        {
-          "name": "tool",
-          "type": "TOOL",
-          "links": [
-            307
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CreateTavilySearchTool"
-      },
-      "widgets_values": [
-        "",
-        "tavily_search_tool",
-        "basic",
-        5,
-        false,
-        false,
-        "",
-        ""
-      ]
-    },
-    {
       "id": 182,
       "type": "CreateTavilySearchTool",
       "pos": [
-        3730,
-        8320
+        -295.7599567457207,
+        9693.605240495075
       ],
       "size": {
         "0": 400,
         "1": 270.0002136230469
       },
       "flags": {},
-      "order": 44,
+      "order": 20,
       "mode": 2,
       "outputs": [
         {
@@ -4218,17 +2803,1747 @@
         "",
         ""
       ]
+    },
+    {
+      "id": 106,
+      "type": "Anything Everywhere",
+      "pos": [
+        70,
+        -90
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LLM_MODEL",
+          "type": "*",
+          "link": 439,
+          "color_on": ""
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Anything Everywhere",
+        "group_restricted": 0,
+        "color_restricted": 0
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 46,
+      "type": "ConvertAgentToLlamaindex",
+      "pos": [
+        110.5165702472673,
+        785.743341847113
+      ],
+      "size": {
+        "0": 243.60000610351562,
+        "1": 46
+      },
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "link": 68
+        },
+        {
+          "name": "optional_embed_model",
+          "type": "LLM_EMBED_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "LLM_MODEL",
+          "links": [
+            313,
+            326,
+            437,
+            438
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConvertAgentToLlamaindex"
+      }
+    },
+    {
+      "id": 105,
+      "type": "Note",
+      "pos": [
+        852.5165702472661,
+        877.743341847113
+      ],
+      "size": {
+        "0": 367.8463439941406,
+        "1": 63.29185485839844
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Here we demonstrate a simple RAG system assimilating data from a web source. "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 135,
+      "type": "Note",
+      "pos": [
+        200.17440209891208,
+        1742.391392409329
+      ],
+      "size": {
+        "0": 368.5342712402344,
+        "1": 65.6380844116211
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "You can also change the system-prompt downstream of the original with something else using the Change System Message node."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 114,
+      "type": "ConversableAgentCreator",
+      "pos": [
+        -298.82559790108985,
+        1595.391392409329
+      ],
+      "size": {
+        "0": 376.8870544433594,
+        "1": 126.6159896850586
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "links": [
+            172,
+            443
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConversableAgentCreator"
+      },
+      "widgets_values": [
+        "Interviewer",
+        "You are a happy, wise talking dog. You always should answer questions with every third word as \"woof\" and some other dog-like communication."
+      ]
+    },
+    {
+      "id": 266,
+      "type": "GenerateReply",
+      "pos": [
+        193.17440209891205,
+        1456.894049983668
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 54,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "link": 443
+        },
+        {
+          "name": "sender",
+          "type": "AGENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "reply",
+          "type": "STRING",
+          "links": [
+            444
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GenerateReply"
+      },
+      "widgets_values": [
+        "Hi, who are you??"
+      ]
+    },
+    {
+      "id": 119,
+      "type": "ChangeSystemMessage",
+      "pos": [
+        191.17440209891205,
+        1855.391392409329
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 53,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "link": 172
+        }
+      ],
+      "outputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "links": [
+            445
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ChangeSystemMessage"
+      },
+      "widgets_values": [
+        "You are a un-amused, sarcastic talking cat. You always should answer questions with every third word as \"meow\" and some other cat-like communication."
+      ]
+    },
+    {
+      "id": 267,
+      "type": "GenerateReply",
+      "pos": [
+        610.1744020989124,
+        1853.894049983668
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 72,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "link": 445
+        },
+        {
+          "name": "sender",
+          "type": "AGENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "reply",
+          "type": "STRING",
+          "links": [
+            446
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GenerateReply"
+      },
+      "widgets_values": [
+        "Hi, who are you??"
+      ]
+    },
+    {
+      "id": 134,
+      "type": "Note",
+      "pos": [
+        -294.82559790108985,
+        1433.894049983668
+      ],
+      "size": {
+        "0": 377.0216064453125,
+        "1": 105.32913970947266
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This example is similar to the above example, however instead of converting agent to Llama-Index model, you can ask questions directly using \"Generate Reply\" \n\nThis is useful  if all you're doing is conversing with the agent, and do not need RAG features."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 109,
+      "type": "Note",
+      "pos": [
+        -210.59793485595736,
+        2265.6069487521277
+      ],
+      "size": {
+        "0": 374.2001953125,
+        "1": 139.38182067871094
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This demonstration show-cases what Conversational Agents can do. \n\nWe have two agents, the job interviewer, and the new graduate, they will try and perform a conversation between each other. "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 268,
+      "type": "Note",
+      "pos": [
+        766.8264582317536,
+        3112.82277363742
+      ],
+      "size": {
+        "0": 374.2001953125,
+        "1": 139.38182067871094
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Unfortunately for now, memory works within the confines of a single dialog. An agent does not remember information from the conversations with other agents."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 110,
+      "type": "ConversableAgentCreator",
+      "pos": [
+        295.82645823175386,
+        3324.82277363742
+      ],
+      "size": {
+        "0": 382.6528015136719,
+        "1": 221.51744079589844
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "links": [
+            228
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConversableAgentCreator"
+      },
+      "widgets_values": [
+        "CEO",
+        "You are the CEO of the company. Please ask your employee for feedback on the last candidate's interview. Inquire whether we should hire this candidate or refrain from extending an offer.\n\nAfter gathering your feedback, please finalize your decision regarding the candidate. Clearly state whether we should hire them or not and explain your reasoning. Conclude your message with the code word \"TERMINATE.\"\n\nWrite short messages."
+      ]
+    },
+    {
+      "id": 111,
+      "type": "SimpleChat",
+      "pos": [
+        755.8264582317536,
+        3324.82277363742
+      ],
+      "size": {
+        "0": 422.5950622558594,
+        "1": 221.73658752441406
+      },
+      "flags": {},
+      "order": 80,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "initiator",
+          "type": "AGENT",
+          "link": 228
+        },
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "link": 229
+        }
+      ],
+      "outputs": [
+        {
+          "name": "chat_history",
+          "type": "STRING",
+          "links": [
+            162
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            163
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "initiator",
+          "type": "AGENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SimpleChat"
+      },
+      "widgets_values": [
+        "last_msg",
+        true,
+        "Hi, I'm the CEO. How did the interview go? Tell me more about it. I'll close the conversation when we're done.",
+        5
+      ]
+    },
+    {
+      "id": 113,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1275.8264582317524,
+        2884.82277363742
+      ],
+      "size": {
+        "0": 486.4032287597656,
+        "1": 661.095458984375
+      },
+      "flags": {},
+      "order": 96,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 162,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "- Hi, I'm the CEO. How did the interview go? Tell me more about it. I'll close the conversation when we're done.\n\n- I'm sorry, but I don't have any information about an interview. Please provide me with more details so that I can assist you better.\n\n- It seems like there may have been some confusion. Let me clarify - did you interview a candidate recently? If so, could you please share your thoughts on whether we should hire them or not? Thank you.\n\n- I'm sorry for the confusion, but as an AI, I do not have the capability to conduct interviews. If you can provide me with more details about the candidate or the interview process, I can provide guidance on the decision to hire them.\n\n- Understood. Based on the information provided, I believe we are not discussing a specific candidate, so there is no decision to be made on this matter. Thank you for your assistance. TERMINATE.\n\n"
+      ]
+    },
+    {
+      "id": 112,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1785.8264582317524,
+        2894.82277363742
+      ],
+      "size": {
+        "0": 499.156005859375,
+        "1": 224.67919921875
+      },
+      "flags": {},
+      "order": 97,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 163,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Understood. Based on the information provided, I believe we are not discussing a specific candidate, so there is no decision to be made on this matter. Thank you for your assistance. ."
+      ]
+    },
+    {
+      "id": 269,
+      "type": "ConversableAgentCreator",
+      "pos": [
+        295.82645823175386,
+        4064.82277363742
+      ],
+      "size": {
+        "0": 382.6528015136719,
+        "1": 221.51744079589844
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "links": [
+            447
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConversableAgentCreator"
+      },
+      "widgets_values": [
+        "CEO",
+        "You are the CEO of the company. Please ask your employee for feedback on the last candidate's interview. Inquire whether we should hire this candidate or refrain from extending an offer.\n\nAfter gathering your feedback, please finalize your decision regarding the candidate. Clearly state whether we should hire them or not and explain your reasoning. Conclude your message with the code word \"TERMINATE.\"\n\nWrite short messages."
+      ]
+    },
+    {
+      "id": 270,
+      "type": "SimpleChat",
+      "pos": [
+        755.8264582317536,
+        4064.82277363742
+      ],
+      "size": {
+        "0": 422.5950622558594,
+        "1": 221.73658752441406
+      },
+      "flags": {},
+      "order": 95,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "initiator",
+          "type": "AGENT",
+          "link": 447
+        },
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "link": 448
+        }
+      ],
+      "outputs": [
+        {
+          "name": "chat_history",
+          "type": "STRING",
+          "links": [
+            450
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            449
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "initiator",
+          "type": "AGENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SimpleChat"
+      },
+      "widgets_values": [
+        "last_msg",
+        true,
+        "Hi, I'm the CEO. How did the interview go? Tell me more about it. I'll close the conversation when we're done.",
+        5
+      ]
+    },
+    {
+      "id": 271,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1785.8264582317524,
+        3634.82277363742
+      ],
+      "size": {
+        "0": 499.156005859375,
+        "1": 224.67919921875
+      },
+      "flags": {},
+      "order": 103,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 449,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Thank you for the feedback. Based on this, I think we should not extend an offer to this candidate as we need someone with a strong grasp of technical details. Please inform them politely that we won't be moving forward with their application. \n\n."
+      ]
+    },
+    {
+      "id": 272,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1275.8264582317524,
+        3624.82277363742
+      ],
+      "size": {
+        "0": 486.4032287597656,
+        "1": 661.095458984375
+      },
+      "flags": {},
+      "order": 102,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 450,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "- Hi, I'm the CEO. How did the interview go? Tell me more about it. I'll close the conversation when we're done.\n\n- The interview was insightful. The interviewee demonstrated a good understanding of L2 regularization but struggled with providing a precise technical explanation of how the regularization parameter influences the penalty term on the weights. Overall, there was a creative attempt at explaining technical concepts but lacked precision in the details requested.\n\n- Thank you for the feedback. Based on this, I think we should not extend an offer to this candidate as we need someone with a strong grasp of technical details. Please inform them politely that we won't be moving forward with their application. \n\nTERMINATE.\n\n"
+      ]
+    },
+    {
+      "id": 273,
+      "type": "ChangeSystemMessage",
+      "pos": [
+        291.82645823175386,
+        3932.82277363742
+      ],
+      "size": {
+        "0": 380.47540283203125,
+        "1": 54
+      },
+      "flags": {},
+      "order": 79,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "link": 454
+        },
+        {
+          "name": "system_message",
+          "type": "STRING",
+          "link": 453,
+          "widget": {
+            "name": "system_message"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "links": [
+            448
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ChangeSystemMessage"
+      },
+      "widgets_values": [
+        "You're the AI expert. Tell the CEO about the results of the interview. If you don't know what interview we're talking about, say so.\n\nWrite short messages.\n\nYou've summarized your interview on paper and is as follows:\n\n"
+      ]
+    },
+    {
+      "id": 275,
+      "type": "Text Concatenate",
+      "pos": [
+        50.82645823175389,
+        3939.82277363742
+      ],
+      "size": {
+        "0": 210,
+        "1": 142
+      },
+      "flags": {},
+      "order": 64,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 452,
+          "widget": {
+            "name": "text_a"
+          }
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 451,
+          "widget": {
+            "name": "text_b"
+          }
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          }
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            453
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        " ",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 276,
+      "type": "Text Multiline",
+      "pos": [
+        -276.1735417682463,
+        3938.82277363742
+      ],
+      "size": {
+        "0": 287.02899169921875,
+        "1": 236.83078002929688
+      },
+      "flags": {},
+      "order": 29,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            452
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "You're the AI expert. Tell the CEO about the results of the interview. If you don't know what interview we're talking about, say so.\n\nWrite short messages.\n\nYou've transcribed your interview on paper and is as follows:\n\n"
+      ]
+    },
+    {
+      "id": 47,
+      "type": "SimpleChat",
+      "pos": [
+        231.13515945351878,
+        2461.732644233482
+      ],
+      "size": {
+        "0": 400,
+        "1": 208.00003051757812
+      },
+      "flags": {},
+      "order": 49,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "initiator",
+          "type": "AGENT",
+          "link": 71
+        },
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "name": "chat_history",
+          "type": "STRING",
+          "links": [
+            73,
+            451
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            74
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "initiator",
+          "type": "AGENT",
+          "links": [
+            226,
+            454
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SimpleChat"
+      },
+      "widgets_values": [
+        "last_msg",
+        true,
+        "Let's start... What is L2 regularization? ",
+        3
+      ]
+    },
+    {
+      "id": 149,
+      "type": "Note",
+      "pos": [
+        -238.1735417682463,
+        3758.82277363742
+      ],
+      "size": {
+        "0": 429.5651550292969,
+        "1": 97.297119140625
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "A work around to memory limitations would be modifying text strings fed to another dialogue. \n\nHere we prefix the system message with the interview chat history. "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 262,
+      "type": "Note",
+      "pos": [
+        2472.62855213879,
+        2615.113586256779
+      ],
+      "size": {
+        "0": 350.31707763671875,
+        "1": 244.0272216796875
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "You can send messages as an agent in the dialogue by using the \"Send Message\" node.\n\nAdditionally, you can create responses in dialogues using the \"Generate Reply\" node.\n\nAs demonstrated here, the agent produces various responses based on the dialogue state, which is configured through the \"Send Message\" nodes. \n\nYou can see which first bid is the most favorable."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 253,
+      "type": "SendMessage",
+      "pos": [
+        2867,
+        2505
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 51,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "link": 415
+        },
+        {
+          "name": "sender",
+          "type": "AGENT",
+          "link": 416
+        }
+      ],
+      "outputs": [
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "links": [
+            418
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "sender",
+          "type": "AGENT",
+          "links": [
+            419
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SendMessage"
+      },
+      "widgets_values": [
+        "Hi, I want to buy tomatoes. How about 7$?"
+      ]
+    },
+    {
+      "id": 250,
+      "type": "SimpleChat",
+      "pos": [
+        3318,
+        3026
+      ],
+      "size": {
+        "0": 401.9701843261719,
+        "1": 251.0858154296875
+      },
+      "flags": {},
+      "order": 68,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "initiator",
+          "type": "AGENT",
+          "link": 411
+        },
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "link": 412
+        }
+      ],
+      "outputs": [
+        {
+          "name": "chat_history",
+          "type": "STRING",
+          "links": [
+            413
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            414
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "initiator",
+          "type": "AGENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "recipient",
+          "type": "AGENT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SimpleChat"
+      },
+      "widgets_values": [
+        "reflection_with_llm",
+        false,
+        "Could you sell me these tomatoes at this price? ",
+        7
+      ]
+    },
+    {
+      "id": 263,
+      "type": "Note",
+      "pos": [
+        3350,
+        3345
+      ],
+      "size": {
+        "0": 347.9087829589844,
+        "1": 96.94061279296875
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "You can also start a dialogue from various starting points using the recipient and sender outputs with a Simple Chat node"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 150,
+      "type": "Note",
+      "pos": [
+        410,
+        4640
+      ],
+      "size": {
+        "0": 377.7635498046875,
+        "1": 154.90451049804688
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "In this demonstration we're creating a group chat between agents.\n\nYou need a Group Chat Manager. Which will receive messages from one agent and forward them to all other agents downstream. The Group Chat Manager reads all messages and determines whose turn it is to speak next. The manager doesn't speak.\n\nFor now you're limited to 4 agents, however we will improve this to be more dynamic in the future. \n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 157,
+      "type": "Note",
+      "pos": [
+        124,
+        6356
+      ],
+      "size": {
+        "0": 409.4527282714844,
+        "1": 154.89688110351562
+      },
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This demonstration shows the usage of Llama-Index as a tool for agents. Taking a `llm_index` input, the Query Engine As Tool can provide the index data to the agents. "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 63,
+      "type": "Note",
+      "pos": [
+        1133.2674387555833,
+        6421.565129792002
+      ],
+      "size": {
+        "0": 456.0566711425781,
+        "1": 372.19464111328125
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "***** Suggested tool call (call_3fEa7hPE7MzDYJoVkH3wOTHK): elf_name_generator *****\nArguments: \n{\"query\": \"How to do what you love?\"}\n***********************************************************************************\n***** Suggested tool call (call_EzYjanFhnAdoozFjM2rcV6I3): elf_name_generator *****\nArguments: \n{\"query\": \"How to get startup ideas?\"}\n***********************************************************************************\n***** Suggested tool call (call_bSYj8Lw8nw7Di4t5VX5gEzJM): elf_name_generator *****\nArguments: \n{\"query\": \"How to detect bias?\"}\n***********************************************************************************\n***** Suggested tool call (call_RMKh4Om8d7wgDEfChhuzgXm3): elf_name_generator *****\nArguments: \n{\"query\": \"How to put ideas into words?\"}\n***********************************************************************************\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 34,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2112.0603872620322,
+        6041.079036369883
+      ],
+      "size": {
+        "0": 544.903564453125,
+        "1": 608.6996459960938
+      },
+      "flags": {},
+      "order": 107,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 104,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "I'm glad you found the tips on generating startup ideas helpful! If you're interested in exploring how to do what you love or how to put ideas into words, please let me know which topic you'd like to delve into next, and I'll provide you with more information and insights to help you further."
+      ]
+    },
+    {
+      "id": 164,
+      "type": "AddTool",
+      "pos": [
+        235,
+        8735
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 66
+      },
+      "flags": {},
+      "order": 55,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "tool",
+          "type": "TOOL",
+          "link": 307
+        },
+        {
+          "name": "assistant",
+          "type": "AGENT",
+          "link": 249
+        },
+        {
+          "name": "executor",
+          "type": "AGENT",
+          "link": 298
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant",
+          "type": "AGENT",
+          "links": [
+            344
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "executor",
+          "type": "AGENT",
+          "links": [
+            300
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AddTool"
+      }
+    },
+    {
+      "id": 158,
+      "type": "Note",
+      "pos": [
+        264,
+        7213
+      ],
+      "size": {
+        "0": 407.2643737792969,
+        "1": 152.2899932861328
+      },
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This demonstration shows the Tavily Search Tool used with agents to perform web searches. Useful for grabbing context about current events, or other data the LLM model wouldn't otherwise have context on. \n\nDon't forget to supply your Tavily API key in the Tavily Search Tool node. You can obtain a key here: https://app.tavily.com/"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 184,
+      "type": "Note",
+      "pos": [
+        456.24460626745406,
+        8428.157150791589
+      ],
+      "size": {
+        "0": 450.1312255859375,
+        "1": 130.99850463867188
+      },
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Demonstration of utilizing tools within a group chat, such as Tavily Search Tool.\n\nTo increase context awareness, change the model to gpt-4-preview, or use another model with a large context size.\n\nDon't forget to supply your Tavily API key in the Tavily Search Tool node. You can obtain a key here: https://app.tavily.com/"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 181,
+      "type": "CreateTavilySearchTool",
+      "pos": [
+        -306,
+        8624
+      ],
+      "size": {
+        "0": 400,
+        "1": 270.0000915527344
+      },
+      "flags": {},
+      "order": 38,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "tool",
+          "type": "TOOL",
+          "links": [
+            307
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateTavilySearchTool"
+      },
+      "widgets_values": [
+        "",
+        "tavily_search_tool",
+        "basic",
+        10,
+        false,
+        false,
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 183,
+      "type": "CreateTavilySearchTool",
+      "pos": [
+        -253.01525598223833,
+        7201.017610605757
+      ],
+      "size": {
+        "0": 400,
+        "1": 270.0002136230469
+      },
+      "flags": {},
+      "order": 39,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "tool",
+          "type": "TOOL",
+          "links": [
+            308
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateTavilySearchTool"
+      },
+      "widgets_values": [
+        "",
+        "tavily_search_tool_2",
+        "basic",
+        15,
+        true,
+        false,
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 107,
+      "type": "Note",
+      "pos": [
+        -260,
+        -210
+      ],
+      "size": {
+        "0": 299.5727233886719,
+        "1": 69.90499114990234
+      },
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This is a prettty huge example, so we use Anything Everywhere node to connect LLM to all nodes that require it. "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 277,
+      "type": "Note",
+      "pos": [
+        -266,
+        96
+      ],
+      "size": {
+        "0": 312.55389404296875,
+        "1": 67.3569107055664
+      },
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "To use OpenAI models you'll need to provide an `api_key`\n\nGet one here: https://platform.openai.com/signup"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 102,
+      "type": "Note",
+      "pos": [
+        -314.4834297527312,
+        513.743341847113
+      ],
+      "size": {
+        "0": 417.94952392578125,
+        "1": 212.43821716308594
+      },
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This example will start by showing you how to create a basic LLM Agent with existing functionality in Llama-Index nodes. \n\nThis is demonstrating adding personality to an agents responses. \n\nThere are other possibilities as well, such as enabling the LLM Agent to use tools such as web searching, which would effectively turn the LLM Agent into a information RAG assistant. "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 45,
+      "type": "ConversableAgentCreator",
+      "pos": [
+        -319.48342975273124,
+        785.743341847113
+      ],
+      "size": {
+        "0": 402.9642333984375,
+        "1": 139.95704650878906
+      },
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "agent",
+          "type": "AGENT",
+          "links": [
+            68
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConversableAgentCreator"
+      },
+      "widgets_values": [
+        "Interviewer",
+        "You are a happy, wise talking dog. You always should answer questions with every third word as \"woof\" and some other dog-like communication."
+      ]
+    },
+    {
+      "id": 104,
+      "type": "Note",
+      "pos": [
+        469,
+        345
+      ],
+      "size": {
+        "0": 368.3110046386719,
+        "1": 58
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Here we demonstrate just a simple call to the LLM Agent"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 4,
+      "type": "LLMSimpleWebPageReader",
+      "pos": [
+        450.51657024726717,
+        725.743341847113
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 45,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            327
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMSimpleWebPageReader"
+      },
+      "widgets_values": [
+        "https://paulgraham.com/startupfunding.html",
+        "",
+        "",
+        "",
+        true
+      ]
+    },
+    {
+      "id": 186,
+      "type": "LLMQueryEngineAdv",
+      "pos": [
+        1280.5165702472661,
+        755.743341847113
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 100,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 313
+        },
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 329
+        },
+        {
+          "name": "llm_message",
+          "type": "LIST",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "results",
+          "type": "STRING",
+          "links": [
+            315,
+            455
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMQueryEngineAdv"
+      },
+      "widgets_values": [
+        "How to found a startup?",
+        10,
+        0.7
+      ]
+    },
+    {
+      "id": 278,
+      "type": "SaltOutput",
+      "pos": [
+        1844,
+        401
+      ],
+      "size": {
+        "0": 398.4447937011719,
+        "1": 247.69247436523438
+      },
+      "flags": {},
+      "order": 105,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "output_data",
+          "type": "*",
+          "link": 455
+        },
+        {
+          "name": "video_audio",
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltOutput"
+      },
+      "widgets_values": [
+        "a_dogs_startup_summary",
+        "A dog will teach you the basic of a startup",
+        "STRING",
+        8,
+        "DEFAULT"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "LLMOpenAIModel",
+      "pos": [
+        -270,
+        -100
+      ],
+      "size": {
+        "0": 315,
+        "1": 150
+      },
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Model",
+          "type": "LLM_MODEL",
+          "links": [
+            439
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "embed_model_only",
+          "type": "LLM_EMBED_MODEL",
+          "links": [
+            440
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMOpenAIModel"
+      },
+      "widgets_values": [
+        "gpt-3.5-turbo",
+        "SALTAI_OPENAI_KEY",
+        "text-embedding-ada-002",
+        false
+      ]
     }
   ],
   "links": [
-    [
-      2,
-      2,
-      0,
-      3,
-      0,
-      "STRING"
-    ],
     [
       68,
       45,
@@ -4236,14 +4551,6 @@
       46,
       0,
       "AGENT"
-    ],
-    [
-      69,
-      46,
-      0,
-      9,
-      0,
-      "LLM_MODEL"
     ],
     [
       71,
@@ -4390,22 +4697,6 @@
       "STRING"
     ],
     [
-      156,
-      46,
-      0,
-      99,
-      0,
-      "LLM_MODEL"
-    ],
-    [
-      157,
-      1,
-      0,
-      106,
-      0,
-      "LLM_MODEL"
-    ],
-    [
       162,
       111,
       0,
@@ -4428,38 +4719,6 @@
       119,
       0,
       "AGENT"
-    ],
-    [
-      180,
-      114,
-      0,
-      127,
-      0,
-      "AGENT"
-    ],
-    [
-      181,
-      119,
-      0,
-      128,
-      0,
-      "AGENT"
-    ],
-    [
-      182,
-      128,
-      0,
-      122,
-      0,
-      "STRING"
-    ],
-    [
-      185,
-      127,
-      0,
-      130,
-      0,
-      "STRING"
     ],
     [
       226,
@@ -4620,14 +4879,6 @@
       191,
       0,
       "AGENT"
-    ],
-    [
-      334,
-      1,
-      1,
-      192,
-      0,
-      "LLM_EMBED_MODEL"
     ],
     [
       335,
@@ -4932,14 +5183,150 @@
       261,
       0,
       "STRING"
+    ],
+    [
+      437,
+      46,
+      0,
+      99,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      438,
+      46,
+      0,
+      9,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      439,
+      1,
+      0,
+      106,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      440,
+      1,
+      1,
+      192,
+      0,
+      "LLM_EMBED_MODEL"
+    ],
+    [
+      443,
+      114,
+      0,
+      266,
+      0,
+      "AGENT"
+    ],
+    [
+      444,
+      266,
+      0,
+      130,
+      0,
+      "STRING"
+    ],
+    [
+      445,
+      119,
+      0,
+      267,
+      0,
+      "AGENT"
+    ],
+    [
+      446,
+      267,
+      0,
+      122,
+      0,
+      "STRING"
+    ],
+    [
+      447,
+      269,
+      0,
+      270,
+      0,
+      "AGENT"
+    ],
+    [
+      448,
+      273,
+      0,
+      270,
+      1,
+      "AGENT"
+    ],
+    [
+      449,
+      270,
+      1,
+      271,
+      0,
+      "STRING"
+    ],
+    [
+      450,
+      270,
+      0,
+      272,
+      0,
+      "STRING"
+    ],
+    [
+      451,
+      47,
+      0,
+      275,
+      1,
+      "STRING"
+    ],
+    [
+      452,
+      276,
+      0,
+      275,
+      0,
+      "STRING"
+    ],
+    [
+      453,
+      275,
+      0,
+      273,
+      1,
+      "STRING"
+    ],
+    [
+      454,
+      47,
+      2,
+      273,
+      0,
+      "AGENT"
+    ],
+    [
+      455,
+      186,
+      0,
+      278,
+      0,
+      "*"
     ]
   ],
   "groups": [
     {
       "title": "Tavily search",
       "bounding": [
-        3697,
-        5620,
+        -334,
+        6982,
         2695,
         1252
       ],
@@ -4950,8 +5337,8 @@
     {
       "title": "LLamaindex tools",
       "bounding": [
-        3698,
-        4531,
+        -329,
+        5893,
         3044,
         1030
       ],
@@ -4962,8 +5349,8 @@
     {
       "title": "Group chat",
       "bounding": [
-        3698,
-        3095,
+        -324,
+        4410,
         2159,
         1406
       ],
@@ -4974,10 +5361,10 @@
     {
       "title": "Simple chat",
       "bounding": [
-        3699,
-        1606,
-        2620,
-        1456
+        -330,
+        2118,
+        2639,
+        2236
       ],
       "color": "#8AA",
       "font_size": 24,
@@ -4986,8 +5373,8 @@
     {
       "title": "System message",
       "bounding": [
-        3700,
-        785,
+        -329,
+        1290,
         1820,
         785
       ],
@@ -4998,8 +5385,8 @@
     {
       "title": "Llamaindex + agents",
       "bounding": [
-        3699,
-        -302,
+        -330,
+        194,
         2683,
         1045
       ],
@@ -5008,10 +5395,10 @@
       "locked": false
     },
     {
-      "title": "Group",
+      "title": "Tools in Group Chat",
       "bounding": [
-        3694,
-        6907,
+        -332,
+        8281,
         3010,
         1791
       ],
@@ -5022,8 +5409,8 @@
     {
       "title": "Tomatoes",
       "bounding": [
-        6487,
-        1608,
+        2434,
+        2123,
         2388,
         1868
       ],

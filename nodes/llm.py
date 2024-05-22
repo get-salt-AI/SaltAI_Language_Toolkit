@@ -12,6 +12,8 @@ from llama_index.core import Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.embeddings.openai import OpenAIEmbedding
 
+from .. import MENU_NAME, SUB_MENU_NAME
+
 HAS_LLAMA_CPP = False
 try:
     from llama_index.llms.llama_cpp import LlamaCPP
@@ -26,6 +28,8 @@ except Exception:
 HAS_GEMINI = False
 try:
     from llama_index.llms.gemini import Gemini
+    from llama_index.multi_modal_llms.gemini import GeminiMultiModal
+    from llama_index.embeddings.gemini import GeminiEmbedding
     HAS_GEMINI = True
 except Exception:
     pass
@@ -84,7 +88,7 @@ class LLMGemini:
                 "api_key": ("STRING", {
                     "multiline": False, 
                     "dynamicPrompts": False, 
-                    "default": os.environ.get("GOOGLE_API_KEY", "")
+                    "default": ""
                 }),
             },
         }
@@ -93,12 +97,46 @@ class LLMGemini:
     RETURN_NAMES = ("model", )
 
     FUNCTION = "load_model"
-    CATEGORY = "SALT/Llama-Index/Loaders"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Loaders"
 
     def load_model(self, model_name:str, api_key:str) -> Dict[str, Any]:
         llm = Gemini(model_name=model_name, api_key=api_key)
         embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
-        return ({"llm":llm, "embed_model":embed_model},)
+        return ({"llm":llm, "llm_name": model_name, "embed_model": embed_model, "embed_name": "bge-small-en-v1.5"},)
+
+
+class GeminiMultiModalLoader:
+    """
+    Load Gemini Multi-Modal Model
+    """
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "model_name": ([
+                    "models/gemini-pro",
+                    "models/gemini-1.5-pro-latest",
+                    "models/gemini-pro-vision",
+                    "models/gemini-1.0-pro",					
+                    "models/gemini-ultra",
+                ],),
+                "api_key": ("STRING", {
+                    "multiline": False, 
+                    "default": ""
+                }),
+            },
+        }
+
+    RETURN_TYPES = ("LLM_MODEL", )
+    RETURN_NAMES = ("model", )
+
+    FUNCTION = "load_model"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Loaders"
+
+    def load_model(self, model_name: str, api_key: str) -> dict:
+        gemini = GeminiMultiModal(model_name=model_name, api_key=api_key)
+        embed_model = GeminiEmbedding(model_name="models/embedding-001", api_key=api_key)
+        return ({"llm": gemini, "llm_name": model_name, "embed_model": embed_model, "embed_name": "embedding-001"},)
 
 
 LOCAL_FILES = folder_paths.get_filename_list("llm")
@@ -113,7 +151,7 @@ class LLMLlamaCPP:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "ModelName": (LOCAL_FILES, ), 
+                "model_name": (LOCAL_FILES, ), 
             },
         }
 
@@ -121,13 +159,13 @@ class LLMLlamaCPP:
     RETURN_NAMES = ("model", )
 
     FUNCTION = "load_model"
-    CATEGORY = "SALT/Llama-Index/Loaders"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Loaders"
 
-    def load_model(self, ModelName: str) -> Dict[str, Any]:
-        path = folder_paths.get_full_path('llm',ModelName)
+    def load_model(self, model_name: str) -> Dict[str, Any]:
+        path = folder_paths.get_full_path('llm', model_name)
         llm = LlamaCPP(model_path=path)
         embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
-        return ({"llm":llm, "llm_name": ModelName,"embed_model": embed_model, "embed_name": "BAAI/bge-small-en-v1.5"},)
+        return ({"llm":llm, "llm_name": model_name,"embed_model": embed_model, "embed_name": "BAAI/bge-small-en-v1.5"},)
 
 
 class LLMMistralAI:
@@ -150,7 +188,6 @@ class LLMMistralAI:
                 ],),
                 "api_key": ("STRING", {
                     "multiline": False, 
-                    "dynamicPrompts": False, 
                     "default": os.environ.get("MISTRAL_API_KEY", "")
                 }),
             },
@@ -160,7 +197,7 @@ class LLMMistralAI:
     RETURN_NAMES = ("model", )
 
     FUNCTION = "load_model"
-    CATEGORY = "SALT/Llama-Index/Loaders"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Loaders"
 
     def load_model(self, model_name:str, api_key:str) -> Dict[str, Any]:
         llm = MistralAI(model_name=model_name, api_key=api_key)
@@ -189,7 +226,7 @@ class LLMOllama:
     RETURN_NAMES = ("model", )
 
     FUNCTION = "load_model"
-    CATEGORY = "SALT/Llama-Index/Loaders"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Loaders"
 
     def load_model(self, model_name:str) -> Dict[str, Any]:
         llm = Ollama(model=model_name)
@@ -208,7 +245,6 @@ class LLMOpenAI:
                 "model": (list(ALL_AVAILABLE_MODELS),),
                 "api_key": ("STRING", {
                     "multiline": False, 
-                    "dynamicPrompts": False, 
                     "default": os.environ.get("OPENAI_API_KEY", "")
                 }),
                 "embedding_model": (
@@ -225,11 +261,10 @@ class LLMOpenAI:
     RETURN_NAMES = ("llm_model", "embed_model_only")
 
     FUNCTION = "load_model"
-    CATEGORY = "SALT/Llama-Index/Loaders"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Loaders"
 
     def load_model(self, model:str, embedding_model:str, api_key:str, multimodal:bool = False) -> Dict[str, Any]:
-        llm = OpenAI(model=model) if not multimodal else OpenAIMultiModal(model=model)
-        llm.api_key = api_key
+        llm = OpenAI(model=model, api_key=api_key) if not multimodal else OpenAIMultiModal(model=model, api_key=api_key)
         embed_model = OpenAIEmbedding(model_name=embedding_model, api_key=api_key,)
         return ({"llm":llm, "llm_name": model, "embed_model":embed_model, "embed_name": embedding_model}, {"embed_model": embed_model, "embed_name": embedding_model})
 
@@ -248,7 +283,6 @@ class LLMGroq:
                 "model": (["llama3-8b-8192", "llama3-70b-8192", "mixtral-8x7b-32768", "gemma-7b-it"],),
                 "groq_api_key": ("STRING", {
                     "multiline": False,
-                    "dynamicPrompts": False,
                     "default": os.environ.get("GROQ_API_KEY", "")
                 }),
                 "embedding_model": (
@@ -269,7 +303,7 @@ class LLMGroq:
     RETURN_NAMES = ("llm_model", "embed_model_only")
 
     FUNCTION = "load_model"
-    CATEGORY = "SALT/Llama-Index/Loaders"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Loaders"
 
     def load_model(self, model: str, groq_api_key: str, embedding_model:str, openai_api_key:str = None) -> Dict[str, Any]:
         llm = Groq(model=model, api_key=groq_api_key)
@@ -319,7 +353,7 @@ class LLMOpenAIModelOpts:
     RETURN_NAMES = ("model", )
 
     FUNCTION = "set_options"
-    CATEGORY = "SALT/Llama-Index/Loaders/Options"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Loaders/Options"
 
     def set_options(self, llm_model:Dict[str, Any], **kwargs) -> Dict[str, Any]:
         llm = llm_model['llm']
@@ -371,8 +405,11 @@ if HAS_MISTRAL:
     
 if HAS_GEMINI:
     NODE_CLASS_MAPPINGS["LLMGeminiModel"] = LLMGemini
+    NODE_CLASS_MAPPINGS["GeminiMultiModalLoader"] = GeminiMultiModalLoader
+
     NODE_DISPLAY_NAME_MAPPINGS["LLMGeminiModel"] = "∞ Gemini Model"
-    
+    NODE_DISPLAY_NAME_MAPPINGS["GeminiMultiModalLoader"] = "∞ Gemini Multimodal Model"
+     
 if HAS_OLLAMA:
     NODE_CLASS_MAPPINGS["LLMOllamaModel"] = LLMOllama
     NODE_DISPLAY_NAME_MAPPINGS["LLMOllamaModel"] = "∞ Ollama Model"
