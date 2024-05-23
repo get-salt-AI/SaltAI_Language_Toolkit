@@ -1,0 +1,517 @@
+{
+  "last_node_id": 103,
+  "last_link_id": 251,
+  "nodes": [
+    {
+      "id": 32,
+      "type": "LLMQueryEngine",
+      "pos": [
+        1310,
+        360
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 38
+        },
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "link": 39
+        },
+        {
+          "name": "llm_message",
+          "type": "LIST",
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "name": "results",
+          "type": "STRING",
+          "links": [
+            41
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMQueryEngine"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 25,
+      "type": "LLMParquetDatasetSearcher",
+      "pos": [
+        460,
+        650
+      ],
+      "size": {
+        "0": 315,
+        "1": 482
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "search_term",
+          "type": "STRING",
+          "link": 249,
+          "widget": {
+            "name": "search_term"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "results",
+          "type": "STRING",
+          "links": [
+            72
+          ],
+          "shape": 6,
+          "slot_index": 0
+        },
+        {
+          "name": "results_list",
+          "type": "LIST",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "documents",
+          "type": "DOCUMENT",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMParquetDatasetSearcher"
+      },
+      "widgets_values": [
+        "text",
+        "https://huggingface.co/datasets/FredZhang7/stable-diffusion-prompts-2.47M/resolve/main/all_prompts.txt",
+        "",
+        "",
+        "*",
+        false,
+        20,
+        0.1,
+        false,
+        12,
+        1024,
+        3,
+        "0",
+        false,
+        false,
+        226030041690218,
+        354803151071963,
+        "randomize"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "LLMChatMessagesAdv",
+      "pos": [
+        460,
+        360
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "user_prompt",
+          "type": "STRING",
+          "link": 248,
+          "widget": {
+            "name": "user_prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_message",
+          "type": "LIST",
+          "links": [
+            40
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMChatMessagesAdv"
+      },
+      "widgets_values": [
+        "You are a expert stable diffusion prompt engineer. You take a users search query, and related example prompts, and build a new prompt based on the users search query. You only respond with the generated prompt, and nothing else. Do not chat in any shape or form. \n\nDo not copy prompt examples exactly, use them on reference on how to make a new unique prompt. The generated prompt should follow the users input. For example, if it's \"anime girl\" then the prompt should be anime themed. If it's \"oil painting portrait\" then it should be a prompt about a oil painting prompt. If no style is detected, add one. \n\nBe sure to include modifiers at the end, such as: HD, 4k, highly detailed, trending on ArtStation, ultra realistic, very highly detailed, 8k, octane, etc as they relate to the prompt. You can find more examples of detail modifiers in the example prompts.\n\nUse emphasis weighting on subjects and quality descriptions of tags or phrases. Emphasis weighting works by surrounding the tag(s) by parenthesis like: (werewolf:1.2) female, surrounded by (vibrant energy:1.3), where the weighting float shouldn't exceed 1.5, or go below 1.05. Weighting is used to bring out features in a image generation that might otherwise be ignored. ",
+        ""
+      ]
+    },
+    {
+      "id": 45,
+      "type": "SaltDisplayAny",
+      "pos": [
+        820,
+        650
+      ],
+      "size": {
+        "0": 604.0365600585938,
+        "1": 397.61981201171875
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_value",
+          "type": "*",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltDisplayAny"
+      },
+      "widgets_values": [
+        "A beautiful, intricately detailed 3D rendering of a blonde-haired, blue-eyed Western girl in medieval armor, wearing a white shirt, brown leather belt, and brown holster, standing in front of a wooden door with wooden beams, in the style of Leonardo da Vinci and Rembrandt, trending on ArtStation, 4K, Octane render., female character, 3d rendering, video game, fantasy, medieval, armor, costume, blonde hair, blue eyes, brown leather, white shirt, brown belt, brown holster, wooden door, wooden wall, wooden beams",
+        "portrait of elf girl with red hair, black robe with gold runes, boho chic | | very anime!!!, symmetry face, fine details. realistic shaded lighting poster by ilya kuvshinov, katsuhiro otomo, kidmo!!!, trending on artstation, magali villeneuve, artgerm, jeremy lipkin and michael garmash\n\na beautiful portrait of elf girl, deep focus, d & d, fantasy, intricate, elegant, highly detailed, digital painting, artstation, concept art, matte, sharp focus, illustration, hearthstone, art by artgerm and greg rutkowski and alphonse mucha\n\ncute oil painted portrait of elf girl with pink hair holding bow, fantasy, intricate, elegant, extremely detailed digital painting trending artstation concept art heroic portrait sharp focus, illustration, art by artgerm, greg rutkowski magali villeneuve gaston bussiere\n\nportrait of elf girl with red hair, low cut dress, boho chic, lay at a high rise apartment window at night | | very anime!!!, symmetry face, fine details. realistic shaded lighting poster by ilya kuvshinov, katsuhiro otomo, kidmo!!!, trending on artstation, magali villeneuve, artgerm, jeremy lipkin and michael garmash\n\nportrait of elf girl with red hair, low cut dress, boho chic | | very anime!!!, symmetry face, fine details. realistic shaded lighting poster by ilya kuvshinov, katsuhiro otomo, kidmo!!!, trending on artstation, magali villeneuve, artgerm, jeremy lipkin and michael garmash\n\nprofile portrait of elf girl with red hair, chesty fantasy outfit, blue cloak, boho chic | | very anime!!!, symmetry face, fine details. realistic shaded lighting poster by ilya kuvshinov, katsuhiro otomo, kidmo!!!, trending on artstation, magali villeneuve, artgerm, jeremy lipkin and michael garmash\n\n"
+      ]
+    },
+    {
+      "id": 31,
+      "type": "LLMVectorStoreIndexAdv",
+      "pos": [
+        890,
+        360
+      ],
+      "size": {
+        "0": 380.4000244140625,
+        "1": 122
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "link": 36
+        },
+        {
+          "name": "document",
+          "type": "DOCUMENT",
+          "link": 37
+        },
+        {
+          "name": "optional_llm_context",
+          "type": "LLM_CONTEXT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "llm_index",
+          "type": "LLM_INDEX",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMVectorStoreIndexAdv"
+      },
+      "widgets_values": [
+        128,
+        0
+      ]
+    },
+    {
+      "id": 28,
+      "type": "LLMGroqModel",
+      "pos": [
+        460,
+        160
+      ],
+      "size": {
+        "0": 360.1957702636719,
+        "1": 150
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "llm_model",
+          "type": "LLM_MODEL",
+          "links": [
+            36,
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "embed_model_only",
+          "type": "LLM_EMBED_MODEL",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMGroqModel"
+      },
+      "widgets_values": [
+        "llama3-70b-8192",
+        "SALTAI_GROQ_KEY",
+        "text-embedding-ada-002",
+        "SALTAI_OPENAI_KEY"
+      ]
+    },
+    {
+      "id": 103,
+      "type": "SaltInput",
+      "pos": [
+        -20,
+        360
+      ],
+      "size": [
+        421.1365782682558,
+        396.3055297284086
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_image",
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "input_mask",
+          "type": "MASK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "*",
+          "links": [
+            248,
+            249
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltInput"
+      },
+      "widgets_values": [
+        "basic_prompt",
+        "A basic prompt to elaborate on",
+        "STRING",
+        "portrait of elf girl",
+        "",
+        false,
+        false,
+        "image"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "SaltDisplayAny",
+      "pos": [
+        1740,
+        360
+      ],
+      "size": {
+        "0": 449.8513488769531,
+        "1": 196.5437469482422
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_value",
+          "type": "*",
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            251
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltDisplayAny"
+      },
+      "widgets_values": [
+        "A beautiful, intricately detailed 3D rendering of a blonde-haired, blue-eyed Western girl in medieval armor, wearing a white shirt, brown leather belt, and brown holster, standing in front of a wooden door with wooden beams, in the style of Leonardo da Vinci and Rembrandt, trending on ArtStation, 4K, Octane render.",
+        "a whimsical, highly detailed portrait of a refined (feline:1.2) gentleman in a top hat, surrounded by (luxurious velvet:1.1) drapes, with a (mysterious:1.1) gaze, trending on ArtStation, ultra realistic, 8k, octane render."
+      ]
+    },
+    {
+      "id": 102,
+      "type": "SaltOutput",
+      "pos": [
+        2218,
+        360
+      ],
+      "size": {
+        "0": 315,
+        "1": 174
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "output_data",
+          "type": "*",
+          "link": 251
+        },
+        {
+          "name": "video_audio",
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaltOutput"
+      },
+      "widgets_values": [
+        "generated_prompt",
+        "The LLM generated prompt used for the image",
+        "STRING",
+        8,
+        "DEFAULT"
+      ]
+    }
+  ],
+  "links": [
+    [
+      36,
+      28,
+      0,
+      31,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      37,
+      25,
+      2,
+      31,
+      1,
+      "DOCUMENT"
+    ],
+    [
+      38,
+      28,
+      0,
+      32,
+      0,
+      "LLM_MODEL"
+    ],
+    [
+      39,
+      31,
+      0,
+      32,
+      1,
+      "LLM_INDEX"
+    ],
+    [
+      40,
+      29,
+      0,
+      32,
+      2,
+      "LIST"
+    ],
+    [
+      41,
+      32,
+      0,
+      33,
+      0,
+      "*"
+    ],
+    [
+      72,
+      25,
+      0,
+      45,
+      0,
+      "*"
+    ],
+    [
+      248,
+      103,
+      0,
+      29,
+      0,
+      "STRING"
+    ],
+    [
+      249,
+      103,
+      0,
+      25,
+      0,
+      "STRING"
+    ],
+    [
+      251,
+      33,
+      0,
+      102,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

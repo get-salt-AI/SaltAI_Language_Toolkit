@@ -12,6 +12,7 @@ from llama_index.core.llms.custom import CustomLLM
 from llama_index.core.types import PydanticProgramMode
 from .utils import clone_conversable_agent
 
+from ... import MENU_NAME, SUB_MENU_NAME
 
 class BaseModel(CustomLLM):
 	agent: Any
@@ -80,7 +81,7 @@ class ConvertAgentToLlamaindex:
 	RETURN_NAMES = ("model",)
 
 	FUNCTION = "convert_agent"
-	CATEGORY = "SALT/Shakers/Agents"
+	CATEGORY = f"{MENU_NAME}/Shakers/Agents"
 
 	def convert_agent(self, agent, optional_embed_model=None):
 		llm = {"llm": BaseModel(agent)}
@@ -109,7 +110,7 @@ class ConversableAgentCreator:
 	RETURN_NAMES = ("agent",)
 
 	FUNCTION = "create_agent"
-	CATEGORY = "SALT/Shakers/Agents"
+	CATEGORY = f"{MENU_NAME}/Shakers/Agents"
 
 	def create_agent(self, name, system_message, llm_model=None):
 		agent = ConversableAgent(
@@ -145,7 +146,7 @@ class ConversableAgentCreatorAdvanced:
 	RETURN_NAMES = ("agent",)
 
 	FUNCTION = "create_agent"
-	CATEGORY = "SALT/Shakers/Agents"
+	CATEGORY = f"{MENU_NAME}/Shakers/Agents"
 
 	def create_agent(self, name, system_message, llm_model=None, default_auto_reply="", description=None):
 		agent = ConversableAgent(
@@ -184,7 +185,7 @@ class GroupChatManagerCreator:
 	RETURN_NAMES = ("group_manager",)
 
 	FUNCTION = "create_agent"
-	CATEGORY = "SALT/Llama-Index/Agents"
+	CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Agents"
 
 	def create_agent(self, name, system_message, llm_model=None, max_consecutive_auto_reply=None):
 		group_manager = {
@@ -220,7 +221,7 @@ class ChangeSystemMessage:
 	RETURN_NAMES = ("agent",)
 
 	FUNCTION = "update_system_prompt"
-	CATEGORY = "SALT/Llama-Index/Agents"
+	CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Agents"
 
 	def update_system_prompt(self, agent, system_message, llm_model=None):
 		agent = clone_conversable_agent(agent)
@@ -244,7 +245,7 @@ class ClearMemory:
 	RETURN_NAMES = ("agent",)
 
 	FUNCTION = "clear_memory"
-	CATEGORY = "SALT/Llama-Index/Agents"
+	CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Agents"
 
 	def clear_memory(self, agent, recipient=None):
 		agent = clone_conversable_agent(agent)

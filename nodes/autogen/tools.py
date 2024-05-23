@@ -3,6 +3,7 @@ from typing_extensions import Annotated
 from tavily import TavilyClient
 from .utils import clone_conversable_agent
 
+from ... import MENU_NAME, SUB_MENU_NAME
 
 class AddTool:
     @classmethod
@@ -21,7 +22,7 @@ class AddTool:
     RETURN_NAMES = ("assistant", "executor",)
 
     FUNCTION = "create_tool"
-    CATEGORY = "SALT/Llama-Index/Agents"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Agents"
 
     def create_tool(self, tool, assistant, executor=None):
         assistant = clone_conversable_agent(assistant)
@@ -68,7 +69,7 @@ class CreateTavilySearchTool:
     RETURN_NAMES = ("tool",)
 
     FUNCTION = "create_tool"
-    CATEGORY = "SALT/Llama-Index/Agents"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Agents"
 
     def create_tool(
         self,
@@ -120,7 +121,7 @@ class ConvertAgentAsTool:
     RETURN_NAMES = ("tool",)
 
     FUNCTION = "create_tool"
-    CATEGORY = "SALT/Llama-Index/Agents"
+    CATEGORY = f"{MENU_NAME}/{SUB_MENU_NAME}/Agents"
 
     def create_tool(self, agent):
         agent = clone_conversable_agent(agent)
