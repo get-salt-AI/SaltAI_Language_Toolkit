@@ -95,7 +95,7 @@ def read_extra_info(input_str):
         dictionary = json.loads(input_str)
         return dictionary
     except Exception as e:
-        logger.error("Parsing error:", e)
+        logger.error(f"Parsing error: {e}")
         return None
 
 class LLMCSVReader(CSVReader):
@@ -978,8 +978,8 @@ class LLMDirectoryReader:
         else:
             exclude = None
 
-        logger.info("Excluding: ", exclude)
-        logger.info("Required Extensions: ", required_exts)
+        logger.info(f"Excluding: {exclude}")
+        logger.info(f"Required Extensions: {required_exts}")
 
         if not optional_path_list:
             full_path = get_full_path(1, input_directory.strip())
@@ -1052,11 +1052,11 @@ class LLMSimpleWebPageReader:
         valid_urls = []
         for url in urls:
             if not valid_url(url):
-                logger.warning("Skipping invalid URL", url)
+                logger.warning(f"Skipping invalid URL {url}")
                 continue
             valid_urls.append(url)
 
-        logger.info("Valided URLs:", valid_urls)
+        logger.info(f"Valided URLs: {valid_urls}")
 
         documents = SimpleWebPageReader(html_to_text=html_to_text).load_data(valid_urls)
         return (documents,)
@@ -1088,11 +1088,11 @@ class LLMSimpleWebPageReaderAdv:
         valid_urls = []
         for url in urls:
             if not valid_url(url):
-                logger.warning("Skipping invalid URL", url)
+                logger.warning(f"Skipping invalid URL {url}")
                 continue
             valid_urls.append(url)
 
-        logger.info("Valided URLs:", valid_urls)
+        logger.info(f"Valided URLs: {valid_urls}")
 
         documents = SimpleWebPageReader(html_to_text=html_to_text).load_data(valid_urls)
         return (documents,)
@@ -1133,11 +1133,11 @@ class LLMTrafilaturaWebReader:
         valid_urls = []
         for url in urls:
             if not valid_url(url):
-                logger.warning("Skipping invalid URL", url)
+                logger.warning(f"Skipping invalid URL: {url}")
                 continue
             valid_urls.append(url)
 
-        logger.info("Valided URLs:", valid_urls)
+        logger.info(f"Valided URLs: {valid_urls}")
 
         documents = TrafilaturaWebReader().load_data(valid_urls)
         return (documents,)
@@ -1166,11 +1166,11 @@ class LLMTrafilaturaWebReaderAdv:
         valid_urls = []
         for url in urls:
             if not valid_url(url):
-                logger.warning("Skipping invalid URL", url)
+                logger.warning(f"Skipping invalid URL: {url}")
                 continue
             valid_urls.append(url)
 
-        logger.info("Valided URLs:", valid_urls)
+        logger.info(f"Valided URLs: {valid_urls}")
 
         documents = TrafilaturaWebReader().load_data(valid_urls)
         return (documents,)
@@ -1211,7 +1211,7 @@ class LLMRssReaderNode:
 
         urls = [url for url in urls if valid_url(url)]
 
-        logger.info("Valided URLs:", urls)
+        logger.info(f"Valided URLs: {urls}")
 
         documents = RssReader().load_data(urls)
         return (documents,)
@@ -1467,7 +1467,7 @@ class LLMTavilyResearch:
                     ", ") if include_domains is not None and exclude_domains != "" else None,
             )
         
-        logger.info("Tavily Search Query:", search_query)
+        logger.info(f"Tavily Search Query: {search_query}")
 
         # Increment the search results because when using `include_raw_content` 
         # results are found in order of accessibility, so first X results may not 
@@ -1552,7 +1552,7 @@ class LLMSaltWebCrawler:
         if not url.strip() and not urls:
             raise Exception("Please provide at lease one URL")
         
-        logger.info("Keyword:", keywords)
+        logger.info(f"Keyword: {keywords}")
         if keywords in ("", "undefined") or keywords is None:
             keywords = None
             relevant_links = False
